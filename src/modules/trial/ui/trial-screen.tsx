@@ -309,7 +309,12 @@ export function TrialScreen() {
             </p>
             <p className="mt-2 h-6 text-center text-base" role="status">
               {game.lastWrong ? (
-                <span className="text-wrong">「{game.lastWrong}」は ちがうよ</span>
+                <span className="text-wrong">
+                  {/* 英字だけがミスになるのは、日本語入力がオフのまま打ったとき。直し方を出す。 */}
+                  {/^[a-zA-Zａ-ｚＡ-Ｚ]+$/.test(game.lastWrong)
+                    ? "にほんご入力を オンにしてね"
+                    : `「${game.lastWrong}」は ちがうよ`}
+                </span>
               ) : game.pending ? (
                 <span className="text-fg-muted">「{game.pending}」→ つづけて</span>
               ) : (
@@ -456,6 +461,9 @@ export function TrialScreen() {
             <li>取り消し方 A・B・C のそれぞれで 3 を試す</li>
             <li>予測変換の候補が出るか。候補を選んだらどうなるか</li>
             <li>キーボードを出したまま、ボスとお題が見えているか</li>
+            <li>
+              パソコンでは、日本語入力をオンにしてローマ字で打つと、打つ途中の英字でミスが増えない
+            </li>
           </ol>
         </section>
       </div>

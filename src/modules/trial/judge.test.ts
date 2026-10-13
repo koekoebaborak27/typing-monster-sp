@@ -55,6 +55,33 @@ describe("trial/judge judgeInput", () => {
   it("お題より長く打ったらミス", () => {
     expect(judgeInput("さくら", "さくらん")).toEqual({ confirmed: 3, pending: "", missed: true });
   });
+  it("打っている途中のローマ字はミスにせず、途中として返す", () => {
+    expect(judgeInput("さくら", "s")).toEqual({ confirmed: 0, pending: "s", missed: false });
+    expect(judgeInput("さくら", "さｋ")).toEqual({ confirmed: 1, pending: "ｋ", missed: false });
+    expect(judgeInput("きょうりゅう", "ky")).toEqual({
+      confirmed: 0,
+      pending: "ky",
+      missed: false,
+    });
+  });
+  it("「っ」「ん」のあとに続くローマ字も途中として返す", () => {
+    expect(judgeInput("がっこう", "がっk")).toEqual({ confirmed: 2, pending: "k", missed: false });
+    expect(judgeInput("えんぴつ", "えn")).toEqual({ confirmed: 1, pending: "n", missed: false });
+    expect(judgeInput("えんぴつ", "えんp")).toEqual({ confirmed: 2, pending: "p", missed: false });
+  });
+  it("ローマ字の前のひらがなが違っていればミス", () => {
+    expect(judgeInput("さくら", "しk")).toEqual({ confirmed: 0, pending: "", missed: true });
+  });
+  it("ローマ字が 4 文字を超えたらミス（日本語入力がオフのまま打った場合）", () => {
+    expect(judgeInput("さくら", "saku")).toEqual({ confirmed: 0, pending: "saku", missed: false });
+    expect(judgeInput("さくら", "sakur")).toEqual({ confirmed: 0, pending: "", missed: true });
+  });
+  it("お題を打ち終えたあとのローマ字はミス", () => {
+    expect(judgeInput("さくら", "さくらa")).toEqual({ confirmed: 3, pending: "", missed: true });
+  });
+  it("途中の形のあとにローマ字を打ったらミス", () => {
+    expect(judgeInput("がっこう", "かk")).toEqual({ confirmed: 0, pending: "", missed: true });
+  });
   it("漢字に変換されたらミス", () => {
     expect(judgeInput("さくら", "桜")).toEqual({ confirmed: 0, pending: "", missed: true });
   });
