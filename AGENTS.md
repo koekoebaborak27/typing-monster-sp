@@ -35,7 +35,7 @@
 | `.github/` | Copilot 指示（`copilot-instructions.md`）+ Copilot プロンプト（`prompts/`）+ Copilot カスタムエージェント（`agents/<name>.agent.md`）+ CI ワークフロー（`workflows/ci.yml`） |
 | `.agents/` | Codex が読むリポジトリ内スキル（`skills/<name>/SKILL.md`。サブエージェントの入口も兼ねる） |
 | `.codex/` | Codex CLI のプロジェクト設定（`config.toml`。サンドボックス / 承認ポリシー）+ 権限ルール（`rules/*.rules`） |
-| `.claude/` | Claude Code が読むスキル（`skills/<name>/SKILL.md`）+ サブエージェント（`agents/<name>.md`）+ 権限設定（`settings.json`） |
+| `.claude/` | Claude Code が読むスキル（`skills/<name>/SKILL.md`）+ サブエージェント（`agents/<name>.md`）+ 権限設定（`settings.json`）+ 画面確認用の開発サーバーの起動設定（`launch.json`） |
 | `.vscode/` | 推奨拡張機能 + Copilot の権限設定（`settings.json`） |
 
 ## ポイント
