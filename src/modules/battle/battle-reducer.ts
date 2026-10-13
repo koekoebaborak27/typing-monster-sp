@@ -1,227 +1,129 @@
 import type { Boss } from "@/modules/boss";
-import type { ChoiceId, Question } from "@/modules/quiz";
-import {
-  BOSS_MAX_HP,
-  MAX_LIFE,
-  hpAfterFinishFirstHit,
-  hpAfterNormalHit,
-  isPerfect,
-  lifeAfterMiss,
-} from "./scoring";
-import type { BattleAction, BattleEffect, BattleState, FinishQuestions } from "./types";
+import type { Word } from "@/modules/word";
+import { BOSS_MAX_HP, hpAfterFinishFirstHit, hpAfterNormalHit } from "./scoring";
+import { judgeInput } from "./judge";
+import type { BattleAction, BattleEffect, BattleState } from "./types";
 
-/** 通常問題の数。`slot` がこの値になったらとどめ問題に入る。 */
+/** 通常問題の数。`slot` がこれ未満なら通常問題、以上ならとどめ問題。 */
 const NORMAL_COUNT = 3;
 
-/** 最後の問題（とどめ2問目）の `slot`。 */
+/** 最後の問題（とどめ問題の2問目）の `slot`。 */
 const LAST_SLOT = 4;
 
-/** バトル開始前（読み込み中）の状態を作る。 */
-export function createInitialState(): BattleState {
+/**
+ * バトルを始めるときの状態を作る。
+ * ボスと5語は、呼ぶ側が乱数を使って選んでから渡す（この関数の中では乱数を使わない）。
+ */
+export function createInitialState(boss: Boss, words: readonly Word[]): BattleState {
   return {
-    phase: "loading",
-    fetchError: null,
-    questions: [],
-    finishQuestions: null,
-    boss: null,
+    phase: "typing",
+    boss,
+    words,
     slot: 0,
-    isRetry: false,
-    choiceOrder: [],
-    selectedChoiceId: null,
     hp: BOSS_MAX_HP,
-    life: MAX_LIFE,
-    combo: 0,
-    normalWrong: [],
-    reviewList: [],
-    finishDamage: 0,
+    typedCount: 0,
+    wrongText: "",
+    needsJapaneseInput: false,
+    missCount: 0,
     lastDamage: 0,
   };
 }
 
-/**
- * いま出している問題を返す。無ければ null。
- * `slot` が 0〜2 なら出題APIの `questions[slot]`、3〜4 なら `finishQuestions[slot - 3]`。
- */
-export function currentQuestion(state: BattleState): Question | null {
-  if (state.slot < NORMAL_COUNT) return state.questions[state.slot] ?? null;
-  return state.finishQuestions?.[state.slot - NORMAL_COUNT] ?? null;
+/** 今のお題を返す。画面と reducer の両方で使う。 */
+export function currentWord(state: BattleState): Word {
+  return state.words[state.slot];
 }
 
 /**
- * とどめ問題2問を決める。
- * 通常問題の間違い（間違えた順）を先に使い、足りない分を予備問題（1問目・2問目の順）で埋める。
- * 間違いが3問あっても、使うのは先頭の2問だけ。
+ * お題を最後の文字まで打てたときの状態を作る。
+ * 何問目かに応じてHPを減らし、ダメージ表示（最後の問題だけは、とどめの一撃）へ進める。
  */
-export function decideFinishQuestions(
-  normalWrong: Question[],
-  spares: Question[],
-): FinishQuestions {
-  const picked = [...normalWrong.slice(0, 2), ...spares].slice(0, 2);
-  return [picked[0], picked[1]];
-}
+function completeWord(state: BattleState, typedCount: number): BattleState {
+  const typed = { ...state, typedCount, wrongText: "", needsJapaneseInput: false };
 
-/** 問題の選択肢IDを、問題データの並びのまま取り出す。 */
-function defaultOrder(question: Question | null): ChoiceId[] {
-  return question ? question.choices.map((choice) => choice.id) : [];
+  // 最後の問題は、残りのHPをすべて減らして、とどめの一撃にする。
+  if (state.slot === LAST_SLOT) {
+    return { ...typed, phase: "finishing", hp: 0, lastDamage: state.hp };
+  }
+
+  // 通常問題は100、とどめ問題の1問目は残りHPの半分を減らす。
+  const hp =
+    state.slot < NORMAL_COUNT ? hpAfterNormalHit(state.hp) : hpAfterFinishFirstHit(state.hp);
+  return { ...typed, phase: "damage", hp, lastDamage: state.hp - hp };
 }
 
 /**
- * 次の問題へ進める。`slot` を1つ進め、出し直しをやめ、選択肢の並びを問題データの順に戻す。
- * 通常問題の最後（2）から3へ進むときは、ここでとどめ問題を決める。
+ * 入力欄の中身が変わったときの状態を作る。
+ * 中身の全体を今のお題と比べ、進める・ミスを数える・打ち終えた、のどれかにする。
  */
-function advance(state: BattleState): BattleState {
-  const slot = state.slot + 1;
-  const finishQuestions =
-    slot === NORMAL_COUNT
-      ? decideFinishQuestions(state.normalWrong, state.questions.slice(3, 5))
-      : state.finishQuestions;
-  const next: BattleState = {
-    ...state,
-    phase: "answering",
-    slot,
-    isRetry: false,
-    finishQuestions,
-    selectedChoiceId: null,
-  };
-  return { ...next, choiceOrder: defaultOrder(currentQuestion(next)) };
-}
+function changeInput(state: BattleState, value: string): BattleState {
+  const target = currentWord(state).text;
+  const result = judgeInput(target, value);
 
-/** 最初の解答が不正解だった問題を、ふりかえり用の一覧へ加える（すでにあれば加えない）。 */
-function addToReview(reviewList: Question[], question: Question): Question[] {
-  return reviewList.some((item) => item.id === question.id)
-    ? reviewList
-    : [...reviewList, question];
-}
-
-/** 選択肢を押したときの状態を作る。正解か不正解かで、HP・ライフ・コンボ・次の表示が変わる。 */
-function answer(state: BattleState, choiceId: ChoiceId): BattleState {
-  const question = currentQuestion(state);
-  // 解答待ち以外、問題が無いとき、今の問題に無い選択肢は無視する。
-  if (state.phase !== "answering" || !question) return state;
-  if (!question.choices.some((choice) => choice.id === choiceId)) return state;
-
-  const isFinish = state.slot >= NORMAL_COUNT;
-  const base = { ...state, selectedChoiceId: choiceId };
-
-  if (choiceId === question.answer) {
-    // とどめ2問目に正解したら、ボスを倒す。大きく出すダメージは、倒す直前のHP。
-    if (state.slot === LAST_SLOT) {
-      return { ...base, phase: "finishing", finishDamage: state.hp, hp: 0, combo: state.combo + 1 };
-    }
-    const hp = isFinish ? hpAfterFinishFirstHit(state.hp) : hpAfterNormalHit(state.hp);
+  if (result.missed) {
     return {
-      ...base,
-      phase: "correct",
-      hp,
-      // 画面に大きく出すため、減った分のHPをダメージとして覚えておく。
-      lastDamage: state.hp - hp,
-      combo: state.combo + 1,
+      ...state,
+      typedCount: result.confirmed,
+      // 正しく打てた所より後ろを、違う部分として持つ（画面で赤くする部分）。
+      wrongText: value.slice(result.confirmed),
+      needsJapaneseInput: result.tooManyLetters,
+      // ミスを数えるのは、合っている状態から違っている状態に変わったときの1回だけ。
+      // 違う文字が入力欄に残っている間（変える前の wrongText が空でない間）は、何を打っても増やさない。
+      missCount: state.wrongText === "" ? state.missCount + 1 : state.missCount,
     };
   }
 
-  // 出し直し中の不正解は、ふりかえりに加えない（最初の解答で決まるため）。
-  const reviewList = state.isRetry ? state.reviewList : addToReview(state.reviewList, question);
-  if (isFinish) {
-    // とどめ問題で間違えてもライフは減らさない。
-    return { ...base, phase: "wrong", combo: 0, reviewList };
-  }
-  return {
-    ...base,
-    phase: "wrong",
-    life: lifeAfterMiss(state.life),
-    combo: 0,
-    normalWrong: [...state.normalWrong, question],
-    reviewList,
-  };
-}
+  // お題の最後の文字まで打てた。
+  if (result.confirmed === target.length) return completeWord(state, result.confirmed);
 
-/** 「わかった」を押したときの状態を作る。通常問題は次へ進み、とどめ問題は同じ問題を並べ替えて出し直す。 */
-function acknowledge(state: BattleState, retryOrder?: ChoiceId[]): BattleState {
-  if (state.phase !== "wrong") return state;
-  if (state.slot < NORMAL_COUNT) return advance(state);
-  return {
-    ...state,
-    phase: "answering",
-    isRetry: true,
-    selectedChoiceId: null,
-    // 並べ替えが渡されなかったときは、今の並びのままにする（通常は呼ぶ側が必ず渡す）。
-    choiceOrder: retryOrder ?? state.choiceOrder,
-  };
+  // 合っているが、まだ途中。
+  return { ...state, typedCount: result.confirmed, wrongText: "", needsJapaneseInput: false };
 }
 
 /**
- * 操作を受け取って、次の状態を返す。同じ入力なら必ず同じ結果になる。
- * 今の状態では起こらない操作（例: 解答待ち以外での選択肢タップ）は、状態を変えずに返す。
+ * バトルの状態を変える。
+ * 同じ入力なら必ず同じ結果を返し、画面・localStorage・タイマー・音には触れない。
  */
 export function battleReducer(state: BattleState, action: BattleAction): BattleState {
   switch (action.type) {
-    case "fetchStarted":
-      // 取得エラーからのやり直し。エラーの前は何も始まっていないので、最初の状態に戻す。
-      return state.phase === "fetchError" ? createInitialState() : state;
-    case "fetchSucceeded": {
-      if (state.phase !== "loading") return state;
-      const started: BattleState = {
-        ...state,
-        phase: "answering",
-        fetchError: null,
-        questions: action.questions,
-        boss: action.boss,
-        slot: 0,
-      };
-      return { ...started, choiceOrder: defaultOrder(currentQuestion(started)) };
-    }
-    case "fetchFailed":
-      return state.phase === "loading"
-        ? { ...state, phase: "fetchError", fetchError: action.fetchError }
-        : state;
-    case "answered":
-      return answer(state, action.choiceId);
-    case "correctShown":
-      return state.phase === "correct" ? advance(state) : state;
-    case "acknowledged":
-      return acknowledge(state, action.retryOrder);
+    case "inputChanged":
+      // ダメージ表示・とどめの一撃の間に入った文字は判定しない（ミスにも数えない）。
+      if (state.phase !== "typing") return state;
+      return changeInput(state, action.value);
+    case "damageShown":
+      // ダメージ表示のとき以外に届いたものは無視する（待ちが二重に動いた場合など）。
+      if (state.phase !== "damage") return state;
+      // 次のお題へ進む。入力欄は空にするので、打てた文字数も0に戻す。
+      return { ...state, phase: "typing", slot: state.slot + 1, typedCount: 0 };
   }
-}
-
-/** 今回のボスを倒したときに保存する、勝利の記録を作る。ボスが決まっていなければ何も返さない。 */
-function winEffect(boss: Boss | null, life: number): BattleEffect[] {
-  return boss ? [{ type: "recordBattleWin", bossId: boss.id, isPerfect: isPerfect(life) }] : [];
 }
 
 /**
- * 状態が変わったときに実行すべき処理を、前後の状態を比べて列挙する。実行はしない。
- * 音・各問題の最初の解答の記録・勝利の記録を返す。
+ * 状態の変化に伴って実行すべき処理を、一覧にして返す。
+ * 実行はしない。音を鳴らすかどうか（サウンドON/OFF）は、実行する側で判断する。
  */
 export function listEffects(prev: BattleState, next: BattleState): BattleEffect[] {
   const effects: BattleEffect[] = [];
-  const answered = prev.phase === "answering" && next.phase !== "answering";
-  const question = currentQuestion(prev);
 
-  if (answered && (next.phase === "correct" || next.phase === "finishing")) {
-    effects.push({ type: "playSound", kind: "correct" });
-  }
-  if (answered && next.phase === "wrong") {
-    effects.push({ type: "playSound", kind: "wrong" });
+  // ミスの音は、ミスを数えたときだけ鳴らす。
+  if (next.missCount > prev.missCount) effects.push({ type: "playSound", kind: "miss" });
+
+  // 言葉を打ち終えたとき（入力待ちから、ダメージ表示・とどめの一撃へ進んだとき）の音。
+  if (prev.phase === "typing" && next.phase !== "typing") {
+    effects.push({ type: "playSound", kind: "complete" });
   }
 
-  // 最初の解答だけ記録する。出し直しは対象外。
-  // 通常問題で間違えた問題がとどめ問題で再び出たときも、最初の解答はすでに記録済みなので記録しない。
-  if (
-    answered &&
-    question &&
-    !prev.isRetry &&
-    !prev.normalWrong.some((q) => q.id === question.id)
-  ) {
+  // 次のお題へ進むときだけ、入力欄を空にする。
+  if (prev.phase === "damage" && next.phase === "typing") effects.push({ type: "clearInput" });
+
+  // とどめの一撃になったときに1回だけ、撃破を記録する。ミスが0回ならパーフェクト。
+  if (prev.phase !== "finishing" && next.phase === "finishing") {
     effects.push({
-      type: "recordFirstAnswer",
-      questionId: question.id,
-      isCorrect: next.phase !== "wrong",
+      type: "recordBattleWin",
+      bossId: next.boss.id,
+      isPerfect: next.missCount === 0,
     });
   }
 
-  // 勝利の記録は、とどめの一撃になった瞬間の1回だけ。
-  if (prev.phase !== "finishing" && next.phase === "finishing") {
-    effects.push(...winEffect(next.boss, next.life));
-  }
   return effects;
 }

@@ -1,18 +1,20 @@
 import { loadProgress } from "@/modules/progress";
 
+/** 鳴らす音の種類。complete=言葉を打ち終えたとき、miss=ミスを数えたとき。 */
+export type SoundKind = "complete" | "miss";
 /** 鳴らす音の1つ分。周波数（Hz）・始まる時刻（秒）・長さ（秒）・波の形。 */
 type Tone = { frequency: number; start: number; duration: number; wave: OscillatorType };
 
 /**
  * 音の種類ごとの鳴らし方。音声ファイルは使わず、ブラウザの音の合成だけで鳴らす（DESIGN.md）。
- * 正解は明るい2音（ド→ソ）、不正解は低くて短いブザー。
+ * 言葉を打ち終えたときの音（complete）は明るい2音（ド→ソ）、ミスの音（miss）は低くて短いブザー。
  */
-const TONES: Record<"correct" | "wrong", Tone[]> = {
-  correct: [
+const TONES: Record<SoundKind, Tone[]> = {
+  complete: [
     { frequency: 523, start: 0, duration: 0.12, wave: "sine" },
     { frequency: 784, start: 0.12, duration: 0.2, wave: "sine" },
   ],
-  wrong: [{ frequency: 150, start: 0, duration: 0.3, wave: "square" }],
+  miss: [{ frequency: 150, start: 0, duration: 0.3, wave: "square" }],
 };
 
 /** 音を出すための部品。ホームのタップで作り、以降のバトルで使い回す。 */
@@ -20,7 +22,7 @@ let audioContext: AudioContext | null = null;
 
 /**
  * 音を鳴らせるようにする。
- * ブラウザは、画面をタップする前は音を鳴らせない決まりなので、ホームの難易度／リベンジボタンのタップの中で呼ぶ。
+ * ブラウザは、画面をタップする前は音を鳴らせない決まりなので、ホームの「バトル スタート」や結果の「もう1回」のタップの中で呼ぶ。
  * 音が使えない端末では何もしない。
  */
 export function enableSound(): void {
@@ -34,10 +36,10 @@ export function enableSound(): void {
 }
 
 /**
- * 正解音・不正解音を1回鳴らす。
+ * 打ち終えた音・ミスの音を1回鳴らす。
  * サウンドがOFFのとき、まだ有効にしていないとき、音が使えないときは何もしない。
  */
-export function playSound(kind: "correct" | "wrong"): void {
+export function playSound(kind: SoundKind): void {
   const context = audioContext;
   if (!context || !loadProgress().soundOn) return;
 

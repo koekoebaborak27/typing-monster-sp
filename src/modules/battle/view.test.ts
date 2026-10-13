@@ -1,35 +1,29 @@
 /**
- * 対象: battle/view（getChoiceStatus・hpPercent・progressPercent）
- * 目的: バトル画面の表示の出し分けのうち、状態から決まる部分を担保する（設計書「表示の出し分け」）
+ * 対象: battle/next/view
+ * 目的: バトル画面・結果画面の表示の出し分けのうち、状態から決まる部分を担保する（設計書「表示の出し分け」）
  */
 import { describe, it, expect } from "vitest";
+import type { BattleResult } from "./battle-result";
 import {
-  getChoiceStatus,
   getEvaluationView,
+  getFinishLabel,
+  getHintText,
+  getMissNote,
   getNoticeTexts,
   hpPercent,
+  isAngry,
   progressPercent,
+  splitTarget,
 } from "./view";
-import type { BattleResult } from "./types";
 
-describe("getChoiceStatus", () => {
-  it("解答待ちでは、どの選択肢も通常の見た目", () => {
-    expect(getChoiceStatus("answering", "c1", null, "c2")).toBe("default");
-  });
-
-  it.each(["correct", "finishing"] as const)("%s では選んだ選択肢だけ緑、他は通常", (phase) => {
-    expect(getChoiceStatus(phase, "c2", "c2", "c2")).toBe("correct");
-    expect(getChoiceStatus(phase, "c1", "c2", "c2")).toBe("default");
-  });
-
-  it("不正解表示では、選んだ選択肢が赤・正解が緑・残りが薄くなる", () => {
-    expect(getChoiceStatus("wrong", "c1", "c1", "c2")).toBe("wrong");
-    expect(getChoiceStatus("wrong", "c2", "c1", "c2")).toBe("correct");
-    expect(getChoiceStatus("wrong", "c3", "c1", "c2")).toBe("faded");
+describe("isAngry", () => {
+  it("ミス 4 回までは通常、5 回から怒りモード", () => {
+    expect(isAngry(4)).toBe(false);
+    expect(isAngry(5)).toBe(true);
   });
 });
 
-describe("hpPercent / progressPercent", () => {
+describe("hpPercent", () => {
   it("HP 500 で100%、200 で40%、0 で0%", () => {
     expect(hpPercent(500)).toBe(100);
     expect(hpPercent(200)).toBe(40);
@@ -40,37 +34,90 @@ describe("hpPercent / progressPercent", () => {
     expect(hpPercent(-10)).toBe(0);
     expect(hpPercent(600)).toBe(100);
   });
+});
 
-  it("進み具合は (slot + 1) / 5", () => {
-    expect(progressPercent(0)).toBe(20);
-    expect(progressPercent(3)).toBe(80);
-    expect(progressPercent(4)).toBe(100);
+describe("progressPercent", () => {
+  it("入力待ちは slot / 5", () => {
+    expect(progressPercent("typing", 0)).toBe(0);
+    expect(progressPercent("typing", 3)).toBe(60);
+  });
+
+  it("ダメージ表示・とどめの一撃は (slot + 1) / 5", () => {
+    expect(progressPercent("damage", 0)).toBe(20);
+    expect(progressPercent("finishing", 4)).toBe(100);
+  });
+});
+
+describe("getFinishLabel", () => {
+  it("1〜3問目は出さない", () => {
+    expect(getFinishLabel("typing", 2)).toBeNull();
+  });
+
+  it("4・5問目は 1/2・2/2 を出す", () => {
+    expect(getFinishLabel("typing", 3)).toBe("とどめ問題 1/2");
+    expect(getFinishLabel("damage", 3)).toBe("とどめ問題 1/2");
+    expect(getFinishLabel("typing", 4)).toBe("とどめ問題 2/2");
+  });
+
+  it("とどめの一撃の状態では出さない", () => {
+    expect(getFinishLabel("finishing", 4)).toBeNull();
+  });
+});
+
+describe("splitTarget", () => {
+  it("入力待ちは、打てた文字・次の1文字・残りに分ける", () => {
+    expect(splitTarget("ねこです", "typing", 2)).toEqual({ typed: "ねこ", next: "で", rest: "す" });
+    expect(splitTarget("ねこ", "typing", 0)).toEqual({ typed: "", next: "ね", rest: "こ" });
+  });
+
+  it("ダメージ表示・とどめの一撃は全部を打てた文字にする", () => {
+    expect(splitTarget("ねこ", "damage", 2)).toEqual({ typed: "ねこ", next: "", rest: "" });
+    expect(splitTarget("ねこ", "finishing", 2)).toEqual({ typed: "ねこ", next: "", rest: "" });
+  });
+});
+
+describe("getHintText", () => {
+  it("合っているときは出さない", () => {
+    expect(getHintText("", false)).toBeNull();
+  });
+
+  it("違う文字が残っているときは、その1文字目を示す", () => {
+    expect(getHintText("けこ", false)).toBe("「け」は ちがうよ。⌫ で けしてね");
+  });
+
+  it("日本語入力がオフと見なしたときは、その案内を出す", () => {
+    expect(getHintText("neko", true)).toBe("にほんご入力を オンにしてね");
   });
 });
 
 describe("getEvaluationView", () => {
-  it("ライフ3はパーフェクト勝利で★3、2は勝利で★2、1は勝利で★1", () => {
-    expect(getEvaluationView(3)).toEqual({ title: "パーフェクト勝利！", stars: 3 });
-    expect(getEvaluationView(2)).toEqual({ title: "勝利！", stars: 2 });
-    expect(getEvaluationView(1)).toEqual({ title: "勝利！", stars: 1 });
+  it.each([
+    [0, "パーフェクト勝利！", 3],
+    [1, "勝利！", 2],
+    [2, "勝利！", 2],
+    [3, "勝利！", 1],
+    [4, "勝利！", 1],
+    [5, "ギリギリ勝利！", null],
+  ] as const)("ミス %i 回は「%s」・★%s", (missCount, title, stars) => {
+    expect(getEvaluationView(missCount)).toEqual({ title, stars });
   });
+});
 
-  it("ライフ0はギリギリ勝利で、★の行を出さない", () => {
-    expect(getEvaluationView(0)).toEqual({ title: "ギリギリ勝利！", stars: null });
+describe("getMissNote", () => {
+  it("ミスがあれば★3の条件、無ければパーフェクト", () => {
+    expect(getMissNote(1)).toBe("ミス 0回で ★3つ！");
+    expect(getMissNote(0)).toBe("パーフェクト！");
   });
 });
 
 describe("getNoticeTexts", () => {
   /** テスト用の結果を作る。 */
   const result = (overrides: Partial<BattleResult>): BattleResult => ({
-    start: { mode: "normal", level: 1 },
     boss: { id: "b", emoji: "👹", name: "ボス" },
-    life: 2,
+    missCount: 2,
     killCountBefore: 1,
     killCountAfter: 2,
     perfectCount: 0,
-    reviewList: [],
-    revengeCleared: false,
     ...overrides,
   });
 
@@ -79,7 +126,7 @@ describe("getNoticeTexts", () => {
   });
 
   it("初めて倒したときは NEW、パーフェクトなら続けて回数を出す（図鑑 → パーフェクトの順）", () => {
-    expect(getNoticeTexts(result({ killCountBefore: 0, life: 3, perfectCount: 2 }))).toEqual([
+    expect(getNoticeTexts(result({ killCountBefore: 0, missCount: 0, perfectCount: 2 }))).toEqual([
       "NEW！ボス図鑑に登録された！",
       "パーフェクト勝利 2回目！",
     ]);
