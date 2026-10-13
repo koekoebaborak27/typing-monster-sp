@@ -24,7 +24,7 @@
 | ------------------- | ----- |
 | 1. 土台の準備            | 5 / 5 |
 | 2. 入力の試作と実機確認       | 6 / 6 |
-| 3. 要件・基本設計の書き直しとボス名 | 1 / 4 |
+| 3. 要件・基本設計の書き直しとボス名 | 2 / 4 |
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 0 / 3 |
 | 6. バトルの進行           | 0 / 3 |
@@ -36,13 +36,13 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 3-2（基本設計・詳細設計の書き直し）。要件定義（[`01_requirements/`](../specs/01_requirements/README.md)）は書き直し済みで、仕様の正本はそちらに移った。まず索引を読み、どのファイルを直す・消すかを決める。
+次の作業は 3-3（ボス 20 体の名前の付け直し）。いまの名前と ID は [ボス一覧](../specs/02_basic-design/boss-zukan/01_ボスデータと選び方.md#ボス一覧) にある。ID は変えず、名前だけの案を 20 体分まとめて出し、オーナーの確認を取ってから、設計書（要件定義の [ボス](../specs/01_requirements/battle/04_ボス.md)・基本設計のボス一覧・`screens.html`）と `src/modules/boss/data/bosses.ts` に反映する。
 
 ```powershell
-rg -n "^#{1,3} " docs/specs/02_basic-design/README.md docs/specs/03_detail-design/README.md
+rg -n "name:" src/modules/boss/data/bosses.ts
 ```
 
-要件定義でまだ決めていない点（ミスの数え方の細部・言葉を選ぶ基準・オフラインのときの扱いなど）は [履歴](history/2026-10.md#2026-10-13-要件定義の書き直し) にある。
+設計書でまだ決めていない点は [履歴](history/2026-10.md#2026-10-13-基本設計と詳細設計の書き直し) にある。
 
 ## 残っているタスク
 
@@ -63,20 +63,20 @@ rg -n "^#{1,3} " docs/specs/02_basic-design/README.md docs/specs/03_detail-desig
   - [x] 2-6. 結果を受けて、入力の方法を確定する（2026-10-13。標準のキーボードで 1 文字ごとに判定。間違えた文字は打った人が消す）→ [履歴](history/2026-10.md#2026-10-13-実機確認の結果と入力の方法の確定)
 - [ ] **3. 要件・基本設計の書き直しとボス名**
   - [x] 3-1. [`01_requirements/`](../specs/01_requirements/README.md) を書き直す（2026-10-13。`question-api/`・`revenge/`・`草案.md` は消した）→ [履歴](history/2026-10.md#2026-10-13-要件定義の書き直し)
-  - [ ] 3-2. [`02_basic-design/`](../specs/02_basic-design/README.md)・[`03_detail-design/`](../specs/03_detail-design/README.md) を書き直す（状態遷移・結果画面・ホーム画面・保存データの形・モジュール構成）。`question-api/` は消す
+  - [x] 3-2. [`02_basic-design/`](../specs/02_basic-design/README.md)・[`03_detail-design/`](../specs/03_detail-design/README.md) を書き直す（2026-10-13。`question-api/` は消した）→ [履歴](history/2026-10.md#2026-10-13-基本設計と詳細設計の書き直し)
   - [ ] 3-3. ボス 20 体の名前の案を出し、オーナーの確認を取って、設計書と `src/modules/boss/data/bosses.ts` に反映する
   - [ ] 3-4. [`本システムの概要.md`](../development/本システムの概要.md) の扱いを決め、リポジトリ全体の `.md` のリンク切れを確認する
 - [x] **4. 画面イメージの作り直し**（[`screens.html`](../specs/mock/screens.html)・[`DESIGN.md`](../../DESIGN.md)。オーナーの指示で 3 より先に実施）
   - [x] 4-1. バトル画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
   - [x] 4-2. ホーム画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
   - [x] 4-3. 結果画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
-- [ ] **5. 言葉の機能**（`src/modules/quiz/` を置き換える）
+- [ ] **5. 言葉の機能**（`src/modules/quiz/` を `src/modules/word/` に置き換える）
   - [ ] 5-1. 言葉のデータを約 100 語作り、オーナーが中身を確かめる
   - [ ] 5-2. 最近出た言葉を避けて 5 語を選ぶ処理と、その単体テストを作る
-  - [ ] 5-3. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`）
+  - [ ] 5-3. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`）。使う所が無くなる `shared/errors/`・`shared/observability/` を消すかも決める
 - [ ] **6. バトルの進行**（`src/modules/battle/`）
   - [ ] 6-1. `battle-reducer.ts` から失敗・取得中・取得失敗・ライフを消し、「何文字目まで打ったか」「ミスの回数」を足す
-  - [ ] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る
+  - [ ] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る（`trial/judge.ts` を `battle/judge.ts` へ移す）
   - [ ] 6-3. `scoring.ts` の評価をミスの回数で決める形に変え、`battle-result.ts`・`view.ts` を合わせる
 - [ ] **7. 画面**
   - [ ] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）
@@ -84,7 +84,7 @@ rg -n "^#{1,3} " docs/specs/02_basic-design/README.md docs/specs/03_detail-desig
   - [ ] 7-3. 結果画面
   - [ ] 7-4. ボス図鑑（文言の見直しだけ）
 - [ ] **8. 保存データ**（`src/modules/progress/`）
-  - [ ] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にする
+  - [ ] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にする（開始時の保存は `recordBattleStart` の 1 つにまとめる）
   - [ ] 8-2. 読み書きと単体テストを合わせる
 - [ ] **9. テストと仕上げ**
   - [ ] 9-1. 試作ページ（`/trial`）を消す
@@ -102,7 +102,7 @@ rg -n "^#{1,3} " docs/specs/02_basic-design/README.md docs/specs/03_detail-desig
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
-| 設計書・画面イメージ | `screens.html` と `DESIGN.md` はタイピングの内容（オーナー確認済み）。`docs/specs/01_requirements/` もタイピングの内容。`02_basic-design/`・`03_detail-design/` はクイズモンスターの内容のまま |
+| 設計書・画面イメージ | `screens.html` と `DESIGN.md` はタイピングの内容（オーナー確認済み）。`docs/specs/` の要件定義・基本設計・詳細設計もタイピングの内容（ボスの名前だけ前のまま）。[`本システムの概要.md`](../development/本システムの概要.md) はクイズモンスターの内容のまま |
 | GitHub・Vercel | 作成済み。本番は `https://typing-monster-sp.vercel.app`（`main` への push で自動デプロイ） |
 
 ## 完了済みの作業

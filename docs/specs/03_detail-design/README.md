@@ -9,26 +9,27 @@
 | ファイル | 内容 |
 | --- | --- |
 | [battle/01_バトル進行の処理の分け方.md](battle/01_バトル進行の処理の分け方.md) | バトルの状態の型、操作の一覧、状態を変える関数と保存・音・時間待ちの分け方 |
-| [battle/02_BattleSessionと先読み.md](battle/02_BattleSessionと先読み.md) | `BattleSession` が持つ値、先読みの開始・取り出し・捨て方 |
+| [battle/02_1文字ごとの判定.md](battle/02_1文字ごとの判定.md) | 入力欄の中身をお題と比べる関数の作り、途中の形の表、判定の手順 |
 
 ## 作らなかった項目と理由
 
 | 項目 | 理由 |
 | --- | --- |
-| ダメージ計算・評価判定・枠ランク・出題の選び方 | 規則は基本設計の表で決まっている（[状態の遷移](../02_basic-design/battle/01_バトル画面の状態遷移.md#状態の遷移)、[結果画面の表示](../02_basic-design/battle/02_結果画面の表示.md#表示の出し分け)、[枠ランクの判定](../02_basic-design/boss-zukan/01_ボスデータと選び方.md#枠ランクの判定)、[出題の選び方](../02_basic-design/question-api/01_出題の選び方.md)）。引数と戻り値は実装時に型で決める |
+| ダメージ計算・評価判定・枠ランク・お題の選び方 | 規則は基本設計の表で決まっている（[状態の遷移](../02_basic-design/battle/01_バトル画面の状態遷移.md#状態の遷移)、[結果画面の表示](../02_basic-design/battle/02_結果画面の表示.md#表示の出し分け)、[枠ランクの判定](../02_basic-design/boss-zukan/01_ボスデータと選び方.md#枠ランクの判定)、[お題の選び方](../02_basic-design/battle/05_お題の選び方.md)）。引数と戻り値は実装時に型で決める |
 | 保存データの読み書き・版が違うときの扱い | [保存データの形](../02_basic-design/local-storage/01_保存データの形.md#読み込み) で、ケースごとの動作まで決まっている |
-| 出題APIのエラー時の返し方 | [APIの入出力](../02_basic-design/question-api/02_APIの入出力.md#エラーの応答) で、HTTP の番号・`code`・409 の `unknownIds` まで決まっている。画面側の扱いは [エラーと特殊表示](../02_basic-design/common/02_エラーと特殊表示.md#一覧) |
+| `BattleSession` | 持つ値が2つだけになり、[画面間で受け渡すもの](../02_basic-design/common/01_URLと画面遷移.md#画面間で受け渡すもの) で足りる |
 
 ## 実装の順番
 
-依存される側（[依存関係](../02_basic-design/common/03_モジュール構成.md#依存関係)）から1モジュールずつ作り、PR もこの単位で分ける。
+依存される側（[依存関係](../02_basic-design/common/03_モジュール構成.md#依存関係)）から1モジュールずつ作り替え、PR もこの単位で分ける。
 
 | 順 | 対象 | 確かめ方 |
 | --- | --- | --- |
-| 1 | `quiz`：問題データの読み込み・出題の選び方・入力の検証・出題API（`app/api/questions/route.ts`） | 単体テスト、API を直接呼ぶ |
-| 2 | `progress`：保存データの読み書き | 単体テスト |
-| 3 | `boss`：ボス一覧・ボスの選び方・枠ランクの判定（画面以外） | 単体テスト |
-| 4 | `battle` の計算部分：`battle-reducer.ts`・`scoring.ts`・`api-client.ts` | 単体テスト（ここまで画面なし） |
-| 5 | `battle` の画面：`BattleSession` → ホーム → バトル → 結果、サウンド | ブラウザで操作する、Playwright |
-| 6 | `boss` の画面：ボス図鑑 | ブラウザで操作する |
-| 7 | PWA：manifest・Service Worker・オフライン用ページ | 本番相当の build で確かめる |
+| 1 | `word`：言葉のデータ・5語の選び方。出題API まわりを消す | 単体テスト |
+| 2 | `battle` の計算部分：`battle-reducer.ts`・`judge.ts`・`scoring.ts`・`battle-result.ts`・`view.ts` | 単体テスト（ここまで画面なし） |
+| 3 | `battle` の画面：バトル → ホーム → 結果 | ブラウザで操作する、Playwright |
+| 4 | `boss` の画面：ボス図鑑（文言の見直し） | ブラウザで操作する |
+| 5 | `progress`：保存データの形と読み書き | 単体テスト |
+| 6 | 試作ページを消し、本番相当の build で確かめる | lint・format:check・typecheck・test・build、実機 |
+
+順番は [`docs/todo/TODO.md`](../../todo/TODO.md) の 5〜9 と同じ。
