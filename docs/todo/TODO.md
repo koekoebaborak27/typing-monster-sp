@@ -26,9 +26,9 @@
 | 2. 入力の試作と実機確認       | 6 / 6 |
 | 3. 要件・基本設計の書き直しとボス名 | 4 / 4 |
 | 4. 画面イメージの作り直し      | 3 / 3 |
-| 5. 言葉の機能            | 2 / 3 |
+| 5. 言葉の機能            | 2 / 2 |
 | 6. バトルの進行           | 0 / 3 |
-| 7. 画面               | 0 / 4 |
+| 7. 画面               | 0 / 5 |
 | 8. 保存データ            | 0 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
 
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 5-3（出題 API まわりを消す）。先に、5 語を選ぶ処理の PR（ブランチ `feature/pick-words`）がマージ済みかを確かめる。消す対象を使っている所を洗い出してから、消す範囲（`shared/errors/`・`shared/observability/` を含めるか、バトルの画面がクイズのまま動かなくなる所をどう扱うか）をオーナーに確認する。
+次の作業は 6-1（`battle-reducer.ts` の作り替え）。いまの画面（`ui/battle-screen.tsx`・`ui/use-battle.ts` など）は `battle-reducer.ts`・`types.ts` を使っているので、書きかえると 7 が終わるまで typecheck と build が通らなくなる。**書き始める前に、6 の間も CI を通す方法（例: 新しいファイルを別の名前で横に作り、7 で差し替える）を案にしてオーナーに確認する。**
 
 ```powershell
-git switch main; git pull; gh pr list --state all --head feature/pick-words; rg -l "modules/quiz|api-client|prefetch|api/questions" src e2e
+git switch main; git pull; rg -n "battle-reducer|from \"../types\"|from \"./types\"" src/modules/battle
 ```
 
 ## 残っているタスク
@@ -68,10 +68,9 @@ git switch main; git pull; gh pr list --state all --head feature/pick-words; rg 
   - [x] 4-1. バトル画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
   - [x] 4-2. ホーム画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
   - [x] 4-3. 結果画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
-- [ ] **5. 言葉の機能**（`src/modules/quiz/` を `src/modules/word/` に置き換える）
+- [x] **5. 言葉の機能**（`src/modules/word/`。クイズの側を消すのは 7-5）
   - [x] 5-1. 言葉のデータを約 100 語作り、オーナーが中身を確かめる（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-言葉のデータを-100-語作成)
   - [x] 5-2. 最近出た言葉を避けて 5 語を選ぶ処理と、その単体テストを作る（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-5-語を選ぶ処理を作成)
-  - [ ] 5-3. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`）。使う所が無くなる `shared/errors/`・`shared/observability/` を消すかも決める
 - [ ] **6. バトルの進行**（`src/modules/battle/`）
   - [ ] 6-1. `battle-reducer.ts` から失敗・取得中・取得失敗・ライフを消し、「何文字目まで打ったか」「ミスの回数」を足す
   - [ ] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る（`trial/judge.ts` を `battle/judge.ts` へ移す）
@@ -81,6 +80,7 @@ git switch main; git pull; gh pr list --state all --head feature/pick-words; rg 
   - [ ] 7-2. ホーム画面
   - [ ] 7-3. 結果画面
   - [ ] 7-4. ボス図鑑（文言の見直しだけ）
+  - [ ] 7-5. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`・`shared/errors/`・`shared/observability/`）。`src/AGENTS.md` と `REVIEW.md` の対応する行も直す → [後ろへ回した理由](history/2026-10.md#2026-10-13-出題-api-まわりを消す作業を後ろへ移動)
 - [ ] **8. 保存データ**（`src/modules/progress/`）
   - [ ] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にする（開始時の保存は `recordBattleStart` の 1 つにまとめる）
   - [ ] 8-2. 読み書きと単体テストを合わせる
@@ -113,3 +113,4 @@ git switch main; git pull; gh pr list --state all --head feature/pick-words; rg 
 | 2. 入力の試作と実機確認 | 6 | [入力の試作ページ](history/2026-10.md#2026-10-13-入力の試作ページ)・[実機確認の結果と入力の方法の確定](history/2026-10.md#2026-10-13-実機確認の結果と入力の方法の確定) |
 | 3. 要件・基本設計の書き直しとボス名 | 4 | [要件定義の書き直し](history/2026-10.md#2026-10-13-要件定義の書き直し)・[基本設計と詳細設計の書き直し](history/2026-10.md#2026-10-13-基本設計と詳細設計の書き直し)・[ボスの名前と ID の付け直し](history/2026-10.md#2026-10-13-ボスの名前と-id-の付け直し)・[本システムの概要を消してリンク切れを確認](history/2026-10.md#2026-10-13-本システムの概要を消してリンク切れを確認) |
 | 4. 画面イメージの作り直し | 3 | [画面イメージの案の作り直し](history/2026-10.md#2026-10-13-画面イメージの案の作り直し) |
+| 5. 言葉の機能 | 2 | [言葉のデータを 100 語作成](history/2026-10.md#2026-10-13-言葉のデータを-100-語作成)・[5 語を選ぶ処理を作成](history/2026-10.md#2026-10-13-5-語を選ぶ処理を作成) |

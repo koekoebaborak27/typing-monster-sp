@@ -25,9 +25,9 @@
 
 | 順 | 対象 | 確かめ方 |
 | --- | --- | --- |
-| 1 | `word`：言葉のデータ・5語の選び方。出題API まわりを消す | 単体テスト |
+| 1 | `word`：言葉のデータ・5語の選び方 | 単体テスト |
 | 2 | `battle` の計算部分：`battle-reducer.ts`・`judge.ts`・`scoring.ts`・`battle-result.ts`・`view.ts` | 単体テスト（ここまで画面なし） |
-| 3 | `battle` の画面：バトル → ホーム → 結果 | ブラウザで操作する、Playwright |
+| 3 | `battle` の画面：バトル → ホーム → 結果。終わったら、使う所が無くなった出題API まわり（`quiz` モジュール・`shared/errors/`・`shared/observability/` を含む）を消す | ブラウザで操作する、Playwright |
 | 4 | `boss` の画面：ボス図鑑（文言の見直し） | ブラウザで操作する |
 | 5 | `progress`：保存データの形と読み書き | 単体テスト |
 | 6 | 試作ページを消し、本番相当の build で確かめる | lint・format:check・typecheck・test・build、実機 |
