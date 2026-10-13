@@ -27,7 +27,7 @@
 | 3. 要件・基本設計の書き直しとボス名 | 4 / 4 |
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 2 / 2 |
-| 6. バトルの進行           | 0 / 3 |
+| 6. バトルの進行           | 2 / 3 |
 | 7. 画面               | 0 / 5 |
 | 8. 保存データ            | 0 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 6-1（`battle-reducer.ts` の作り替え）。いまの画面（`ui/battle-screen.tsx`・`ui/use-battle.ts` など）は `battle-reducer.ts`・`types.ts` を使っているので、書きかえると 7 が終わるまで typecheck と build が通らなくなる。**書き始める前に、6 の間も CI を通す方法（例: 新しいファイルを別の名前で横に作り、7 で差し替える）を案にしてオーナーに確認する。**
+次の作業は 6-3（評価をミスの回数で決める `scoring.ts` と、`battle-result.ts`・`view.ts`）。先に、6-1・6-2 の PR（ブランチ `feature/battle-reducer`）がマージ済みかを確かめる。新しいファイルは `src/modules/battle/next/` に作り、いまのクイズ用のファイルには触れない。`next/battle-reducer.ts` は HP の計算を古い `../scoring` から読んでいるので、`next/scoring.ts` を作ったら読み込み先を張り替える。設計は [結果画面の表示](../specs/02_basic-design/battle/02_結果画面の表示.md) を読む。
 
 ```powershell
-git switch main; git pull; rg -n "battle-reducer|from \"../types\"|from \"./types\"" src/modules/battle
+git switch main; git pull; gh pr list --state all --head feature/battle-reducer; ls src/modules/battle/next
 ```
 
 ## 残っているタスク
@@ -72,11 +72,11 @@ git switch main; git pull; rg -n "battle-reducer|from \"../types\"|from \"./type
   - [x] 5-1. 言葉のデータを約 100 語作り、オーナーが中身を確かめる（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-言葉のデータを-100-語作成)
   - [x] 5-2. 最近出た言葉を避けて 5 語を選ぶ処理と、その単体テストを作る（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-5-語を選ぶ処理を作成)
 - [ ] **6. バトルの進行**（`src/modules/battle/`）
-  - [ ] 6-1. `battle-reducer.ts` から失敗・取得中・取得失敗・ライフを消し、「何文字目まで打ったか」「ミスの回数」を足す
-  - [ ] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る（`trial/judge.ts` を `battle/judge.ts` へ移す）
+  - [x] 6-1. `battle-reducer.ts` から失敗・取得中・取得失敗・ライフを消し、「何文字目まで打ったか」「ミスの回数」を足す（2026-10-13。`battle/next/` に作った）→ [履歴](history/2026-10.md#2026-10-13-バトルの状態の変え方と判定を作成)
+  - [x] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る（`trial/judge.ts` を `battle/next/judge.ts` へ移した）（2026-10-13。`battle/next/` に作った）→ [履歴](history/2026-10.md#2026-10-13-バトルの状態の変え方と判定を作成)
   - [ ] 6-3. `scoring.ts` の評価をミスの回数で決める形に変え、`battle-result.ts`・`view.ts` を合わせる
 - [ ] **7. 画面**
-  - [ ] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）
+  - [ ] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）。作り替えるときに、クイズ用の古いファイルを消して `battle/next/` の中身を 1 つ上へ移す
   - [ ] 7-2. ホーム画面
   - [ ] 7-3. 結果画面
   - [ ] 7-4. ボス図鑑（文言の見直しだけ）
@@ -96,7 +96,7 @@ git switch main; git pull; rg -n "battle-reducer|from \"../types\"|from \"./type
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み。入力の試作ページ（`/trial`）がある。言葉のデータ（100 語）と 5 語を選ぶ処理（`src/modules/word/`）があるが、まだどこからも使っていない |
+| ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み。入力の試作ページ（`/trial`）がある。言葉のデータ（100 語）と 5 語を選ぶ処理（`src/modules/word/`）があるが、まだどこからも使っていない。タイピング用のバトルの計算部分（状態の変え方・判定）が `src/modules/battle/next/` にあり、判定だけ試作ページが使っている |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |

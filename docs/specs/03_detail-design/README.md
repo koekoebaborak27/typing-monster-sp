@@ -32,4 +32,6 @@
 | 5 | `progress`：保存データの形と読み書き | 単体テスト |
 | 6 | 試作ページを消し、本番相当の build で確かめる | lint・format:check・typecheck・test・build、実機 |
 
+- 順 2 の間は、新しいファイルを `src/modules/battle/next/` に作る。いまの画面がクイズ用の `battle-reducer.ts`・`types.ts` を使っていて、その場で書きかえると画面を作り替えるまで typecheck と build が通らないため。順 3 でバトル画面を作り替えるときに、クイズ用のファイルを消して `next/` の中身を 1 つ上へ移す。
+
 順番は [`docs/todo/TODO.md`](../../todo/TODO.md) の 5〜9 と同じ。
