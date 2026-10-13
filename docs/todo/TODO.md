@@ -24,7 +24,7 @@
 | ------------------- | ----- |
 | 1. 土台の準備            | 5 / 5 |
 | 2. 入力の試作と実機確認       | 6 / 6 |
-| 3. 要件・基本設計の書き直しとボス名 | 2 / 4 |
+| 3. 要件・基本設計の書き直しとボス名 | 3 / 4 |
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 0 / 3 |
 | 6. バトルの進行           | 0 / 3 |
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 3-3（ボス 20 体の名前の付け直し）。いまの名前と ID は [ボス一覧](../specs/02_basic-design/boss-zukan/01_ボスデータと選び方.md#ボス一覧) にある。ID は変えず、名前だけの案を 20 体分まとめて出し、オーナーの確認を取ってから、設計書（要件定義の [ボス](../specs/01_requirements/battle/04_ボス.md)・基本設計のボス一覧・`screens.html`）と `src/modules/boss/data/bosses.ts` に反映する。
+次の作業は 3-4（[`本システムの概要.md`](../development/本システムの概要.md) の扱いを決める）。中身はクイズモンスターのままで、ボスの前の名前も残っている。「書き直す」「消す」のどちらにするかをオーナーに確認し、決まったとおりに直したあと、リポジトリ全体の `.md` のリンク切れを確認する。先に、ボスの名前の PR（[履歴](history/2026-10.md#2026-10-13-ボスの名前と-id-の付け直し) にリンク）が `main` に入っているかを確かめる。
 
 ```powershell
-rg -n "name:" src/modules/boss/data/bosses.ts
+git switch main; git pull; rg -n "^#{1,3} " docs/development/本システムの概要.md
 ```
 
 設計書でまだ決めていない点は [履歴](history/2026-10.md#2026-10-13-基本設計と詳細設計の書き直し) にある。
@@ -64,7 +64,7 @@ rg -n "name:" src/modules/boss/data/bosses.ts
 - [ ] **3. 要件・基本設計の書き直しとボス名**
   - [x] 3-1. [`01_requirements/`](../specs/01_requirements/README.md) を書き直す（2026-10-13。`question-api/`・`revenge/`・`草案.md` は消した）→ [履歴](history/2026-10.md#2026-10-13-要件定義の書き直し)
   - [x] 3-2. [`02_basic-design/`](../specs/02_basic-design/README.md)・[`03_detail-design/`](../specs/03_detail-design/README.md) を書き直す（2026-10-13。`question-api/` は消した）→ [履歴](history/2026-10.md#2026-10-13-基本設計と詳細設計の書き直し)
-  - [ ] 3-3. ボス 20 体の名前の案を出し、オーナーの確認を取って、設計書と `src/modules/boss/data/bosses.ts` に反映する
+  - [x] 3-3. ボス 20 体の名前と ID を付け直し、設計書と `src/modules/boss/data/bosses.ts` に反映する（2026-10-13。ID も付け直した）→ [履歴](history/2026-10.md#2026-10-13-ボスの名前と-id-の付け直し)
   - [ ] 3-4. [`本システムの概要.md`](../development/本システムの概要.md) の扱いを決め、リポジトリ全体の `.md` のリンク切れを確認する
 - [x] **4. 画面イメージの作り直し**（[`screens.html`](../specs/mock/screens.html)・[`DESIGN.md`](../../DESIGN.md)。オーナーの指示で 3 より先に実施）
   - [x] 4-1. バトル画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
@@ -100,9 +100,9 @@ rg -n "name:" src/modules/boss/data/bosses.ts
 | --- | --- |
 | ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み。入力の試作ページ（`/trial`）がある |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
-| git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
+| git 管理 | `main` を GitHub（`origin`）へ push 済み。ボスの名前の変更は `feature/rename-bosses` の PR で、`main` にはまだ入っていない。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
-| 設計書・画面イメージ | `screens.html` と `DESIGN.md` はタイピングの内容（オーナー確認済み）。`docs/specs/` の要件定義・基本設計・詳細設計もタイピングの内容（ボスの名前だけ前のまま）。[`本システムの概要.md`](../development/本システムの概要.md) はクイズモンスターの内容のまま |
+| 設計書・画面イメージ | `screens.html` と `DESIGN.md` はタイピングの内容（オーナー確認済み）。`docs/specs/` の要件定義・基本設計・詳細設計もタイピングの内容。[`本システムの概要.md`](../development/本システムの概要.md) はクイズモンスターの内容のまま |
 | GitHub・Vercel | 作成済み。本番は `https://typing-monster-sp.vercel.app`（`main` への push で自動デプロイ） |
 
 ## 完了済みの作業
