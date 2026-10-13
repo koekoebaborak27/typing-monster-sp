@@ -18,7 +18,7 @@ import {
 } from "./battle-reducer";
 import type { BattleAction, BattleState } from "./types";
 
-const boss: Boss = { id: "ukkari-tako", emoji: "🐙", name: "ウッカリダコ" };
+const boss: Boss = { id: "renda-dako", emoji: "🐙", name: "レンダダコ" };
 
 /** テスト用の問題を作る。正解は c2、間違いは c1 を選ぶ。 */
 function makeQuestion(id: string): Question {
@@ -398,7 +398,7 @@ describe("battle/battle-reducer listEffects", () => {
       expect(effectsOf(second, RIGHT)).toEqual([
         { type: "playSound", kind: "correct" },
         { type: "recordFirstAnswer", questionId: "s2", isCorrect: true },
-        { type: "recordBattleWin", bossId: "ukkari-tako", isPerfect: true },
+        { type: "recordBattleWin", bossId: "renda-dako", isPerfect: true },
       ]);
     });
     it("ライフが3でなければ isPerfect は false", () => {
@@ -406,7 +406,7 @@ describe("battle/battle-reducer listEffects", () => {
       const effects = effectsOf(lost, RIGHT);
       expect(effects).toContainEqual({
         type: "recordBattleWin",
-        bossId: "ukkari-tako",
+        bossId: "renda-dako",
         isPerfect: false,
       });
     });

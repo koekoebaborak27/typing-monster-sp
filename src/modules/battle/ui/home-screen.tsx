@@ -20,7 +20,7 @@ const LEVELS = [
 ] as const;
 
 /** ホームのタイトル横に出すボス。決まった1体を出す。 */
-const HOME_BOSS = BOSSES.find((boss) => boss.id === "hatena-invader") ?? BOSSES[0];
+const HOME_BOSS = BOSSES.find((boss) => boss.id === "keyin-invader") ?? BOSSES[0];
 
 /** 補助ボタン（枠だけのボタン）の共通のクラス。縦横44px以上を保つ。 */
 const BUTTON_CLASS =
