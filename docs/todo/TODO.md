@@ -100,8 +100,8 @@ pnpm dev
 | 項目 | 状態 |
 | --- | --- |
 | ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み |
-| フォルダ | `C:workdekojin_learn	yping-monster-sp` |
-| フォルダ | `C:workdekojin_learn	yping-monster-sp` |
+| フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
+| git 管理 | 手元だけ（`main`）。リモートは無い。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
 | 設計書・画面イメージ | クイズモンスターの内容のまま |
 | GitHub・Vercel | 新しいプロジェクト用のものは未作成 |
