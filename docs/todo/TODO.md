@@ -28,7 +28,7 @@
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 2 / 2 |
 | 6. バトルの進行           | 3 / 3 |
-| 7. 画面               | 0 / 5 |
+| 7. 画面               | 1 / 5 |
 | 8. 保存データ            | 0 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
 
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 7-1（バトル画面）。6 の計算部分は `src/modules/battle/next/` に揃っている。7-1 では、クイズ用の古いファイル（`battle/` 直下の `battle-reducer.ts`・`types.ts`・`scoring.ts`・`view.ts`・`battle-result.ts`・`session.tsx` と `ui/`）を作り替えて消し、`next/` の中身を 1 つ上へ移す。`next/battle-result.ts` の `buildBattleResult` は撃破回数などを数字で受け取る形（`Progress` の作り替えは 8）。設計は [バトル進行の処理の分け方](../specs/03_detail-design/battle/01_バトル進行の処理の分け方.md) の「フックの流れ」を読む。
+次の作業は 7-2（ホーム画面）。7-1 のとき、通すための最小限の形で、ホーム（「バトル スタート」1 つ）と結果（ボス・評価・★・お知らせ帯・ボタン）も作り替えてある。7-2 では `docs/specs/mock/screens.html` と [ホーム画面](../specs/02_basic-design/battle/03_ホーム画面.md) に突き合わせて直す。7-3 で足すのは結果の「ミスの回数」の欄（大きな数字と一言。`view.ts` の `getMissNote` は用意済み）。
 
 ```powershell
-git switch main; git pull; gh pr list --state all --head feature/battle-scoring; ls src/modules/battle src/modules/battle/next
+git switch main; git pull; gh pr list --state all --head feature/battle-screen-typing; ls src/modules/battle src/modules/battle/ui
 ```
 
 ## 残っているタスク
@@ -76,9 +76,9 @@ git switch main; git pull; gh pr list --state all --head feature/battle-scoring;
   - [x] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る（`trial/judge.ts` を `battle/next/judge.ts` へ移した）（2026-10-13。`battle/next/` に作った）→ [履歴](history/2026-10.md#2026-10-13-バトルの状態の変え方と判定を作成)
   - [x] 6-3. `scoring.ts` の評価をミスの回数で決める形に変え、`battle-result.ts`・`view.ts` を合わせる（2026-10-13。`battle/next/` に作った。PR #6）→ [履歴](history/2026-10.md#2026-10-13-評価と結果と表示の出し分けを作成)
 - [ ] **7. 画面**
-  - [ ] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）。作り替えるときに、クイズ用の古いファイルを消して `battle/next/` の中身を 1 つ上へ移す
-  - [ ] 7-2. ホーム画面
-  - [ ] 7-3. 結果画面
+  - [x] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）。クイズ用の古いファイルを消して `battle/next/` の中身を 1 つ上へ移した（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-バトル画面を作り替え)
+  - [ ] 7-2. ホーム画面（7-1 で最小限は作り替え済み。モック・設計書との突き合わせが残り）
+  - [ ] 7-3. 結果画面（7-1 で最小限は作り替え済み。「ミスの回数」の欄が残り）
   - [ ] 7-4. ボス図鑑（文言の見直しだけ）
   - [ ] 7-5. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`・`shared/errors/`・`shared/observability/`）。`src/AGENTS.md` と `REVIEW.md` の対応する行も直す → [後ろへ回した理由](history/2026-10.md#2026-10-13-出題-api-まわりを消す作業を後ろへ移動)
 - [ ] **8. 保存データ**（`src/modules/progress/`）
@@ -96,7 +96,7 @@ git switch main; git pull; gh pr list --state all --head feature/battle-scoring;
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み。入力の試作ページ（`/trial`）がある。言葉のデータ（100 語）と 5 語を選ぶ処理（`src/modules/word/`）があるが、まだどこからも使っていない。タイピング用のバトルの計算部分（状態の変え方・判定）が `src/modules/battle/next/` にあり、判定だけ試作ページが使っている |
+| ソース | バトル画面（`/battle`）・ホーム・結果は、タイピング用に作り替え済み（ホーム・結果は最小限）。`src/modules/battle/` のクイズ用ファイルは `api-client.ts`・`prefetch.ts`（と、そこだけが使う型）を除いて消した。出題 API まわり（`src/app/api/questions/`・`src/modules/quiz/`・`shared/errors/`・`shared/observability/`）と、保存データ（`progress`）は、まだクイズのまま。入力の試作ページ（`/trial`）がある。最近出た言葉を避ける処理はまだ使っていない（8 で入れる） |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |

@@ -1,7 +1,12 @@
 import { loadProgress } from "@/modules/progress";
 import type { Progress } from "@/modules/progress";
-import type { Question, QuestionRequest, QuestionResponse } from "@/modules/quiz";
-import type { BattleStart, FetchErrorKind } from "./types";
+import type { Level, Question, QuestionRequest, QuestionResponse } from "@/modules/quiz";
+
+/** 次に始めるバトルの条件。通常モードは難易度つき、リベンジモードは難易度なし。出題 API を消す作業（7-5）で、この型ごと消す。 */
+export type BattleStart = { mode: "normal"; level: Level } | { mode: "revenge" };
+
+/** 取得エラーの種類。出題 API を消す作業（7-5）で、この型ごと消す。 */
+export type FetchErrorKind = "offline" | "failed" | "revengeUnavailable";
 
 /** 出題APIを呼んだ結果。成功か、リベンジできない（409）か、それ以外の失敗か。 */
 export type FetchQuestionsResult =

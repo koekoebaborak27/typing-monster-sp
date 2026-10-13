@@ -5,9 +5,8 @@
  *   - 同じ結果では2回始めない／捨てた先読みは使われない
  */
 import { describe, it, expect, vi } from "vitest";
-import type { FetchQuestionsResult } from "./api-client";
+import type { BattleStart, FetchQuestionsResult } from "./api-client";
 import { createPrefetchStore } from "./prefetch";
-import type { BattleStart } from "./types";
 
 const ok: FetchQuestionsResult = { ok: true, questions: [], unknownIds: [] };
 const failed: FetchQuestionsResult = { ok: false, reason: "failed" };

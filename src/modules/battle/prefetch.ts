@@ -1,6 +1,5 @@
 import { fetchQuestions } from "./api-client";
-import type { FetchQuestionsResult } from "./api-client";
-import type { BattleStart } from "./types";
+import type { BattleStart, FetchQuestionsResult } from "./api-client";
 
 /** 先読みの1件分。 */
 type PrefetchEntry = {

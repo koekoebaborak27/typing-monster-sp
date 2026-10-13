@@ -12,23 +12,19 @@ import { getEvaluationView, getNoticeTexts } from "../view";
 const BUTTON_CLASS =
   "min-h-11 w-full rounded-xl border border-border px-4 py-3 text-base focus-visible:ring-2 focus-visible:ring-label focus-visible:outline-none";
 
-/** 結果画面。BattleSession に置かれた結果を表示し、次のバトルの先読みを始める。 */
+/** 結果画面。BattleSession に置かれた結果を表示する。 */
 export function ResultScreen() {
   const router = useRouter();
-  const { result, prefetchNext, discardPrefetch } = useBattleSession();
+  const { result, startBattle } = useBattleSession();
 
-  // 画面を開いたとき。結果が無ければ（URLを直接開いたとき等）ホームへ戻し、あれば次のバトルの問題を先読みする。
+  // 画面を開いたとき。結果が無ければ（URLを直接開いたとき等）ホームへ戻す。
   useEffect(() => {
-    if (!result) {
-      router.replace("/");
-      return;
-    }
-    prefetchNext(result);
-  }, [result, prefetchNext, router]);
+    if (!result) router.replace("/");
+  }, [result, router]);
 
   if (!result) return null;
 
-  const evaluation = getEvaluationView(result.life);
+  const evaluation = getEvaluationView(result.missCount);
   const notices = getNoticeTexts(result);
 
   return (
@@ -65,45 +61,19 @@ export function ResultScreen() {
         </p>
       ))}
 
-      {result.reviewList.length > 0 ? (
-        <section className="mt-2 flex flex-col gap-2">
-          <h2 className="text-xs text-fg-muted">ふりかえり（まちがえた問題）</h2>
-          {result.reviewList.map((question) => (
-            <div key={question.id} className="rounded-xl bg-surface px-3 py-3 leading-relaxed">
-              <p>{question.question}</p>
-              <p className="text-correct">
-                正解：{question.choices.find((choice) => choice.id === question.answer)?.text}
-              </p>
-              <p className="text-sm text-fg-muted">{question.explanation}</p>
-            </div>
-          ))}
-        </section>
-      ) : (
-        <p className="mt-2 text-center text-base">まちがいなし！</p>
-      )}
-
       <div className="mt-4 flex flex-col gap-2">
-        {result.revengeCleared ? (
-          <p className="text-center text-base text-combo">ぜんぶリベンジした！</p>
-        ) : (
-          // 同じ mode・level の開始情報と先読みはそのまま残っているので、バトル画面が取り出して使う。
-          <button
-            type="button"
-            onClick={() => router.replace("/battle")}
-            className={cn(BUTTON_CLASS, "border-primary bg-primary text-white")}
-          >
-            もう1回
-          </button>
-        )}
         <button
           type="button"
           onClick={() => {
-            // ホームへ戻るときは、先読みした問題を捨てる。
-            discardPrefetch();
-            router.replace("/");
+            // 結果の「もう1回」。バトルを始めてよい印を付け直して /battle へ置き換える。
+            startBattle();
+            router.replace("/battle");
           }}
-          className={BUTTON_CLASS}
+          className={cn(BUTTON_CLASS, "border-primary bg-primary text-white")}
         >
+          もう1回
+        </button>
+        <button type="button" onClick={() => router.replace("/")} className={BUTTON_CLASS}>
           ホームへ
         </button>
       </div>
