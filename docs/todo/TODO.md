@@ -27,7 +27,7 @@
 | 3. 要件・基本設計の書き直しとボス名 | 4 / 4 |
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 2 / 2 |
-| 6. バトルの進行           | 2 / 3 |
+| 6. バトルの進行           | 3 / 3 |
 | 7. 画面               | 0 / 5 |
 | 8. 保存データ            | 0 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 6-3（評価をミスの回数で決める `scoring.ts` と、`battle-result.ts`・`view.ts`）。先に、6-1・6-2 の PR（ブランチ `feature/battle-reducer`）がマージ済みかを確かめる。新しいファイルは `src/modules/battle/next/` に作り、いまのクイズ用のファイルには触れない。`next/battle-reducer.ts` は HP の計算を古い `../scoring` から読んでいるので、`next/scoring.ts` を作ったら読み込み先を張り替える。設計は [結果画面の表示](../specs/02_basic-design/battle/02_結果画面の表示.md) を読む。
+次の作業は 7-1（バトル画面）。6 の計算部分は `src/modules/battle/next/` に揃っている。7-1 では、クイズ用の古いファイル（`battle/` 直下の `battle-reducer.ts`・`types.ts`・`scoring.ts`・`view.ts`・`battle-result.ts`・`session.tsx` と `ui/`）を作り替えて消し、`next/` の中身を 1 つ上へ移す。`next/battle-result.ts` の `buildBattleResult` は撃破回数などを数字で受け取る形（`Progress` の作り替えは 8）。設計は [バトル進行の処理の分け方](../specs/03_detail-design/battle/01_バトル進行の処理の分け方.md) の「フックの流れ」を読む。
 
 ```powershell
-git switch main; git pull; gh pr list --state all --head feature/battle-reducer; ls src/modules/battle/next
+git switch main; git pull; gh pr list --state all --head feature/battle-scoring; ls src/modules/battle src/modules/battle/next
 ```
 
 ## 残っているタスク
@@ -71,10 +71,10 @@ git switch main; git pull; gh pr list --state all --head feature/battle-reducer;
 - [x] **5. 言葉の機能**（`src/modules/word/`。クイズの側を消すのは 7-5）
   - [x] 5-1. 言葉のデータを約 100 語作り、オーナーが中身を確かめる（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-言葉のデータを-100-語作成)
   - [x] 5-2. 最近出た言葉を避けて 5 語を選ぶ処理と、その単体テストを作る（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-5-語を選ぶ処理を作成)
-- [ ] **6. バトルの進行**（`src/modules/battle/`）
+- [x] **6. バトルの進行**（`src/modules/battle/`）
   - [x] 6-1. `battle-reducer.ts` から失敗・取得中・取得失敗・ライフを消し、「何文字目まで打ったか」「ミスの回数」を足す（2026-10-13。`battle/next/` に作った）→ [履歴](history/2026-10.md#2026-10-13-バトルの状態の変え方と判定を作成)
   - [x] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る（`trial/judge.ts` を `battle/next/judge.ts` へ移した）（2026-10-13。`battle/next/` に作った）→ [履歴](history/2026-10.md#2026-10-13-バトルの状態の変え方と判定を作成)
-  - [ ] 6-3. `scoring.ts` の評価をミスの回数で決める形に変え、`battle-result.ts`・`view.ts` を合わせる
+  - [x] 6-3. `scoring.ts` の評価をミスの回数で決める形に変え、`battle-result.ts`・`view.ts` を合わせる（2026-10-13。`battle/next/` に作った。PR #6）→ [履歴](history/2026-10.md#2026-10-13-評価と結果と表示の出し分けを作成)
 - [ ] **7. 画面**
   - [ ] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）。作り替えるときに、クイズ用の古いファイルを消して `battle/next/` の中身を 1 つ上へ移す
   - [ ] 7-2. ホーム画面
