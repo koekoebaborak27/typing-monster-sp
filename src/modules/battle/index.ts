@@ -32,3 +32,6 @@ export type {
   FetchErrorKind,
   FinishQuestions,
 } from "./types";
+// ここから下は、タイピング用に作り直している途中のもの。画面を作り替えるときに、上のクイズ用のものと入れ替える。
+export { judgeInput } from "./next/judge";
+export type { JudgeResult } from "./next/judge";

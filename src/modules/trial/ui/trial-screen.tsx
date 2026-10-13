@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CompositionEvent, FormEvent, KeyboardEvent } from "react";
 import { BOSSES, BossCircle } from "@/modules/boss";
 import { cn } from "@/shared/ui/utils";
-import { judgeInput } from "../judge";
+import { judgeInput } from "@/modules/battle";
 
 /**
  * 試作で打つ言葉。

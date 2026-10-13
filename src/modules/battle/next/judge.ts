@@ -51,6 +51,11 @@ export type JudgeResult = {
   pending: string;
   /** お題と違う文字が入っていたら true。 */
   missed: boolean;
+  /**
+   * 末尾の英字が5文字以上なら true。
+   * 日本語入力がオフのまま打っていると見なし、「にほんご入力を オンにしてね」を出すために使う。
+   */
+  tooManyLetters: boolean;
 };
 
 /**
@@ -66,7 +71,7 @@ export function isHalfwayForm(targetChar: string, typedChar: string): boolean {
 
 /**
  * 入力欄の中身をお題と先頭から比べ、どこまで正しく打てているかを返す。
- * 画面には依存しない。入力欄の中身が変わるたびに呼び、ミスなら呼んだ側が `confirmed` 文字目までに戻す。
+ * 画面にも状態にも触れない。入力欄の中身が変わるたびに呼ぶ。ミスを数えるかどうかは、呼んだ側（battle-reducer）が直前の状態と合わせて決める。
  */
 export function judgeInput(target: string, value: string): JudgeResult {
   // 末尾のローマ字は、ひらがなになるまで判定を待つ。先にそれより前の部分だけをお題と比べる。
@@ -81,8 +86,14 @@ export function judgeInput(target: string, value: string): JudgeResult {
       kanaPart.confirmed < target.length &&
       romaji.length <= MAX_ROMAJI_LENGTH;
     return canWait
-      ? { confirmed: kanaPart.confirmed, pending: romaji, missed: false }
-      : { confirmed: kanaPart.confirmed, pending: "", missed: true };
+      ? { confirmed: kanaPart.confirmed, pending: romaji, missed: false, tooManyLetters: false }
+      : {
+          confirmed: kanaPart.confirmed,
+          pending: "",
+          missed: true,
+          // 英字が長すぎるときだけ、日本語入力がオフだと見なす。ほかの理由のミスでは false のまま。
+          tooManyLetters: romaji.length > MAX_ROMAJI_LENGTH,
+        };
   }
   return judgeKana(target, value);
 }
@@ -96,11 +107,11 @@ function judgeKana(target: string, value: string): JudgeResult {
     // 途中の形のまま次の文字を打った場合（「が」のところで「かき」）は、ミスにする。
     const isLast = i === value.length - 1;
     if (isLast && i < target.length && isHalfwayForm(target[i], value[i])) {
-      return { confirmed: i, pending: value[i], missed: false };
+      return { confirmed: i, pending: value[i], missed: false, tooManyLetters: false };
     }
 
     // お題と違う文字、またはお題より長く打った場合。
-    return { confirmed: i, pending: "", missed: true };
+    return { confirmed: i, pending: "", missed: true, tooManyLetters: false };
   }
-  return { confirmed: value.length, pending: "", missed: false };
+  return { confirmed: value.length, pending: "", missed: false, tooManyLetters: false };
 }
