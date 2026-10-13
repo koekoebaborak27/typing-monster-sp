@@ -1,7 +1,7 @@
 import { createInitialProgress, parseProgress, CURRENT_VERSION } from "./schema";
 import type { Progress } from "./types";
 
-const STORAGE_KEY = "quiz-monster";
+const STORAGE_KEY = "typing-monster-sp";
 
 /** localStorage の読み書きに失敗したことを service へ伝えるエラー。 */
 export class ProgressStorageError extends Error {

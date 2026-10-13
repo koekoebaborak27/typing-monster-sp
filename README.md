@@ -1,10 +1,12 @@
-# クイズモンスター（quiz-monster）
+# タイピングモンスター（typing-monster-sp）
 
-小学4〜6年生向けの、**3択クイズに答えてボスモンスターを倒す学習ゲーム**です。スマホで遊ぶ Web アプリ（PWA）で、1バトルは約1分です。
+小学校高学年向けの、**ひらがなの言葉をスマホのキーボードで打ってボスモンスターを倒すタイピングゲーム**です。スマホで遊ぶ Web アプリ（PWA）で、1バトルは 5 問です。
+
+> **いまは作り替えの途中です。** クイズモンスター（3択クイズ）のソースを土台にしており、プログラムと、この README の下の説明は、まだクイズのときの内容です。
 
 - 技術: TypeScript + Next.js（App Router）+ React。パッケージ管理は pnpm
 - データ: 問題は `src/modules/quiz/data/questions.json` で管理します。遊んだ記録は端末の localStorage にだけ保存し、DB・ログイン・有料 API は使いません
-- デプロイ先: Vercel（Hobby プラン）。本番は `https://quiz-monster-nu.vercel.app`（`main` への push で自動デプロイ）
+- デプロイ先: Vercel（Hobby プラン）。本番の URL はまだありません（プロジェクトは未作成）
 - いまの進み具合: [`docs/todo/TODO.md`](docs/todo/TODO.md)
 
 ## 主な機能

@@ -90,7 +90,7 @@ export function HomeScreen() {
       <div className="mt-4">
         <BossCircle boss={HOME_BOSS} size="lg" />
       </div>
-      <h1 className="text-center text-2xl font-medium">クイズモンスター</h1>
+      <h1 className="text-center text-2xl font-medium">タイピングモンスター</h1>
       <p className="mb-6 text-center text-fg-muted">3択に答えてボスをたおせ！</p>
 
       <p className="text-xs text-fg-muted">むずかしさをえらぶ</p>

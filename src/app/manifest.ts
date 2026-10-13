@@ -4,8 +4,8 @@ import type { MetadataRoute } from "next";
 // 色は DESIGN.md の画面の背景色（globals.css の `--color-bg`）と同じ値。CSS の値はここから読めないので、同じ値を書いている。
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "クイズモンスター",
-    short_name: "クイズモンスター",
+    name: "タイピングモンスター",
+    short_name: "タイピングモンスター",
     start_url: "/",
     display: "standalone",
     orientation: "portrait",

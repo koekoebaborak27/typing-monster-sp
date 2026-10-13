@@ -16,7 +16,7 @@ const notoSansJp = Noto_Sans_JP({
 
 // ブラウザのタブに出すタイトルと、検索結果などに出す説明文。
 export const metadata: Metadata = {
-  title: "クイズモンスター",
+  title: "タイピングモンスター",
   description: "3択クイズに答えてモンスターをたおそう",
 };
 

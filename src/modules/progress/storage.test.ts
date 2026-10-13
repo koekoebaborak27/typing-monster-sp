@@ -6,7 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { ProgressStorageError, readProgress, writeProgress } from "./storage";
 import type { Progress } from "./types";
 
-const STORAGE_KEY = "quiz-monster";
+const STORAGE_KEY = "typing-monster-sp";
 
 /** テスト用の localStorage を用意し、保存値と失敗を操作できるようにする。 */
 function useStorage(initialValue: string | null = null) {
@@ -64,7 +64,7 @@ describe("progress/storage readProgress", () => {
 
 describe("progress/storage writeProgress", () => {
   describe("記録を書き込むとき", () => {
-    it("quiz-monster キーへ version 1 の JSON を保存する", () => {
+    it("typing-monster-sp キーへ version 1 の JSON を保存する", () => {
       const storage = useStorage();
       const progress: Progress = {
         version: 1,
