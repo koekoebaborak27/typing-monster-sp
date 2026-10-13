@@ -7,8 +7,8 @@
 | 項目 | 内容 |
 | --- | --- |
 | ホスティング | Vercel（Hobby。無料） |
-| 本番 URL | `https://quiz-monster-nu.vercel.app`（`quiz-monster` という名前は他人が使用中のため、Vercel が `-nu` を付けた） |
-| 連携元 | GitHub `koekoebaborak27/quiz-monster`（公開）の `main` ブランチ |
+| 本番 URL | `https://typing-monster-sp.vercel.app` |
+| 連携元 | GitHub `koekoebaborak27/typing-monster-sp`（公開）の `main` ブランチ |
 | 自動デプロイ | Vercel の GitHub 連携による。`main` への push で本番、それ以外のブランチ・PR でプレビュー URL が作られる。GitHub Actions（CI）とは別に動き、CI の成否は待たない |
 | 環境変数 | 無し |
 | 出題 API | Next.js の Route Handlers（`POST /api/questions`。Vercel のサーバーレス関数として動く） |

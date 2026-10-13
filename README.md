@@ -6,7 +6,7 @@
 
 - 技術: TypeScript + Next.js（App Router）+ React。パッケージ管理は pnpm
 - データ: 問題は `src/modules/quiz/data/questions.json` で管理します。遊んだ記録は端末の localStorage にだけ保存し、DB・ログイン・有料 API は使いません
-- デプロイ先: Vercel（Hobby プラン）。本番の URL はまだありません（プロジェクトは未作成）
+- デプロイ先: Vercel（Hobby プラン）。本番は `https://typing-monster-sp.vercel.app`（`main` への push で自動デプロイ）
 - いまの進み具合: [`docs/todo/TODO.md`](docs/todo/TODO.md)
 
 ## 主な機能
