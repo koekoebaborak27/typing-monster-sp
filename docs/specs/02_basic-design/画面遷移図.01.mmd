@@ -1,0 +1,14 @@
+%%{init: {'theme':'default','themeVariables':{'fontFamily':"'Noto Sans CJK JP', sans-serif"},'flowchart':{'nodeSpacing':50,'rankSpacing':85,'padding':12}}}%%
+flowchart TB
+  home["ホーム<br/>/"]
+  battle["バトル<br/>/battle"]
+  result["結果<br/>/result"]
+  zukan["ボス図鑑<br/>/zukan"]
+
+  home -->|難易度ボタン／リベンジ| battle
+  home -->|ボス図鑑| zukan
+  zukan -->|もどる| home
+  battle -->|とどめの一撃のあと自動| result
+  battle -->|戻る操作でバトルを破棄| home
+  result -->|もう1回| battle
+  result -->|ホームへ| home

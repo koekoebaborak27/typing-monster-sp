@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>クイズモンスター 画面イメージ</title>
+<!-- 全画面の画面イメージ。色や配置の決まりごとは DESIGN.md が正本。 -->
+<style>
+body{margin:0;padding:16px;background:#f2f2f2;font-family:sans-serif}
+.wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,340px));gap:20px}
+.cap{font-size:13px;color:#555;margin:0 0 6px}
+.ph{background:#1b1b1b;border:1px solid #3a3a3a;border-radius:20px;padding:16px;color:#ececec;font-size:13px;min-height:520px;box-sizing:border-box;position:relative;overflow:hidden}
+.ph.angry{background:#3a1414;border-color:#7a2a2a}
+.row{display:flex;justify-content:space-between;align-items:center}
+.mut{color:#b9b9b9}.hp{height:12px;background:#0f0f0f;border-radius:6px;overflow:hidden}.hp>i{display:block;height:100%;background:#d13b3b}
+.pg{height:5px;background:#0f0f0f;border-radius:3px;overflow:hidden;margin:10px 0 14px}.pg>i{display:block;height:100%;background:#2f7fd8}
+.boss{width:96px;height:96px;border-radius:50%;background:#251f55;margin:6px auto 8px;display:flex;align-items:center;justify-content:center;font-size:48px}
+.opt{border:1px solid #444;border-radius:10px;padding:11px 14px;margin-bottom:8px;display:flex;gap:14px}.opt b{color:#6aa7f0;font-weight:500}
+.btn{border:1px solid #444;border-radius:12px;padding:12px;text-align:center;margin-bottom:8px;font-size:15px}
+.pri{background:#2f7fd8;border-color:#2f7fd8;color:#fff}
+.hearts{color:#f07c7c;letter-spacing:2px}
+.z{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.z div{border:2px solid #333;border-radius:10px;text-align:center;padding:6px 2px;font-size:11px}.z span{font-size:24px;display:block}.z small{color:#b9b9b9}
+.z div.un{background:#8a8a8a;border-color:#8a8a8a;color:#1b1b1b}.z div.un span{filter:brightness(0)}
+.lg{display:flex;justify-content:center;gap:12px;margin-top:12px;font-size:12px}.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;border:2px solid;vertical-align:-2px;margin-right:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div><p class="cap">1. ホーム</p><div class="ph">
+<div class="row"><span></span><span class="mut" style="font-size:12px;border:1px solid #444;border-radius:20px;padding:4px 10px">🔊 音 ON</span></div>
+<div class="boss" style="margin-top:18px">👾</div>
+<div style="text-align:center;font-size:24px;font-weight:500">クイズモンスター</div>
+<div class="mut" style="text-align:center;margin:4px 0 22px">3択に答えてボスをたおせ！</div>
+<div class="mut" style="font-size:12px;margin-bottom:6px">むずかしさをえらぶ</div>
+<div class="btn pri">かんたん</div><div class="btn">ふつう</div><div class="btn">むずかしい</div>
+<div class="btn" style="color:#777;border-style:dashed;margin-top:14px">🔒 リベンジモード<div style="font-size:11px;line-height:1.5;margin-top:2px">まちがえた問題が5問たまると遊べるよ<br>（いま 3問）</div></div>
+<div class="btn" style="color:#e8a020;border-color:#5a4520">📖 ボス図鑑　7 / 20</div>
+</div></div>
+
+<div><p class="cap">2. バトル（通常）</p><div class="ph">
+<div class="row"><span class="mut">4 / 5問</span><span class="hearts">♥♥♥</span></div>
+<div class="boss">👹</div>
+<div style="text-align:center;font-size:16px;font-weight:500;margin-bottom:8px">ヒッカケオニ</div>
+<div class="hp"><i style="width:40%"></i></div>
+<div class="row" style="margin-top:4px"><span class="mut">HP 200 / 500</span><span style="color:#e8a020">3コンボ！</span></div>
+<div class="pg"><i style="width:60%"></i></div>
+<div style="font-size:17px;font-weight:500;margin-bottom:12px">「必ず正しい」ものはどれ？</div>
+<div class="opt"><b>A</b>正方形は四角形</div><div class="opt"><b>B</b>四角形は正方形</div><div class="opt"><b>C</b>三角形は四角形</div>
+</div></div>
+
+<div><p class="cap">3. バトル（不正解 → 解説）</p><div class="ph">
+<div class="row"><span class="mut">2 / 5問</span><span class="hearts">♥♥<span style="color:#555">♡</span></span></div>
+<div class="boss" style="width:64px;height:64px;font-size:32px">👹</div>
+<div style="text-align:center;font-weight:500;margin-bottom:6px">ヒッカケオニ</div>
+<div class="hp"><i style="width:80%"></i></div><div class="mut" style="margin-top:4px">HP 400 / 500</div>
+<div class="pg"><i style="width:40%"></i></div>
+<div style="font-size:15px;font-weight:500;margin-bottom:10px">「必ず正しい」ものはどれ？</div>
+<div class="opt" style="border:2px solid #3fbf7f;background:#163a28"><b style="color:#3fbf7f">A</b>正方形は四角形 <span style="margin-left:auto;color:#3fbf7f">せいかい</span></div>
+<div class="opt" style="border-color:#a33;color:#e88"><b style="color:#e88">B</b>四角形は正方形 <span style="margin-left:auto">✕</span></div>
+<div class="opt" style="opacity:.45"><b>C</b>三角形は四角形</div>
+<div style="background:#262626;border-radius:10px;padding:10px 12px;margin:8px 0;line-height:1.6"><span style="color:#e8a020;font-size:12px">ひっかけポイント</span><br>正方形はみんな四角形だけど、四角形がみんな正方形とはかぎらない！</div>
+<div class="btn pri" style="margin:0">わかった</div>
+</div></div>
+
+<div><p class="cap">4. バトル（怒りモード ＋ とどめ問題）</p><div class="ph angry">
+<div class="row"><span class="mut">4 / 5問</span><span class="hearts" style="color:#555">♡♡♡</span></div>
+<div style="position:absolute;right:28px;top:52px;background:#fff;color:#7a1f1f;border-radius:12px;padding:6px 10px;font-size:12px;font-weight:500">もうゆるさないぞ！</div>
+<div style="position:relative;width:96px;margin:6px auto 8px"><div class="boss" style="background:#b02a2a;margin:0">👹</div><span style="position:absolute;right:-10px;top:-6px;font-size:24px">💢</span></div>
+<div style="text-align:center;font-size:16px;font-weight:500;color:#ff9a9a;margin-bottom:8px">いかりのヒッカケオニ</div>
+<div class="hp"><i style="width:100%"></i></div>
+<div class="row" style="margin-top:4px"><span class="mut">HP 500 / 500</span><span style="background:#e8a020;color:#3a2400;border-radius:6px;padding:1px 8px;font-size:12px">とどめ問題 1/2</span></div>
+<div class="pg"><i style="width:80%"></i></div>
+<div style="font-size:12px;color:#e8a020;margin-bottom:4px">もういちど こたえてね</div>
+<div style="font-size:17px;font-weight:500;margin-bottom:12px">「必ず正しい」ものはどれ？</div>
+<div class="opt"><b>A</b>三角形は四角形</div><div class="opt"><b>B</b>正方形は四角形</div><div class="opt"><b>C</b>四角形は正方形</div>
+<div class="mut" style="font-size:11px;text-align:center">※出し直しはラベル固定・中身だけ入れ替え／ボスは小刻みにふるえる</div>
+</div></div>
+
+<div><p class="cap">5. バトル（とどめの一撃）</p><div class="ph">
+<div class="row"><span class="mut">5 / 5問</span><span class="hearts">♥♥<span style="color:#555">♡</span></span></div>
+<div style="position:relative;margin-top:20px"><div class="boss" style="opacity:.5">👹</div>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:13px;color:#e8a020">とどめの一撃！</span><span style="font-size:56px;font-weight:500;color:#ffd24a;line-height:1">150</span></div></div>
+<div style="text-align:center;font-size:16px;font-weight:500;margin-bottom:8px">ヒッカケオニ</div>
+<div class="hp"><i style="width:0"></i></div>
+<div class="row" style="margin-top:4px"><span class="mut">HP 0 / 500</span><span style="color:#e8a020">2コンボ！</span></div>
+<div class="pg"><i style="width:100%"></i></div>
+<div class="opt" style="border:2px solid #3fbf7f;background:#163a28;margin-top:30px"><b style="color:#3fbf7f">B</b>正方形は四角形</div>
+<div class="mut" style="text-align:center;margin-top:20px">（数秒後に結果画面へ）</div>
+</div></div>
+
+<div><p class="cap">6. 結果</p><div class="ph">
+<div class="boss" style="width:72px;height:72px;font-size:36px;margin-top:4px">👹</div>
+<div style="text-align:center;font-size:22px;font-weight:500">勝利！</div>
+<div style="text-align:center;color:#ffd24a;font-size:26px;letter-spacing:4px">★★<span style="color:#444">★</span></div>
+<div style="text-align:center" class="mut">ヒッカケオニをたおした（3回目）</div>
+<div style="background:#3a2e10;border:1px solid #e8a020;color:#ffd24a;border-radius:10px;padding:8px;text-align:center;margin:10px 0">ランクアップ！ 枠が銀になった</div>
+<div class="mut" style="font-size:12px;margin-bottom:6px">ふりかえり（まちがえた問題）</div>
+<div style="background:#262626;border-radius:10px;padding:10px 12px;line-height:1.6;margin-bottom:14px">「必ず正しい」ものはどれ？<br><span style="color:#3fbf7f">正解：正方形は四角形</span><br><span class="mut" style="font-size:12px">四角形がみんな正方形とはかぎらない。</span></div>
+<div class="btn pri">もう1回</div><div class="btn">ホームへ</div>
+</div></div>
+
+<div><p class="cap">7. ボス図鑑</p><div class="ph">
+<div class="row" style="margin-bottom:14px"><span>← もどる</span><span style="font-weight:500">ボス図鑑</span><span style="color:#e8a020">7 / 20</span></div>
+<div class="mut" style="text-align:center;font-size:12px;margin:-6px 0 12px">パーフェクト勝利 2回</div>
+<div class="z">
+<div style="border-color:#e0b020"><span>👹</span>ヒッカケオニ<br><small>×5</small></div>
+<div style="border-color:#b8bcc4"><span>🐙</span>ウッカリダコ<br><small>×3</small></div>
+<div style="border-color:#b8bcc4"><span>👻</span>ワスレゴースト<br><small>×4</small></div>
+<div style="border-color:#b06a35"><span>🦊</span>ダマシギツネ<br><small>×1</small></div>
+<div style="border-color:#b06a35"><span>🐸</span>ケタマチガエル<br><small>×2</small></div>
+<div style="border-color:#b06a35"><span>🦉</span>シッタカフクロウ<br><small>×1</small></div>
+<div style="border-color:#b06a35"><span>🤖</span>ヤマカンロボ<br><small>×1</small></div>
+<div class="un"><span>🐉</span>？？？</div><div class="un"><span>🐍</span>？？？</div><div class="un"><span>🦇</span>？？？</div>
+<div class="un"><span>🐻</span>？？？</div><div class="un"><span>🕷️</span>？？？</div><div class="un"><span>🦖</span>？？？</div>
+<div class="un"><span>🧟</span>？？？</div><div class="un"><span>🦂</span>？？？</div><div class="un"><span>🦈</span>？？？</div>
+<div class="un"><span>🦍</span>？？？</div><div class="un"><span>🐌</span>？？？</div><div class="un"><span>👾</span>？？？</div>
+<div class="un"><span>🐊</span>？？？</div>
+</div>
+<div class="mut" style="text-align:center;margin-top:14px;font-size:12px">たおした回数で、わくの色がかわるよ</div>
+<div class="lg"><span><i style="border-color:#b06a35"></i>1回</span><span><i style="border-color:#b8bcc4"></i>3回</span><span><i style="border-color:#e0b020"></i>5回</span></div>
+</div></div>
+
+</div>
+</body>
+</html>

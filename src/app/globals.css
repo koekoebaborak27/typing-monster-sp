@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/*
+ * デザインの値の正本。色の名前は DESIGN.md の表と同じにする。
+ * `bg-bg` `text-fg-muted` のように名前で使い、画面の側には色コードを直接書かない。
+ */
+@theme {
+  --color-bg: #1b1b1b;
+  --color-surface: #262626;
+  --color-surface-2: #8a8a8a;
+  --color-fg: #ececec;
+  --color-fg-muted: #b9b9b9;
+  --color-border: #444444;
+  --color-primary: #2f7fd8;
+  --color-label: #6aa7f0;
+  --color-hp: #d13b3b;
+  --color-track: #0f0f0f;
+  --color-life: #f07c7c;
+  --color-combo: #e8a020;
+  --color-finish: #ffd24a;
+  --color-correct: #3fbf7f;
+  --color-correct-bg: #163a28;
+  --color-wrong: #ee8888;
+  --color-boss: #251f55;
+  --color-boss-angry: #b02a2a;
+  --color-angry-bg: #3a1414;
+  --color-bronze: #b06a35;
+  --color-silver: #b8bcc4;
+  --color-gold: #e0b020;
+
+  --font-sans: var(--font-noto-sans-jp), sans-serif;
+
+  /* 怒りモードのボスを小刻みに震わせる動き。 */
+  --animate-shake: shake 0.3s linear infinite;
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-2px);
+    }
+    75% {
+      transform: translateX(2px);
+    }
+  }
+
+  /* 正解のダメージ数字を、大きく弾ませながら出す動き。 */
+  --animate-damage-pop: damage-pop 1s ease-out forwards;
+  @keyframes damage-pop {
+    0% {
+      transform: scale(0.3) rotate(-8deg);
+      opacity: 0;
+    }
+    20% {
+      transform: scale(1.5) rotate(4deg);
+      opacity: 1;
+    }
+    35% {
+      transform: scale(1) rotate(0deg);
+    }
+    80% {
+      transform: scale(1.05) translateY(-8px);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.05) translateY(-16px);
+      opacity: 0;
+    }
+  }
+
+  /* 「とどめをさせ！」を画面全体に出し、しばらく見せてから消す動き。 */
+  --animate-finish-banner: finish-banner 1.8s ease-out forwards;
+  @keyframes finish-banner {
+    0% {
+      transform: scale(2.2);
+      opacity: 0;
+    }
+    15% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    25% {
+      transform: scale(1.1) rotate(-2deg);
+    }
+    35% {
+      transform: scale(1) rotate(2deg);
+    }
+    75% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+/* 端末の「視差効果を減らす」設定が有効なら、震えを止める（色と文字の変化は残す）。 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-shake {
+    animation: none;
+  }
+  .animate-damage-pop {
+    animation: none;
+  }
+  .animate-finish-banner {
+    animation-duration: 1.8s;
+    animation-name: finish-banner-static;
+  }
+  @keyframes finish-banner-static {
+    0%,
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}

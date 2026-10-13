@@ -1,0 +1,14 @@
+%%{init: {'theme':'default','themeVariables':{'fontFamily':"'Noto Sans CJK JP', sans-serif"},'flowchart':{'nodeSpacing':50,'rankSpacing':85,'padding':12}}}%%
+stateDiagram-v2
+  [*] --> 読み込み中: /battle を開く
+  読み込み中 --> 解答待ち: 成功
+  読み込み中 --> 取得エラー: 失敗
+  取得エラー --> 読み込み中: もういちど
+  取得エラー --> [*]: ホームへ
+
+  解答待ち --> 正解表示: 正解
+  解答待ち --> 不正解表示: 不正解
+  解答待ち --> とどめの一撃: とどめ2問目が正解
+  正解表示 --> 解答待ち: 約1秒後
+  不正解表示 --> 解答待ち: わかった
+  とどめの一撃 --> [*]: 約2秒後

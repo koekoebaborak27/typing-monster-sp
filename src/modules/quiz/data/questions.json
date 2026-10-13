@@ -1,0 +1,5522 @@
+[
+  {
+    "id": "l1-math-01",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "たて3m、横5mの長方形の面積はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "15m²"
+      },
+      {
+        "id": "c2",
+        "text": "16m²"
+      },
+      {
+        "id": "c3",
+        "text": "8m²"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "面積はたて×横で3×5=15。まわりの長さの16mと取りちがえやすい。"
+  },
+  {
+    "id": "l1-math-02",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "半回転の角度は何度？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "360°"
+      },
+      {
+        "id": "c2",
+        "text": "90°"
+      },
+      {
+        "id": "c3",
+        "text": "180°"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1回転が360°なので半回転は180°。直角の90°と取りちがえやすい。"
+  },
+  {
+    "id": "l1-math-03",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "1億を10こ集めた数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "100億"
+      },
+      {
+        "id": "c2",
+        "text": "10億"
+      },
+      {
+        "id": "c3",
+        "text": "1000万"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "1億の10倍は10億。0の数を1つ多く数えて100億にしやすい。"
+  },
+  {
+    "id": "l1-math-04",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "8+4×5を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "60"
+      },
+      {
+        "id": "c2",
+        "text": "40"
+      },
+      {
+        "id": "c3",
+        "text": "28"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "かけ算を先に計算して8+20=28。左から順に計算して60にしやすい。"
+  },
+  {
+    "id": "l1-math-05",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "3.6+2.45を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6.05"
+      },
+      {
+        "id": "c2",
+        "text": "2.81"
+      },
+      {
+        "id": "c3",
+        "text": "6.5"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "小数点の位置をそろえて計算する。右はしでそろえると2.81になる。"
+  },
+  {
+    "id": "l1-math-06",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "7分の2＋7分の3を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "14分の5"
+      },
+      {
+        "id": "c2",
+        "text": "7分の5"
+      },
+      {
+        "id": "c3",
+        "text": "7分の6"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "分母が同じときは分子だけをたす。分母どうしもたして14にしやすい。"
+  },
+  {
+    "id": "l1-math-07",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "1m²は何cm²？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "100cm²"
+      },
+      {
+        "id": "c2",
+        "text": "1000cm²"
+      },
+      {
+        "id": "c3",
+        "text": "10000cm²"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1m=100cmなので100×100=10000。1m=100cmのまま100にしやすい。"
+  },
+  {
+    "id": "l1-math-08",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "4つの角がすべて直角で、4つの辺の長さがすべて等しい四角形はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "正方形"
+      },
+      {
+        "id": "c2",
+        "text": "長方形"
+      },
+      {
+        "id": "c3",
+        "text": "ひし形"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "角が直角で4辺が等しいのは正方形。ひし形は角が直角とはかぎらない。"
+  },
+  {
+    "id": "l1-math-09",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "向かい合った1組の辺だけが平行な四角形はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "平行四辺形"
+      },
+      {
+        "id": "c2",
+        "text": "台形"
+      },
+      {
+        "id": "c3",
+        "text": "ひし形"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "台形は平行な辺が1組だけ。平行四辺形は2組とも平行なので注意。"
+  },
+  {
+    "id": "l1-math-10",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "3748を百の位で四捨五入して、千の位までの概数にするとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "3000"
+      },
+      {
+        "id": "c2",
+        "text": "3700"
+      },
+      {
+        "id": "c3",
+        "text": "4000"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "百の位が7なので切り上げて4000。千の位だけを見て3000にしやすい。"
+  },
+  {
+    "id": "l1-math-11",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "50このあめを6人で同じ数ずつ分けると、1人分は何こで何こあまる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "8こで2こあまる"
+      },
+      {
+        "id": "c2",
+        "text": "7こで8こあまる"
+      },
+      {
+        "id": "c3",
+        "text": "8こで1こあまる"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "50÷6=8あまり2。あまりはわる数の6より小さくなるので7こはまちがい。"
+  },
+  {
+    "id": "l1-math-12",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "1日の気温の変わり方を表すのに、いちばん合うグラフはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "ぼうグラフ"
+      },
+      {
+        "id": "c2",
+        "text": "折れ線グラフ"
+      },
+      {
+        "id": "c3",
+        "text": "円グラフ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "時間とともに変わる様子は折れ線グラフ。ぼうグラフは大きさのくらべに使う。"
+  },
+  {
+    "id": "l1-math-13",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "直方体の面の数はいくつ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "8"
+      },
+      {
+        "id": "c2",
+        "text": "12"
+      },
+      {
+        "id": "c3",
+        "text": "6"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "直方体の面は6つ。8は頂点、12は辺の数なので取りちがえやすい。"
+  },
+  {
+    "id": "l1-math-14",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "面積が24cm²で、たてが4cmの長方形の横の長さはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6cm"
+      },
+      {
+        "id": "c2",
+        "text": "20cm"
+      },
+      {
+        "id": "c3",
+        "text": "8cm"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "横の長さは面積÷たてで24÷4=6。ひき算をして20cmにしやすい。"
+  },
+  {
+    "id": "l1-math-15",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "0.3×4を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "0.12"
+      },
+      {
+        "id": "c2",
+        "text": "1.2"
+      },
+      {
+        "id": "c3",
+        "text": "12"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "3×4=12で、小数点から下のけた数は1けたなので1.2。0.12にしやすい。"
+  },
+  {
+    "id": "l1-math-16",
+    "genre": "math",
+    "grade": 4,
+    "level": 1,
+    "question": "1兆は1億の何倍？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "100倍"
+      },
+      {
+        "id": "c2",
+        "text": "千倍"
+      },
+      {
+        "id": "c3",
+        "text": "1万倍"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "億の次の単位は兆で、1億の1万倍が1兆。千倍と思いやすいので注意。"
+  },
+  {
+    "id": "l1-science-01",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "水を熱し続けたとき、沸騰している間の温度はどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "上がり続ける"
+      },
+      {
+        "id": "c2",
+        "text": "ほぼ変わらない"
+      },
+      {
+        "id": "c3",
+        "text": "下がっていく"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "沸騰中は約100℃のまま変わらない。熱し続けると上がると思いやすい。"
+  },
+  {
+    "id": "l1-science-02",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "乾電池2こを直列つなぎにすると、1このときとくらべてモーターの回る速さはどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "速くなる"
+      },
+      {
+        "id": "c2",
+        "text": "おそくなる"
+      },
+      {
+        "id": "c3",
+        "text": "変わらない"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "直列つなぎは電流が大きくなる。並列つなぎは1このときとほぼ同じ。"
+  },
+  {
+    "id": "l1-science-03",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "とじこめた空気をおしちぢめると、おし返す力はどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "小さくなる"
+      },
+      {
+        "id": "c2",
+        "text": "変わらない"
+      },
+      {
+        "id": "c3",
+        "text": "大きくなる"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "空気はおしちぢめるほど元にもどろうとする力が大きくなる。水はちぢまない。"
+  },
+  {
+    "id": "l1-science-04",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "とじこめた水をおすと、水の体積はどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "変わらない"
+      },
+      {
+        "id": "c2",
+        "text": "小さくなる"
+      },
+      {
+        "id": "c3",
+        "text": "大きくなる"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "水は空気とちがい、おしても体積は変わらない。空気と同じと考えやすい。"
+  },
+  {
+    "id": "l1-science-05",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "金属の玉を熱すると、玉の体積はどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "小さくなる"
+      },
+      {
+        "id": "c2",
+        "text": "大きくなる"
+      },
+      {
+        "id": "c3",
+        "text": "変わらない"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "金属も温めると体積が大きくなる。変化が小さいので変わらないと思いやすい。"
+  },
+  {
+    "id": "l1-science-06",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "水を下から熱すると、温められた水はどう動く？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "下へ動く"
+      },
+      {
+        "id": "c2",
+        "text": "動かない"
+      },
+      {
+        "id": "c3",
+        "text": "上へ動く"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "温められた水は軽くなって上へ動く。金属のように順に伝わると思いやすい。"
+  },
+  {
+    "id": "l1-science-07",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "水を冷やしていくと、何℃でこおり始める？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "0℃"
+      },
+      {
+        "id": "c2",
+        "text": "100℃"
+      },
+      {
+        "id": "c3",
+        "text": "10℃"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "水は0℃でこおり始める。100℃は沸騰する温度なので取りちがえに注意。"
+  },
+  {
+    "id": "l1-science-08",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "水がこおって氷になると、体積はどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "小さくなる"
+      },
+      {
+        "id": "c2",
+        "text": "大きくなる"
+      },
+      {
+        "id": "c3",
+        "text": "変わらない"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "水はこおると体積が大きくなる。冷やすと小さくなると思いやすいので注意。"
+  },
+  {
+    "id": "l1-science-09",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "沸騰した水から出る湯気の正体はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "水蒸気"
+      },
+      {
+        "id": "c2",
+        "text": "空気"
+      },
+      {
+        "id": "c3",
+        "text": "小さな水のつぶ"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "湯気は水蒸気が冷えてできた水のつぶ。目に見えない水蒸気とはちがう。"
+  },
+  {
+    "id": "l1-science-10",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "月は時間がたつと、空をどのように動いて見える？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "東から南を通って西"
+      },
+      {
+        "id": "c2",
+        "text": "西から南を通って東"
+      },
+      {
+        "id": "c3",
+        "text": "北から南へまっすぐ"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "月も太陽と同じく東から南を通って西へ動く。形が変わっても動き方は同じ。"
+  },
+  {
+    "id": "l1-science-11",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "夏の大三角をつくる星の組み合わせはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "ベガ・アルタイル・シリウス"
+      },
+      {
+        "id": "c2",
+        "text": "ベガ・アルタイル・デネブ"
+      },
+      {
+        "id": "c3",
+        "text": "ベガ・デネブ・アンタレス"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "夏の大三角はベガ、アルタイル、デネブ。シリウスは冬の星なので注意。"
+  },
+  {
+    "id": "l1-science-12",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "乾電池の向きを反対にして電流の向きを変えると、モーターの回る向きはどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "変わらない"
+      },
+      {
+        "id": "c2",
+        "text": "止まる"
+      },
+      {
+        "id": "c3",
+        "text": "反対になる"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "電流の向きを反対にするとモーターも反対に回る。回る速さは変わらない。"
+  },
+  {
+    "id": "l1-science-13",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "うでを曲げるとき、うでの内側の筋肉はどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "ちぢむ"
+      },
+      {
+        "id": "c2",
+        "text": "ゆるむ"
+      },
+      {
+        "id": "c3",
+        "text": "変わらない"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "うでを曲げると内側の筋肉がちぢみ、外側の筋肉はゆるむ。"
+  },
+  {
+    "id": "l1-science-14",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "骨と骨のつなぎ目で、体が曲がるところを何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "筋肉"
+      },
+      {
+        "id": "c2",
+        "text": "関節"
+      },
+      {
+        "id": "c3",
+        "text": "けん"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "骨と骨のつなぎ目で曲がるところが関節。筋肉はちぢんで体を動かす。"
+  },
+  {
+    "id": "l1-science-15",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "ツバメが日本で子育てをするのは、おもにどの季節？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "秋から冬"
+      },
+      {
+        "id": "c2",
+        "text": "冬だけ"
+      },
+      {
+        "id": "c3",
+        "text": "春から夏"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "ツバメは春に南の国から来て子育てをし、秋に南へもどる。冬は日本にいない。"
+  },
+  {
+    "id": "l1-science-16",
+    "genre": "science",
+    "grade": 4,
+    "level": 1,
+    "question": "雨水が地面にしみこみやすいのは、どんな土？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "つぶの大きい土"
+      },
+      {
+        "id": "c2",
+        "text": "つぶの小さい土"
+      },
+      {
+        "id": "c3",
+        "text": "どちらも同じ"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "つぶが大きいほどすき間が大きく、水がしみこみやすい。細かい方と思いやすい。"
+  },
+  {
+    "id": "l1-japanese-01",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「ねこの手もかりたい」はどんな意味？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "とてもいそがしい"
+      },
+      {
+        "id": "c2",
+        "text": "本心をかくす"
+      },
+      {
+        "id": "c3",
+        "text": "とてもひまである"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "役に立たないねこの手でもほしいほどいそがしい様子。「ねこをかぶる」とまちがえやすい。"
+  },
+  {
+    "id": "l1-japanese-02",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「成功」と反対の意味の言葉はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "結果"
+      },
+      {
+        "id": "c2",
+        "text": "失敗"
+      },
+      {
+        "id": "c3",
+        "text": "努力"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "うまくいく成功の反対は失敗。成功の前後にある努力や結果とまちがえやすい。"
+  },
+  {
+    "id": "l1-japanese-03",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「改札口」の読み方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "かいさつこう"
+      },
+      {
+        "id": "c2",
+        "text": "あらためぐち"
+      },
+      {
+        "id": "c3",
+        "text": "かいさつぐち"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "改札口は「かいさつぐち」と読む。口を「こう」と音で読みやすいので注意。"
+  },
+  {
+    "id": "l1-japanese-04",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「野球のたいかいに出る」の「たいかい」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "大会"
+      },
+      {
+        "id": "c2",
+        "text": "体会"
+      },
+      {
+        "id": "c3",
+        "text": "大回"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "大きな集まりなので大会。会と回は同じ読みなのでまちがえやすい。"
+  },
+  {
+    "id": "l1-japanese-05",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「まどをあける」の「あける」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "明ける"
+      },
+      {
+        "id": "c2",
+        "text": "開ける"
+      },
+      {
+        "id": "c3",
+        "text": "空ける"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "しまっている物をひらくのは開ける。明けるは夜が明けるときに使う。"
+  },
+  {
+    "id": "l1-japanese-06",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「耳がいたい」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "大きな音がうるさい"
+      },
+      {
+        "id": "c2",
+        "text": "よく聞こえない"
+      },
+      {
+        "id": "c3",
+        "text": "悪い点を言われてつらい"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "自分の弱点を言われて聞くのがつらいこと。本当に耳がいたいのではない。"
+  },
+  {
+    "id": "l1-japanese-07",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「さるも木から落ちる」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "名人でも失敗する"
+      },
+      {
+        "id": "c2",
+        "text": "高い所はあぶない"
+      },
+      {
+        "id": "c3",
+        "text": "練習すれば上手になる"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "木登りが上手なさるでも落ちる。名人でも失敗することがあるという意味。"
+  },
+  {
+    "id": "l1-japanese-08",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「最高」と反対の意味の言葉はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "最後"
+      },
+      {
+        "id": "c2",
+        "text": "最低"
+      },
+      {
+        "id": "c3",
+        "text": "最初"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "高いの反対は低いなので最高の反対は最低。最後や最初は順番のこと。"
+  },
+  {
+    "id": "l1-japanese-09",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「持」「指」「投」に共通する部首はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "にんべん"
+      },
+      {
+        "id": "c2",
+        "text": "きへん"
+      },
+      {
+        "id": "c3",
+        "text": "てへん"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "手に関係のある漢字に使うのがてへん。にんべんは人に関係のある部首。"
+  },
+  {
+    "id": "l1-japanese-10",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "読み方も部首もわからない漢字を漢字辞典で調べるとき、使うのはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "総画索引"
+      },
+      {
+        "id": "c2",
+        "text": "音訓索引"
+      },
+      {
+        "id": "c3",
+        "text": "部首索引"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "読みも部首もわからないときは画数で引く。音訓索引は読みがわかるとき。"
+  },
+  {
+    "id": "l1-japanese-11",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「赤い花がきれいにさいた。」の主語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "赤い"
+      },
+      {
+        "id": "c2",
+        "text": "花が"
+      },
+      {
+        "id": "c3",
+        "text": "さいた"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "主語は「何が」にあたる言葉。「さいた」は「どうした」にあたる述語。"
+  },
+  {
+    "id": "l1-japanese-12",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「小さな鳥が青い空を飛ぶ。」で、「青い」がくわしくしている言葉はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "鳥が"
+      },
+      {
+        "id": "c2",
+        "text": "飛ぶ"
+      },
+      {
+        "id": "c3",
+        "text": "空を"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "青いのは空なので「空を」をくわしくしている。鳥の色のことと思いやすい。"
+  },
+  {
+    "id": "l1-japanese-13",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「雨がふった。（　）、遠足は中止になった。」の（　）に入る言葉はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "だから"
+      },
+      {
+        "id": "c2",
+        "text": "しかし"
+      },
+      {
+        "id": "c3",
+        "text": "または"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "雨が中止の理由なので「だから」。前と後ろが反対の内ようなら「しかし」。"
+  },
+  {
+    "id": "l1-japanese-14",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「生物」の「生」の読み方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "しょう"
+      },
+      {
+        "id": "c2",
+        "text": "せい"
+      },
+      {
+        "id": "c3",
+        "text": "なま"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "生物は「せいぶつ」と読む。一生の「しょう」や生ものの「なま」とまちがえやすい。"
+  },
+  {
+    "id": "l1-japanese-15",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「急がば回れ」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "急ぐなら近道をする"
+      },
+      {
+        "id": "c2",
+        "text": "まよったら来た道をもどる"
+      },
+      {
+        "id": "c3",
+        "text": "急ぐときほど安全な方法で"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "あぶない近道より、遠回りでも安全な方が早いという意味。近道と考えやすい。"
+  },
+  {
+    "id": "l1-japanese-16",
+    "genre": "japanese",
+    "grade": 4,
+    "level": 1,
+    "question": "「はくぶつかん」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "博物館"
+      },
+      {
+        "id": "c2",
+        "text": "博物観"
+      },
+      {
+        "id": "c3",
+        "text": "博物官"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "物を集めて見せるたて物なので「館」。観や官も同じ「かん」と読むので注意。"
+  },
+  {
+    "id": "l1-social-01",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "日本には都道府県がいくつある？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "43"
+      },
+      {
+        "id": "c2",
+        "text": "48"
+      },
+      {
+        "id": "c3",
+        "text": "47"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1都1道2府43県で合わせて47。43は県だけの数なので注意。"
+  },
+  {
+    "id": "l1-social-02",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "浄水場の主な仕事はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "使った水をきれいにして川に流す"
+      },
+      {
+        "id": "c2",
+        "text": "川の水を飲める水にする"
+      },
+      {
+        "id": "c3",
+        "text": "雨水をためておく"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "浄水場は飲み水をつくる所。使った水をきれいにするのは下水処理場。"
+  },
+  {
+    "id": "l1-social-03",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "日本でいちばん面積が大きい都道府県はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "北海道"
+      },
+      {
+        "id": "c2",
+        "text": "岩手県"
+      },
+      {
+        "id": "c3",
+        "text": "東京都"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "北海道の面積は2位の岩手県の5倍以上。人口の多い東京都と取りちがえやすい。"
+  },
+  {
+    "id": "l1-social-04",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "次のうち、海に面していない県はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "静岡県"
+      },
+      {
+        "id": "c2",
+        "text": "長野県"
+      },
+      {
+        "id": "c3",
+        "text": "新潟県"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "長野県は周りを8つの県にかこまれ、海に面していない。静岡と新潟は海に面する。"
+  },
+  {
+    "id": "l1-social-05",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "都道府県のうち、「府」がつく2つはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "京都と奈良"
+      },
+      {
+        "id": "c2",
+        "text": "大阪と兵庫"
+      },
+      {
+        "id": "c3",
+        "text": "京都と大阪"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "府は京都府と大阪府の2つだけ。となりの奈良や兵庫は県なので注意。"
+  },
+  {
+    "id": "l1-social-06",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "家庭で使う水の多くは、もともとどこの水？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "川やダムの水"
+      },
+      {
+        "id": "c2",
+        "text": "海の水"
+      },
+      {
+        "id": "c3",
+        "text": "雨水タンクの水"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "多くは川やダムの水を浄水場できれいにする。海の水は塩分があり使えない。"
+  },
+  {
+    "id": "l1-social-07",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "森林が「緑のダム」とよばれる理由はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "電気をつくるから"
+      },
+      {
+        "id": "c2",
+        "text": "雨水をたくわえるから"
+      },
+      {
+        "id": "c3",
+        "text": "川の流れを止めるから"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "森の土は雨水をたくわえ、少しずつ川へ流す。ダムのように水をためるため。"
+  },
+  {
+    "id": "l1-social-08",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "使い終わったペットボトルを原料にもどし、新しい物を作ることを何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "リユース"
+      },
+      {
+        "id": "c2",
+        "text": "リデュース"
+      },
+      {
+        "id": "c3",
+        "text": "リサイクル"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "原料にもどして作り直すのがリサイクル。リユースはそのままくり返し使うこと。"
+  },
+  {
+    "id": "l1-social-09",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "火力発電で、おもにもやすものはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "石油・石炭・天然ガス"
+      },
+      {
+        "id": "c2",
+        "text": "ウラン"
+      },
+      {
+        "id": "c3",
+        "text": "木や草"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "火力発電は石油や石炭などをもやして電気をつくる。ウランは原子力発電で使う。"
+  },
+  {
+    "id": "l1-social-10",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "海の近くで大きな地震が起きたあと、海岸におしよせることがあるのはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "高潮"
+      },
+      {
+        "id": "c2",
+        "text": "津波"
+      },
+      {
+        "id": "c3",
+        "text": "台風"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "地震で海の底が動くと津波が起こる。台風による高潮とはちがう。"
+  },
+  {
+    "id": "l1-social-11",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "災害のときに、きけんな場所や避難場所をしめした地図を何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "土地利用図"
+      },
+      {
+        "id": "c2",
+        "text": "路線図"
+      },
+      {
+        "id": "c3",
+        "text": "ハザードマップ"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "ハザードマップは災害へのそなえに使う。避難場所も前もって調べておく。"
+  },
+  {
+    "id": "l1-social-12",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "富士山は、何県と何県のさかいにある？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "静岡県と山梨県"
+      },
+      {
+        "id": "c2",
+        "text": "静岡県と長野県"
+      },
+      {
+        "id": "c3",
+        "text": "山梨県と長野県"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "富士山は静岡県と山梨県のさかいにある。となりの長野県にはふれていない。"
+  },
+  {
+    "id": "l1-social-13",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "日本でいちばん大きい湖はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "十和田湖"
+      },
+      {
+        "id": "c2",
+        "text": "琵琶湖"
+      },
+      {
+        "id": "c3",
+        "text": "サロマ湖"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "琵琶湖は滋賀県にある日本一大きな湖。県の面積の約6分の1をしめている。"
+  },
+  {
+    "id": "l1-social-14",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "日本でいちばん人口が多い都道府県はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "大阪府"
+      },
+      {
+        "id": "c2",
+        "text": "神奈川県"
+      },
+      {
+        "id": "c3",
+        "text": "東京都"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "人口がいちばん多いのは東京都。面積がいちばん大きい北海道とまちがえないこと。"
+  },
+  {
+    "id": "l1-social-15",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "日本の都道府県で、いちばん南にあるのはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "沖縄県"
+      },
+      {
+        "id": "c2",
+        "text": "鹿児島県"
+      },
+      {
+        "id": "c3",
+        "text": "長崎県"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "沖縄県は日本のいちばん南の県。九州の鹿児島県より、さらに南にある。"
+  },
+  {
+    "id": "l1-social-16",
+    "genre": "social",
+    "grade": 4,
+    "level": 1,
+    "question": "下水処理場できれいにした水は、どこへ流される？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "浄水場"
+      },
+      {
+        "id": "c2",
+        "text": "川や海"
+      },
+      {
+        "id": "c3",
+        "text": "家庭の水道"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "下水処理場できれいにした水は川や海へもどす。そのまま飲み水にはしない。"
+  },
+  {
+    "id": "l1-logic-01",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "2、4、8、16、□ と数がならんでいる。□に入る数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "24"
+      },
+      {
+        "id": "c2",
+        "text": "32"
+      },
+      {
+        "id": "c3",
+        "text": "18"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "前の数を2倍すると次の数になる。ふえ方だけ見て18や24にしやすい。"
+  },
+  {
+    "id": "l1-logic-02",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "AさんはBさんよりせが高く、CさんはAさんよりせが高い。いちばんせが低いのはだれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "Aさん"
+      },
+      {
+        "id": "c2",
+        "text": "Cさん"
+      },
+      {
+        "id": "c3",
+        "text": "Bさん"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "高い順にC、A、B。いちばん低いのはB。名前の出た順で考えないよう注意。"
+  },
+  {
+    "id": "l1-logic-03",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "1、3、5、7、□ と数がならんでいる。□に入る数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "9"
+      },
+      {
+        "id": "c2",
+        "text": "8"
+      },
+      {
+        "id": "c3",
+        "text": "11"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "2ずつふえているので7+2=9。1ずつふえると考えて8にしやすいので注意。"
+  },
+  {
+    "id": "l1-logic-04",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "1、1、2、3、5、8、□ と数がならんでいる。□に入る数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "11"
+      },
+      {
+        "id": "c2",
+        "text": "13"
+      },
+      {
+        "id": "c3",
+        "text": "16"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "前の2つの数をたすと次の数になる。5+8=13。ふえ方だけ見ると11にしやすい。"
+  },
+  {
+    "id": "l1-logic-05",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "今は午前10時40分。50分後は何時何分？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "午前11時40分"
+      },
+      {
+        "id": "c2",
+        "text": "午前11時20分"
+      },
+      {
+        "id": "c3",
+        "text": "午前11時30分"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "40分+50分=90分=1時間30分。10時に1時間をたして11時30分になる。"
+  },
+  {
+    "id": "l1-logic-06",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "5人が1列にならんでいる。たろうさんは前から2番目。後ろからは何番目？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4番目"
+      },
+      {
+        "id": "c2",
+        "text": "3番目"
+      },
+      {
+        "id": "c3",
+        "text": "2番目"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "5人で前から2番目なら、後ろからは5-2+1=4番目。1をたしわすれやすい。"
+  },
+  {
+    "id": "l1-logic-07",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "長さ10mの道に、はしからはしまで2mおきに木を植えると、木は何本？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "5本"
+      },
+      {
+        "id": "c2",
+        "text": "6本"
+      },
+      {
+        "id": "c3",
+        "text": "4本"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "10÷2=5で間の数は5つ。木は両はしにも植えるので5+1=6本になる。"
+  },
+  {
+    "id": "l1-logic-08",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "今日は水曜日。10日後は何曜日？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "金曜日"
+      },
+      {
+        "id": "c2",
+        "text": "日曜日"
+      },
+      {
+        "id": "c3",
+        "text": "土曜日"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1週間は7日なので10日後は3日後と同じ曜日。水曜日の3日後で土曜日。"
+  },
+  {
+    "id": "l1-logic-09",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "AはBより3才年上で、BはCより2才年上。AはCより何才年上？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "5才"
+      },
+      {
+        "id": "c2",
+        "text": "1才"
+      },
+      {
+        "id": "c3",
+        "text": "6才"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "AはBより3才、BはCより2才上なので3+2=5才。ひき算して1にしやすい。"
+  },
+  {
+    "id": "l1-logic-10",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "○△□○△□○… とならんでいる。20番目はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "○"
+      },
+      {
+        "id": "c2",
+        "text": "△"
+      },
+      {
+        "id": "c3",
+        "text": "□"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "3つでひとまとまり。20÷3=6あまり2なので、まとまりの2番目の△になる。"
+  },
+  {
+    "id": "l1-logic-11",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "りんご1こはみかん3こと同じ重さ。メロン1こはりんご3こと同じ重さ。メロン1こはみかん何こ分？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6こ"
+      },
+      {
+        "id": "c2",
+        "text": "18こ"
+      },
+      {
+        "id": "c3",
+        "text": "9こ"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "りんご1こはみかん3こ分。メロンはりんご3こ分なので3×3=9こ分になる。"
+  },
+  {
+    "id": "l1-logic-12",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "4人がどの人とも1回ずつあく手をすると、あく手は全部で何回？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6回"
+      },
+      {
+        "id": "c2",
+        "text": "4回"
+      },
+      {
+        "id": "c3",
+        "text": "12回"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "AはB・C・Dと3回、BはC・Dと2回、CはDと1回。3+2+1=6回になる。"
+  },
+  {
+    "id": "l1-logic-13",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "1から20までの数で、3でわり切れる数はいくつある？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "7こ"
+      },
+      {
+        "id": "c2",
+        "text": "6こ"
+      },
+      {
+        "id": "c3",
+        "text": "5こ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "3、6、9、12、15、18の6こ。20÷3=6あまり2で数えることもできる。"
+  },
+  {
+    "id": "l1-logic-14",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "正方形の紙を、向かい合う角と角を合わせて1回折ると、どんな形になる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "長方形"
+      },
+      {
+        "id": "c2",
+        "text": "正方形"
+      },
+      {
+        "id": "c3",
+        "text": "三角形"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "角と角を合わせて折るので三角形になる。辺と辺を合わせて折ると長方形。"
+  },
+  {
+    "id": "l1-logic-15",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "2けたの数で、十の位と一の位をたすと10、十の位は一の位より4大きい。その数は？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "73"
+      },
+      {
+        "id": "c2",
+        "text": "37"
+      },
+      {
+        "id": "c3",
+        "text": "64"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "たして10、ちがいが4になる2つの数は7と3。十の位が大きいので73になる。"
+  },
+  {
+    "id": "l1-logic-16",
+    "genre": "logic",
+    "grade": 4,
+    "level": 1,
+    "question": "50円玉と10円玉が合わせて5まいで、合計130円。50円玉は何まい？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "3まい"
+      },
+      {
+        "id": "c2",
+        "text": "2まい"
+      },
+      {
+        "id": "c3",
+        "text": "1まい"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "50円玉2まいと10円玉3まいで100+30=130円。まい数も5まいで合う。"
+  },
+  {
+    "id": "l2-math-01",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "2.5×0.4を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "10"
+      },
+      {
+        "id": "c2",
+        "text": "1"
+      },
+      {
+        "id": "c3",
+        "text": "0.1"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "25×4=100で、小数点から下は合わせて2けたなので1.00=1。0.1にしやすい。"
+  },
+  {
+    "id": "l2-math-02",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "6÷0.5を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "3"
+      },
+      {
+        "id": "c2",
+        "text": "0.3"
+      },
+      {
+        "id": "c3",
+        "text": "12"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1より小さい数でわると答えは大きくなる。6の中に0.5は12こある。"
+  },
+  {
+    "id": "l2-math-03",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "2分の1＋3分の1を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6分の5"
+      },
+      {
+        "id": "c2",
+        "text": "5分の2"
+      },
+      {
+        "id": "c3",
+        "text": "6分の2"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "通分して6分の3と6分の2をたす。分母どうしをたして5分の2にしやすい。"
+  },
+  {
+    "id": "l2-math-04",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "12と18の最大公約数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "3"
+      },
+      {
+        "id": "c2",
+        "text": "6"
+      },
+      {
+        "id": "c3",
+        "text": "36"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "12と18の両方をわり切れるいちばん大きい数は6。36は最小公倍数。"
+  },
+  {
+    "id": "l2-math-05",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "4と6の最小公倍数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "24"
+      },
+      {
+        "id": "c2",
+        "text": "2"
+      },
+      {
+        "id": "c3",
+        "text": "12"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "4と6の公倍数は12、24…でいちばん小さいのは12。かけて24にしやすい。"
+  },
+  {
+    "id": "l2-math-06",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "三角形の2つの角が50°と70°のとき、残りの角は何度？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "60°"
+      },
+      {
+        "id": "c2",
+        "text": "120°"
+      },
+      {
+        "id": "c3",
+        "text": "240°"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "三角形の3つの角の和は180°なので180−50−70=60°。360°と考えやすい。"
+  },
+  {
+    "id": "l2-math-07",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "四角形の4つの角の大きさの和は何度？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "180°"
+      },
+      {
+        "id": "c2",
+        "text": "360°"
+      },
+      {
+        "id": "c3",
+        "text": "540°"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "四角形は対角線で三角形2つに分けられるので180×2=360°になる。"
+  },
+  {
+    "id": "l2-math-08",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "底辺6cm、高さ4cmの三角形の面積はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "24cm²"
+      },
+      {
+        "id": "c2",
+        "text": "10cm²"
+      },
+      {
+        "id": "c3",
+        "text": "12cm²"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "三角形の面積は底辺×高さ÷2で6×4÷2=12。÷2をわすれて24にしやすい。"
+  },
+  {
+    "id": "l2-math-09",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "上底3cm、下底5cm、高さ4cmの台形の面積はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "16cm²"
+      },
+      {
+        "id": "c2",
+        "text": "32cm²"
+      },
+      {
+        "id": "c3",
+        "text": "60cm²"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "(上底+下底)×高さ÷2で(3+5)×4÷2=16。÷2をわすれると32になる。"
+  },
+  {
+    "id": "l2-math-10",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "たて3cm、横4cm、高さ5cmの直方体の体積はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "60cm²"
+      },
+      {
+        "id": "c2",
+        "text": "60cm³"
+      },
+      {
+        "id": "c3",
+        "text": "12cm³"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "体積はたて×横×高さで3×4×5=60。単位はcm³で、cm²は面積の単位。"
+  },
+  {
+    "id": "l2-math-11",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "4回のテストの点数が80、70、90、80点のとき、平均は何点？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "75点"
+      },
+      {
+        "id": "c2",
+        "text": "320点"
+      },
+      {
+        "id": "c3",
+        "text": "80点"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "合計320点を回数の4でわって80点。合計のままにしないよう注意。"
+  },
+  {
+    "id": "l2-math-12",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "8mで400円のリボンは、1mあたり何円？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "50円"
+      },
+      {
+        "id": "c2",
+        "text": "3200円"
+      },
+      {
+        "id": "c3",
+        "text": "408円"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "1mあたりの代金は400÷8=50円。かけ算をして3200円にしやすいので注意。"
+  },
+  {
+    "id": "l2-math-13",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "120kmを2時間で走る車の速さはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "時速240km"
+      },
+      {
+        "id": "c2",
+        "text": "時速60km"
+      },
+      {
+        "id": "c3",
+        "text": "時速122km"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "速さは道のり÷時間で120÷2=60。かけ算をして240にしやすいので注意。"
+  },
+  {
+    "id": "l2-math-14",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "分速80mで歩くと、15分で何m進む？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "120m"
+      },
+      {
+        "id": "c2",
+        "text": "12000m"
+      },
+      {
+        "id": "c3",
+        "text": "1200m"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "道のりは速さ×時間で80×15=1200m。0の数をまちがえやすいので注意。"
+  },
+  {
+    "id": "l2-math-15",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "300円の20%は何円？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "60円"
+      },
+      {
+        "id": "c2",
+        "text": "6000円"
+      },
+      {
+        "id": "c3",
+        "text": "15円"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "20%は0.2なので300×0.2=60円。20をそのままかけて6000にしやすい。"
+  },
+  {
+    "id": "l2-math-16",
+    "genre": "math",
+    "grade": 5,
+    "level": 2,
+    "question": "直径10cmの円の円周はどれ？（円周率は3.14）",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "62.8cm"
+      },
+      {
+        "id": "c2",
+        "text": "31.4cm"
+      },
+      {
+        "id": "c3",
+        "text": "78.5cm"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "円周は直径×3.14で10×3.14=31.4cm。直径を2倍して62.8にしやすい。"
+  },
+  {
+    "id": "l2-science-01",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "インゲンマメの種子が発芽するために必要な条件の組み合わせはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "水・空気・適当な温度"
+      },
+      {
+        "id": "c2",
+        "text": "水・日光・肥料"
+      },
+      {
+        "id": "c3",
+        "text": "水・空気・日光"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "発芽は種子の中の養分を使うので日光や肥料はいらない。成長の条件と混同しやすい。"
+  },
+  {
+    "id": "l2-science-02",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "発芽したインゲンマメがよく成長するために、水・空気・温度のほかに必要なものは？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "暗い場所"
+      },
+      {
+        "id": "c2",
+        "text": "日光と肥料"
+      },
+      {
+        "id": "c3",
+        "text": "冷たい水"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "成長には日光と肥料も必要。発芽には日光や肥料がいらないのとちがう。"
+  },
+  {
+    "id": "l2-science-03",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "種子にでんぷんがあるか調べるためヨウ素液をつけた。でんぷんがあると何色になる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "赤色"
+      },
+      {
+        "id": "c2",
+        "text": "黄色"
+      },
+      {
+        "id": "c3",
+        "text": "青むらさき色"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "でんぷんがあるとヨウ素液は青むらさき色になる。もとのヨウ素液はうすい茶色。"
+  },
+  {
+    "id": "l2-science-04",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "メダカのめすとおすを見分けるとき、どこを見る？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "せびれとしりびれ"
+      },
+      {
+        "id": "c2",
+        "text": "口と目"
+      },
+      {
+        "id": "c3",
+        "text": "体の色"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "おすはせびれに切れこみがあり、しりびれが平行四辺形に近い形をしている。"
+  },
+  {
+    "id": "l2-science-05",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "人の子どもは、受精してから約何週で生まれる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "約10週"
+      },
+      {
+        "id": "c2",
+        "text": "約20週"
+      },
+      {
+        "id": "c3",
+        "text": "約38週"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "人は受精してから約38週、母親の体内で育ってから生まれる。約9か月ほど。"
+  },
+  {
+    "id": "l2-science-06",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "母親の体内の子どもは、何を通して養分を受け取る？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "へその緒"
+      },
+      {
+        "id": "c2",
+        "text": "羊水"
+      },
+      {
+        "id": "c3",
+        "text": "口"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "胎盤からへその緒を通して養分を受け取る。羊水は子どもを守る液体。"
+  },
+  {
+    "id": "l2-science-07",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "川の曲がっているところで、外側の流れや岸はどうなっている？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "おそくて土がつもる"
+      },
+      {
+        "id": "c2",
+        "text": "速くて岸がけずられる"
+      },
+      {
+        "id": "c3",
+        "text": "内側と同じ速さ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "曲がった川の外側は流れが速く岸がけずられる。内側は流れがおそく土がたまる。"
+  },
+  {
+    "id": "l2-science-08",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "川の上流で多く見られる石はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "小さく丸い石"
+      },
+      {
+        "id": "c2",
+        "text": "細かいすなだけ"
+      },
+      {
+        "id": "c3",
+        "text": "大きく角ばった石"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "上流の石は流されたきょりが短く角ばっている。下流の石は運ばれる間に丸くなる。"
+  },
+  {
+    "id": "l2-science-09",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "食塩を水にとかしたあと、全体の重さはどうなる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "水と食塩の合計"
+      },
+      {
+        "id": "c2",
+        "text": "水の重さと同じ"
+      },
+      {
+        "id": "c3",
+        "text": "合計より軽くなる"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "とけて見えなくなっても食塩はなくならない。重さは水と食塩の合計になる。"
+  },
+  {
+    "id": "l2-science-10",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "水の温度を上げても、とける量がほとんど変わらないのはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "ミョウバン"
+      },
+      {
+        "id": "c2",
+        "text": "食塩"
+      },
+      {
+        "id": "c3",
+        "text": "ホウ酸"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "食塩は温度を上げてもとける量がほとんど変わらない。ミョウバンは大きくふえる。"
+  },
+  {
+    "id": "l2-science-11",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "ふりこが1往復する時間を変えるには、何を変えればよい？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "おもりの重さ"
+      },
+      {
+        "id": "c2",
+        "text": "ふれはば"
+      },
+      {
+        "id": "c3",
+        "text": "ふりこの長さ"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1往復の時間はふりこの長さで決まる。おもりの重さやふれはばでは変わらない。"
+  },
+  {
+    "id": "l2-science-12",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "電磁石を強くする方法はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "コイルのまき数をふやす"
+      },
+      {
+        "id": "c2",
+        "text": "電流を小さくする"
+      },
+      {
+        "id": "c3",
+        "text": "鉄しんをぬく"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "電流を大きくするか、まき数をふやすと強くなる。鉄しんをぬくと弱くなる。"
+  },
+  {
+    "id": "l2-science-13",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "電磁石のN極とS極を入れかえるにはどうする？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "まき数をへらす"
+      },
+      {
+        "id": "c2",
+        "text": "電流の向きを反対にする"
+      },
+      {
+        "id": "c3",
+        "text": "電流を大きくする"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "電流の向きを反対にすると極も入れかわる。まき数や電流の大きさでは変わらない。"
+  },
+  {
+    "id": "l2-science-14",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "日本付近の天気は、おもにどの方位からどの方位へ変わっていく？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "東から西"
+      },
+      {
+        "id": "c2",
+        "text": "南から北"
+      },
+      {
+        "id": "c3",
+        "text": "西から東"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "日本の上空にふく西風で雲は西から東へ動く。そのため天気も西から変わる。"
+  },
+  {
+    "id": "l2-science-15",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "台風が近づくと、天気はどうなることが多い？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "大雨と強い風になる"
+      },
+      {
+        "id": "c2",
+        "text": "晴れて暑くなる"
+      },
+      {
+        "id": "c3",
+        "text": "雪がふる"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "台風は大量の雨と強い風をもたらす。台風が去ったあとは晴れることが多い。"
+  },
+  {
+    "id": "l2-science-16",
+    "genre": "science",
+    "grade": 5,
+    "level": 2,
+    "question": "空全体を10として、雲の量が8のときの天気はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "くもり"
+      },
+      {
+        "id": "c2",
+        "text": "晴れ"
+      },
+      {
+        "id": "c3",
+        "text": "雨"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "雲の量が0〜8は晴れ、9〜10がくもり。雲が多い8でも晴れなので注意。"
+  },
+  {
+    "id": "l2-japanese-01",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「先生が家に来る」の「来る」を、尊敬語にしたものはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "まいる"
+      },
+      {
+        "id": "c2",
+        "text": "うかがう"
+      },
+      {
+        "id": "c3",
+        "text": "いらっしゃる"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "相手の動作を高めるのが尊敬語。まいる・うかがうは自分を低める謙譲語。"
+  },
+  {
+    "id": "l2-japanese-02",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「わたしが先生の家に行く」の「行く」を、謙譲語にしたものはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "うかがう"
+      },
+      {
+        "id": "c2",
+        "text": "いらっしゃる"
+      },
+      {
+        "id": "c3",
+        "text": "行かれる"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "自分の動作を低めて相手を高めるのが謙譲語。いらっしゃるは尊敬語。"
+  },
+  {
+    "id": "l2-japanese-03",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "丁寧語を使った言い方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "先生がおっしゃる"
+      },
+      {
+        "id": "c2",
+        "text": "これは本です"
+      },
+      {
+        "id": "c3",
+        "text": "わたしがまいる"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "「です・ます」は丁寧語。おっしゃるは尊敬語、まいるは謙譲語。"
+  },
+  {
+    "id": "l2-japanese-04",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「宿屋」と同じ意味の外来語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "旅館"
+      },
+      {
+        "id": "c2",
+        "text": "やど"
+      },
+      {
+        "id": "c3",
+        "text": "ホテル"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "ホテルは外国から入ってきた外来語。旅館は漢語、やどは昔からある和語。"
+  },
+  {
+    "id": "l2-japanese-05",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「登山」と同じ組み立ての熟語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "読書"
+      },
+      {
+        "id": "c2",
+        "text": "強弱"
+      },
+      {
+        "id": "c3",
+        "text": "大木"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "登山は「山に登る」と下から読むと意味がわかる。読書も「書を読む」で同じ。"
+  },
+  {
+    "id": "l2-japanese-06",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「目をうたがう」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "目がとても悪い"
+      },
+      {
+        "id": "c2",
+        "text": "見たことが信じられない"
+      },
+      {
+        "id": "c3",
+        "text": "人をうらやむ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "見たものが信じられないほどおどろくこと。目が悪いという意味ではない。"
+  },
+  {
+    "id": "l2-japanese-07",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「石の上にも三年」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "かたい物は長持ちする"
+      },
+      {
+        "id": "c2",
+        "text": "三年で何でもわかる"
+      },
+      {
+        "id": "c3",
+        "text": "がまんすればむくわれる"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "冷たい石も三年すわれば温まる。つらくてもがまんすれば成功するという意味。"
+  },
+  {
+    "id": "l2-japanese-08",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「問題の解決をはかる」の「はかる」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "図る"
+      },
+      {
+        "id": "c2",
+        "text": "計る"
+      },
+      {
+        "id": "c3",
+        "text": "量る"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "実現しようとくわだてるのは図る。計るは時間や数、量るは重さに使う。"
+  },
+  {
+    "id": "l2-japanese-09",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「せいかくな時計」の「せいかく」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "性格"
+      },
+      {
+        "id": "c2",
+        "text": "正確"
+      },
+      {
+        "id": "c3",
+        "text": "正格"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "まちがいがないことは正確。性格は人の性質を表す言葉なので注意。"
+  },
+  {
+    "id": "l2-japanese-10",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「経験」の読み方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "きょうけん"
+      },
+      {
+        "id": "c2",
+        "text": "けいげん"
+      },
+      {
+        "id": "c3",
+        "text": "けいけん"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "経は「けい」、験は「けん」と読む。お経の「きょう」と読みやすいので注意。"
+  },
+  {
+    "id": "l2-japanese-11",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「眼科」の読み方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "がんか"
+      },
+      {
+        "id": "c2",
+        "text": "めか"
+      },
+      {
+        "id": "c3",
+        "text": "げんか"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "眼は「がん」と読み、眼科は目の病気を見る所。訓読みの「め」とは読まない。"
+  },
+  {
+    "id": "l2-japanese-12",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「学校のきそくを守る」の「きそく」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "規測"
+      },
+      {
+        "id": "c2",
+        "text": "基則"
+      },
+      {
+        "id": "c3",
+        "text": "規則"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "決まりのことは規則。測は長さなどをはかる意味なので、規則には使わない。"
+  },
+  {
+    "id": "l2-japanese-13",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "俳句の音の数の決まりはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "五・七・五・七・七"
+      },
+      {
+        "id": "c2",
+        "text": "五・七・五"
+      },
+      {
+        "id": "c3",
+        "text": "七・五・七"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "俳句は五・七・五の十七音。五・七・五・七・七は短歌の決まりなので注意。"
+  },
+  {
+    "id": "l2-japanese-14",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "俳句で「つばめ」は、どの季節を表す季語？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "春"
+      },
+      {
+        "id": "c2",
+        "text": "夏"
+      },
+      {
+        "id": "c3",
+        "text": "秋"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "つばめは春に南からやって来るので春の季語。子育ての夏と思いやすい。"
+  },
+  {
+    "id": "l2-japanese-15",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「ぼくの兄は中学生だ。」の述語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "兄は"
+      },
+      {
+        "id": "c2",
+        "text": "ぼくの"
+      },
+      {
+        "id": "c3",
+        "text": "中学生だ"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "述語は「何だ・どんなだ」にあたる言葉。「兄は」は主語にあたる。"
+  },
+  {
+    "id": "l2-japanese-16",
+    "genre": "japanese",
+    "grade": 5,
+    "level": 2,
+    "question": "「竹取物語」で、おじいさんが光る竹の中から見つけたものはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "金のたまご"
+      },
+      {
+        "id": "c2",
+        "text": "小さな女の子"
+      },
+      {
+        "id": "c3",
+        "text": "小さな男の子"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "竹の中にいた小さな女の子が、のちのかぐやひめ。千年以上前の物語。"
+  },
+  {
+    "id": "l2-social-01",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "日本の国土のうち、山地はおよそどれくらいをしめる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "約2分の1"
+      },
+      {
+        "id": "c2",
+        "text": "約4分の3"
+      },
+      {
+        "id": "c3",
+        "text": "約4分の1"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "日本は国土の約4分の3が山地。平地は少なく、そこに多くの人がくらしている。"
+  },
+  {
+    "id": "l2-social-02",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "冬に雪が多くふるのは、日本のどちら側の地域？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "日本海側"
+      },
+      {
+        "id": "c2",
+        "text": "太平洋側"
+      },
+      {
+        "id": "c3",
+        "text": "どちらも同じ"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "冬の北西の季節風が日本海でしめり、山にぶつかって日本海側に雪をふらせる。"
+  },
+  {
+    "id": "l2-social-03",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "冬に日本へふく季節風は、どの方位からふく？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "南東から"
+      },
+      {
+        "id": "c2",
+        "text": "南西から"
+      },
+      {
+        "id": "c3",
+        "text": "北西から"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "冬は大陸から北西の季節風がふく。夏は太平洋から南東の季節風がふく。"
+  },
+  {
+    "id": "l2-social-04",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "日本の米の生産量が特に多い地方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "東北地方"
+      },
+      {
+        "id": "c2",
+        "text": "四国地方"
+      },
+      {
+        "id": "c3",
+        "text": "九州地方"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "東北地方は日本の米の約4分の1を生産する。広い平野と豊かな水があるため。"
+  },
+  {
+    "id": "l2-social-05",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "長野県の高原で、夏のすずしい気候を生かして多く作られる野菜はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "ゴーヤ"
+      },
+      {
+        "id": "c2",
+        "text": "レタスやキャベツ"
+      },
+      {
+        "id": "c3",
+        "text": "サトウキビ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "高原は夏もすずしくレタスなどを作る。ほかの産地が少ない時期に出荷できる。"
+  },
+  {
+    "id": "l2-social-06",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "魚や貝を、いけすなどで大きくなるまで育ててからとる漁業はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "栽培漁業"
+      },
+      {
+        "id": "c2",
+        "text": "沖合漁業"
+      },
+      {
+        "id": "c3",
+        "text": "養殖業"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "大きくなるまで育てるのが養殖業。栽培漁業は放流して海で育てる。"
+  },
+  {
+    "id": "l2-social-07",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "関東から九州北部まで、工業のさかんな地域が海ぞいに広がる所を何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "太平洋ベルト"
+      },
+      {
+        "id": "c2",
+        "text": "中央高地"
+      },
+      {
+        "id": "c3",
+        "text": "日本海側"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "工場は太平洋ベルトに集まる。海ぞいは原料の輸入や製品の輸出に便利なため。"
+  },
+  {
+    "id": "l2-social-08",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "自動車の部品を作って、組み立て工場にとどける工場を何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "本社"
+      },
+      {
+        "id": "c2",
+        "text": "関連工場"
+      },
+      {
+        "id": "c3",
+        "text": "販売店"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "部品は多くの関連工場で作られ、必要な時刻に組み立て工場へ運ばれる。"
+  },
+  {
+    "id": "l2-social-09",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "日本が石油をおもに輸入している地域はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "南アメリカ"
+      },
+      {
+        "id": "c2",
+        "text": "ヨーロッパ"
+      },
+      {
+        "id": "c3",
+        "text": "西アジア"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "日本の石油の多くはサウジアラビアなど西アジアの国から輸入している。"
+  },
+  {
+    "id": "l2-social-10",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "新聞・テレビ・ラジオなど、多くの人に一度に情報を伝えるものをまとめて何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "マスメディア"
+      },
+      {
+        "id": "c2",
+        "text": "ニュース"
+      },
+      {
+        "id": "c3",
+        "text": "インターネット"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "多くの人へ一度に情報を伝えるのがマスメディア。正しいか考えて使うことが大切。"
+  },
+  {
+    "id": "l2-social-11",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "四大公害病の1つ、イタイイタイ病が起きたのはどの県？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "熊本県"
+      },
+      {
+        "id": "c2",
+        "text": "富山県"
+      },
+      {
+        "id": "c3",
+        "text": "新潟県"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "イタイイタイ病は富山県で起きた。熊本県と新潟県では水銀による公害病が起きた。"
+  },
+  {
+    "id": "l2-social-12",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "人が木を植えて育てた森林を何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "天然林"
+      },
+      {
+        "id": "c2",
+        "text": "原生林"
+      },
+      {
+        "id": "c3",
+        "text": "人工林"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "人が植えて育てたのが人工林。天然林は自然の力で育った森林のこと。"
+  },
+  {
+    "id": "l2-social-13",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "海底で大きな地震が起きたとき、海岸で特に注意が必要な災害はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "津波"
+      },
+      {
+        "id": "c2",
+        "text": "大雪"
+      },
+      {
+        "id": "c3",
+        "text": "火山の噴火"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "海底の地震で海水が持ち上がり津波が起こる。すぐに高い所へ避難する。"
+  },
+  {
+    "id": "l2-social-14",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "日本の東のはしにある島はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "沖ノ鳥島"
+      },
+      {
+        "id": "c2",
+        "text": "南鳥島"
+      },
+      {
+        "id": "c3",
+        "text": "与那国島"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "東のはしは南鳥島。沖ノ鳥島は南のはしなので名前でまちがえやすい。"
+  },
+  {
+    "id": "l2-social-15",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "北方領土の島で、いちばん大きい島はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "国後島"
+      },
+      {
+        "id": "c2",
+        "text": "色丹島"
+      },
+      {
+        "id": "c3",
+        "text": "択捉島"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "北方領土でいちばん大きいのは択捉島。日本の北のはしの島でもある。"
+  },
+  {
+    "id": "l2-social-16",
+    "genre": "social",
+    "grade": 5,
+    "level": 2,
+    "question": "日本で、食料の多くを輸入にたよっているものはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "米"
+      },
+      {
+        "id": "c2",
+        "text": "たまご"
+      },
+      {
+        "id": "c3",
+        "text": "大豆"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "大豆の多くは輸入にたよっている。米やたまごはほぼ国内で自給できている。"
+  },
+  {
+    "id": "l2-logic-01",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "1、4、9、16、□ と数がならんでいる。□に入る数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "20"
+      },
+      {
+        "id": "c2",
+        "text": "25"
+      },
+      {
+        "id": "c3",
+        "text": "24"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "1×1、2×2、3×3…と同じ数を2回かけた数。5×5=25。ふえ方を見ても9ふえる。"
+  },
+  {
+    "id": "l2-logic-02",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "父は40才、子は10才。父の年齢が子の3倍になるのは何年後？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "10年後"
+      },
+      {
+        "id": "c2",
+        "text": "5年後"
+      },
+      {
+        "id": "c3",
+        "text": "20年後"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "5年後に父45才、子15才で3倍になる。2人の年の差30才はずっと変わらない。"
+  },
+  {
+    "id": "l2-logic-03",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "まわりの長さが20mの池のまわりに、4mおきに木を植えると、木は何本？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "5本"
+      },
+      {
+        "id": "c2",
+        "text": "6本"
+      },
+      {
+        "id": "c3",
+        "text": "4本"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "池のまわりのように1周するときは、間の数と木の数が同じ。20÷4=5本。"
+  },
+  {
+    "id": "l2-logic-04",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "4人のせの高さをくらべた。AはBより高く、CはAより高く、DはBより低い。2番目に高いのは？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "B"
+      },
+      {
+        "id": "c2",
+        "text": "C"
+      },
+      {
+        "id": "c3",
+        "text": "A"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "高い順にならべるとC、A、B、D。条件を1つずつならべると2番目はA。"
+  },
+  {
+    "id": "l2-logic-05",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "ある年の5月1日は月曜日。5月31日は何曜日？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "水曜日"
+      },
+      {
+        "id": "c2",
+        "text": "火曜日"
+      },
+      {
+        "id": "c3",
+        "text": "月曜日"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "5月31日は1日の30日後。30÷7=4あまり2なので月曜日の2日後で水曜日。"
+  },
+  {
+    "id": "l2-logic-06",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "つるとかめが合わせて10ぴき、足の数は合わせて28本。かめは何びき？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6ぴき"
+      },
+      {
+        "id": "c2",
+        "text": "4ひき"
+      },
+      {
+        "id": "c3",
+        "text": "7ひき"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "全部つるなら足は20本。のこり8本は、かめ1ぴきで2本ずつふえるので4ひき。"
+  },
+  {
+    "id": "l2-logic-07",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "100円で、1こ15円のあめをできるだけ多く買う。何こ買えて、おつりはいくら？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6こで5円"
+      },
+      {
+        "id": "c2",
+        "text": "7こで5円"
+      },
+      {
+        "id": "c3",
+        "text": "6こで10円"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "100÷15=6あまり10。6こ買うと90円で、おつりは10円になる。"
+  },
+  {
+    "id": "l2-logic-08",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "3、7、15、31、□ と数がならんでいる。□に入る数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "47"
+      },
+      {
+        "id": "c2",
+        "text": "63"
+      },
+      {
+        "id": "c3",
+        "text": "62"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "前の数を2倍して1をたすと次の数になる。31×2+1=63。ふえ方も2倍ずつ。"
+  },
+  {
+    "id": "l2-logic-09",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "時計が3時ちょうどのとき、長いはりと短いはりがつくる小さいほうの角は何度？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "90°"
+      },
+      {
+        "id": "c2",
+        "text": "45°"
+      },
+      {
+        "id": "c3",
+        "text": "180°"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "時計の数字1つ分は30°。長いはりが12、短いはりが3なので30×3=90°。"
+  },
+  {
+    "id": "l2-logic-10",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "1〜9の数を3×3のますに1つずつ入れ、たて・横・ななめの和をすべて同じにする。その和は？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "45"
+      },
+      {
+        "id": "c2",
+        "text": "18"
+      },
+      {
+        "id": "c3",
+        "text": "15"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1から9の合計45を3つの列で分けるので1列は15。45は全部の合計。"
+  },
+  {
+    "id": "l2-logic-11",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "ある数に3をかけて5をたすと20になった。ある数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "15"
+      },
+      {
+        "id": "c2",
+        "text": "5"
+      },
+      {
+        "id": "c3",
+        "text": "25"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "逆にたどる。20から5をひいて15、それを3でわって5。15で止めやすい。"
+  },
+  {
+    "id": "l2-logic-12",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "0点から始め、勝つと3点ふえ、負けると1点へる。10回して18点のとき勝ったのは何回？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6回"
+      },
+      {
+        "id": "c2",
+        "text": "8回"
+      },
+      {
+        "id": "c3",
+        "text": "7回"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "7回勝つと21点、3回負けると3点へって18点。合わせて10回にもなる。"
+  },
+  {
+    "id": "l2-logic-13",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "さいころの向かい合う面の数の和はいつも7。上が3、前が2のとき、後ろの面の数は？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "5"
+      },
+      {
+        "id": "c2",
+        "text": "4"
+      },
+      {
+        "id": "c3",
+        "text": "1"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "後ろは前の2と向かい合うので7−2=5。上の3の反対の4とまちがえやすい。"
+  },
+  {
+    "id": "l2-logic-14",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "本を1日目に全体の半分、2日目に残りの半分読んだら、残りは20ページ。本は全部で何ページ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "40ページ"
+      },
+      {
+        "id": "c2",
+        "text": "60ページ"
+      },
+      {
+        "id": "c3",
+        "text": "80ページ"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "最後の残りが20なので2日目の前は40ページ、最初は80ページになる。"
+  },
+  {
+    "id": "l2-logic-15",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "1から100までの整数で、7の倍数はいくつある？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "15こ"
+      },
+      {
+        "id": "c2",
+        "text": "14こ"
+      },
+      {
+        "id": "c3",
+        "text": "13こ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "100÷7=14あまり2なので14こ。7×14=98で、7×15は100をこえる。"
+  },
+  {
+    "id": "l2-logic-16",
+    "genre": "logic",
+    "grade": 5,
+    "level": 2,
+    "question": "10円玉、50円玉、100円玉が1まいずつある。2まいを選んでできる金額は何通り？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "3通り"
+      },
+      {
+        "id": "c2",
+        "text": "6通り"
+      },
+      {
+        "id": "c3",
+        "text": "2通り"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "10と50、10と100、50と100の3つ。順番をかえても同じ金額なので3通り。"
+  },
+  {
+    "id": "l3-math-01",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "3分の2×4分の3を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "9分の8"
+      },
+      {
+        "id": "c2",
+        "text": "2分の1"
+      },
+      {
+        "id": "c3",
+        "text": "7分の5"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "分母どうし、分子どうしをかけて12分の6=2分の1。わり算とまちがえると9分の8。"
+  },
+  {
+    "id": "l3-math-02",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "4分の3÷8分の3を計算するとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2"
+      },
+      {
+        "id": "c2",
+        "text": "32分の9"
+      },
+      {
+        "id": "c3",
+        "text": "2分の1"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "わる数の分母と分子を入れかえてかける。4分の3×3分の8=2になる。"
+  },
+  {
+    "id": "l3-math-03",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "2:3と等しい比はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4:5"
+      },
+      {
+        "id": "c2",
+        "text": "3:2"
+      },
+      {
+        "id": "c3",
+        "text": "8:12"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "両方に4をかけた8:12が等しい。両方に2をたした4:5は等しくないので注意。"
+  },
+  {
+    "id": "l3-math-04",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "長さ60cmのテープを、長さの比が2:3になるように分ける。長いほうは何cm？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "24cm"
+      },
+      {
+        "id": "c2",
+        "text": "36cm"
+      },
+      {
+        "id": "c3",
+        "text": "40cm"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "全体を2+3=5に分けた3つ分なので60÷5×3=36cm。短いほうの24cmに注意。"
+  },
+  {
+    "id": "l3-math-05",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "半径3cmの円の面積はどれ？（円周率は3.14）",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "18.84cm²"
+      },
+      {
+        "id": "c2",
+        "text": "9.42cm²"
+      },
+      {
+        "id": "c3",
+        "text": "28.26cm²"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "円の面積は半径×半径×3.14で3×3×3.14=28.26。18.84は円周の長さ。"
+  },
+  {
+    "id": "l3-math-06",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "底面の半径が2cm、高さが5cmの円柱の体積はどれ？（円周率は3.14）",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "62.8cm³"
+      },
+      {
+        "id": "c2",
+        "text": "31.4cm³"
+      },
+      {
+        "id": "c3",
+        "text": "251.2cm³"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "底面積2×2×3.14=12.56に高さ5をかけて62.8。直径4cmを使わないよう注意。"
+  },
+  {
+    "id": "l3-math-07",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "yがxに比例し、x=3のときy=12。x=5のときyはいくつ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "14"
+      },
+      {
+        "id": "c2",
+        "text": "20"
+      },
+      {
+        "id": "c3",
+        "text": "15"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "y=4×xなのでx=5のときy=20。xがふえた2をそのままたして14にしやすい。"
+  },
+  {
+    "id": "l3-math-08",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "面積24cm²の長方形で、たて4cmのとき横は6cm。たてを8cmにすると横は何cm？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "12cm"
+      },
+      {
+        "id": "c2",
+        "text": "10cm"
+      },
+      {
+        "id": "c3",
+        "text": "3cm"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "たて×横=24で決まっているので反比例。たてが2倍なら横は半分の3cm。"
+  },
+  {
+    "id": "l3-math-09",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "A、B、Cの3人が1列にならぶとき、ならび方は何通り？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "6通り"
+      },
+      {
+        "id": "c2",
+        "text": "3通り"
+      },
+      {
+        "id": "c3",
+        "text": "9通り"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "先頭が3通り、2番目が2通り、最後が1通りで3×2×1=6通りになる。"
+  },
+  {
+    "id": "l3-math-10",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "5チームが、どのチームとも1回ずつ試合をすると、全部で何試合？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "20試合"
+      },
+      {
+        "id": "c2",
+        "text": "10試合"
+      },
+      {
+        "id": "c3",
+        "text": "25試合"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "5×4=20だが、AとB、BとAのように同じ試合を2回数えているので÷2で10。"
+  },
+  {
+    "id": "l3-math-11",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "縮尺が2万5千分の1の地図で4cmの長さは、実際には何m？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "100m"
+      },
+      {
+        "id": "c2",
+        "text": "10000m"
+      },
+      {
+        "id": "c3",
+        "text": "1000m"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "4cm×25000=100000cm=1000m。cmからmへ直すとき0の数に注意。"
+  },
+  {
+    "id": "l3-math-12",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "線対称でもあり、点対称でもある図形はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "正方形"
+      },
+      {
+        "id": "c2",
+        "text": "正三角形"
+      },
+      {
+        "id": "c3",
+        "text": "平行四辺形"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "正方形は両方の対称。正三角形は線対称だけ、平行四辺形は点対称だけ。"
+  },
+  {
+    "id": "l3-math-13",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "1こx円のりんご3こを、120円のかごに入れて買う。代金を表す式はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "x+3×120"
+      },
+      {
+        "id": "c2",
+        "text": "x×3+120"
+      },
+      {
+        "id": "c3",
+        "text": "(x+120)×3"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "りんご3こ分はx×3、それにかご代の120円をたす。かごを3つ分にしない。"
+  },
+  {
+    "id": "l3-math-14",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "5、3、8、3、6 の5つの数の中央値はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "8"
+      },
+      {
+        "id": "c2",
+        "text": "3"
+      },
+      {
+        "id": "c3",
+        "text": "5"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "小さい順にならべた3、3、5、6、8のまん中で5。ならべずに8としやすい。"
+  },
+  {
+    "id": "l3-math-15",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "定価1000円の品物を2割引きにし、さらにその1割引きにすると何円？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "700円"
+      },
+      {
+        "id": "c2",
+        "text": "720円"
+      },
+      {
+        "id": "c3",
+        "text": "710円"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "1000×0.8=800、800×0.9=720円。まとめて3割引きの700円ではない。"
+  },
+  {
+    "id": "l3-math-16",
+    "genre": "math",
+    "grade": 6,
+    "level": 3,
+    "question": "行きは時速6km、帰りは時速3kmで同じ道を往復した。往復の平均の速さは？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "時速4.5km"
+      },
+      {
+        "id": "c2",
+        "text": "時速5km"
+      },
+      {
+        "id": "c3",
+        "text": "時速4km"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "道のりを6kmとすると往復12kmに3時間で時速4km。速さの平均4.5ではない。"
+  },
+  {
+    "id": "l3-science-01",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "ものが燃えるときに使われる気体はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "二酸化炭素"
+      },
+      {
+        "id": "c2",
+        "text": "酸素"
+      },
+      {
+        "id": "c3",
+        "text": "窒素"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "燃えるときは酸素が使われ二酸化炭素ができる。窒素には燃やすはたらきがない。"
+  },
+  {
+    "id": "l3-science-02",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "空気中にいちばん多くふくまれる気体はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "窒素"
+      },
+      {
+        "id": "c2",
+        "text": "酸素"
+      },
+      {
+        "id": "c3",
+        "text": "二酸化炭素"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "空気の約5分の4が窒素で、酸素は約5分の1。酸素が多いと思いやすい。"
+  },
+  {
+    "id": "l3-science-03",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "二酸化炭素があるかどうかを調べるときに使うものはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "ヨウ素液"
+      },
+      {
+        "id": "c2",
+        "text": "食塩水"
+      },
+      {
+        "id": "c3",
+        "text": "石灰水"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "石灰水は二酸化炭素にふれると白くにごる。ヨウ素液はでんぷんを調べるもの。"
+  },
+  {
+    "id": "l3-science-04",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "だ液のはたらきの実験で、でんぷんがなくなったことはどうすればわかる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "石灰水が白くにごる"
+      },
+      {
+        "id": "c2",
+        "text": "ヨウ素液の色が変わらない"
+      },
+      {
+        "id": "c3",
+        "text": "ヨウ素液が青むらさき"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "でんぷんがないとヨウ素液の色は変わらない。青むらさきはでんぷんがある時。"
+  },
+  {
+    "id": "l3-science-05",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "肺で血液に取り入れられる気体はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "酸素"
+      },
+      {
+        "id": "c2",
+        "text": "二酸化炭素"
+      },
+      {
+        "id": "c3",
+        "text": "窒素"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "肺で酸素を取り入れ二酸化炭素を出す。はく息にも酸素は残っている。"
+  },
+  {
+    "id": "l3-science-06",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "心臓から送り出された血液が、全身へ流れていく血管を何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "静脈"
+      },
+      {
+        "id": "c2",
+        "text": "動脈"
+      },
+      {
+        "id": "c3",
+        "text": "毛細血管"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "心臓から出る血液が通るのが動脈、心臓へもどる血液が通るのが静脈。"
+  },
+  {
+    "id": "l3-science-07",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "植物の葉から、水が水蒸気となって出ていくことを何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "光合成"
+      },
+      {
+        "id": "c2",
+        "text": "呼吸"
+      },
+      {
+        "id": "c3",
+        "text": "蒸散"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "葉の気孔から水が出るのが蒸散。光合成は日光ででんぷんを作るはたらき。"
+  },
+  {
+    "id": "l3-science-08",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "日光が当たった葉で作られる養分はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "でんぷん"
+      },
+      {
+        "id": "c2",
+        "text": "しぼう"
+      },
+      {
+        "id": "c3",
+        "text": "食塩"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "日光が当たると葉ででんぷんが作られる。ヨウ素液で調べると青むらさきになる。"
+  },
+  {
+    "id": "l3-science-09",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "生き物どうしの「食べる・食べられる」の関係のつながりを何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "光合成"
+      },
+      {
+        "id": "c2",
+        "text": "食物連鎖"
+      },
+      {
+        "id": "c3",
+        "text": "蒸散"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "食べる・食べられるのつながりが食物連鎖。もとをたどると植物から始まる。"
+  },
+  {
+    "id": "l3-science-10",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "夕方、南の空に見える半月は、どちら側が光っている？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "左側"
+      },
+      {
+        "id": "c2",
+        "text": "上側"
+      },
+      {
+        "id": "c3",
+        "text": "右側"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "夕方は太陽が西にあるので、南を向いて右側の西側が光る。光る側に太陽がある。"
+  },
+  {
+    "id": "l3-science-11",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "満月が見えるとき、太陽・地球・月はどのようにならんでいる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "太陽・月・地球"
+      },
+      {
+        "id": "c2",
+        "text": "太陽・地球・月"
+      },
+      {
+        "id": "c3",
+        "text": "地球・太陽・月"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "地球をはさんで太陽の反対に月があると満月。太陽・月・地球なら新月になる。"
+  },
+  {
+    "id": "l3-science-12",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "地層の中の丸みのある小石は、何のはたらきでできた？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "流れる水"
+      },
+      {
+        "id": "c2",
+        "text": "火山の噴火"
+      },
+      {
+        "id": "c3",
+        "text": "風"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "水に流されて角がとれ丸くなった。火山灰の地層のつぶは角ばっている。"
+  },
+  {
+    "id": "l3-science-13",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "山の上の地層から海の貝の化石が出た。この地層ができたとき、そこはどんな場所？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "山の上"
+      },
+      {
+        "id": "c2",
+        "text": "森の中"
+      },
+      {
+        "id": "c3",
+        "text": "海の底"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "海の貝の化石が出る地層は海の底でできた。今の場所で考えないよう注意。"
+  },
+  {
+    "id": "l3-science-14",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "酸性の水溶液は、青色リトマス紙を何色に変える？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "赤色"
+      },
+      {
+        "id": "c2",
+        "text": "青色のまま"
+      },
+      {
+        "id": "c3",
+        "text": "黄色"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "酸性は青色リトマス紙を赤に変える。アルカリ性は赤色を青に変える。"
+  },
+  {
+    "id": "l3-science-15",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "水溶液から水を蒸発させたとき、何も残らないのはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "食塩水"
+      },
+      {
+        "id": "c2",
+        "text": "塩酸"
+      },
+      {
+        "id": "c3",
+        "text": "石灰水"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "塩酸は気体がとけた水溶液なので何も残らない。食塩水は食塩が残る。"
+  },
+  {
+    "id": "l3-science-16",
+    "genre": "science",
+    "grade": 6,
+    "level": 3,
+    "question": "てこの左うでの支点から20cmに30gをつるした。右うでの10cmに何gつるすと水平になる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "15g"
+      },
+      {
+        "id": "c2",
+        "text": "30g"
+      },
+      {
+        "id": "c3",
+        "text": "60g"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "重さ×支点からのきょりが左右で等しい。20×30=600なので600÷10=60g。"
+  },
+  {
+    "id": "l3-japanese-01",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「一石二鳥」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "2つのうち1つを選ぶ"
+      },
+      {
+        "id": "c2",
+        "text": "苦労がむだになる"
+      },
+      {
+        "id": "c3",
+        "text": "1つで2つの得をする"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "石1つで鳥2羽をとるように、1つの行いで2つの利益を得ることのたとえ。"
+  },
+  {
+    "id": "l3-japanese-02",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「矛盾」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "つじつまが合わない"
+      },
+      {
+        "id": "c2",
+        "text": "大切に守る"
+      },
+      {
+        "id": "c3",
+        "text": "むだなことをする"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "何でも通すほこと何も通さないたてを売った商人の話。つじつまが合わないこと。"
+  },
+  {
+    "id": "l3-japanese-03",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「五十歩百歩」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "50と100は大ちがい"
+      },
+      {
+        "id": "c2",
+        "text": "大きなちがいはない"
+      },
+      {
+        "id": "c3",
+        "text": "少しずつ進む"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "五十歩にげた者が百歩にげた者を笑った話。どちらもにげたことは同じ。"
+  },
+  {
+    "id": "l3-japanese-04",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "敬語の使い方が正しいのはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "先生がまいられた"
+      },
+      {
+        "id": "c2",
+        "text": "先生が申された"
+      },
+      {
+        "id": "c3",
+        "text": "先生がおっしゃった"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "まいる・申すは自分を低める謙譲語。先生の動作にはおっしゃるを使う。"
+  },
+  {
+    "id": "l3-japanese-05",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「非常」と同じ組み立ての熟語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "未来"
+      },
+      {
+        "id": "c2",
+        "text": "強風"
+      },
+      {
+        "id": "c3",
+        "text": "身体"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "非・未・不・無が上につき下の意味を打ち消す組み立て。未来も同じ組み立て。"
+  },
+  {
+    "id": "l3-japanese-06",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「親友」と同じ組み立ての熟語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "開閉"
+      },
+      {
+        "id": "c2",
+        "text": "青空"
+      },
+      {
+        "id": "c3",
+        "text": "出国"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "親友は「親しい友」で上が下をくわしくする。青空も「青い空」で同じ組み立て。"
+  },
+  {
+    "id": "l3-japanese-07",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「著しい」の読み方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "あらわしい"
+      },
+      {
+        "id": "c2",
+        "text": "ちょしい"
+      },
+      {
+        "id": "c3",
+        "text": "いちじるしい"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "著しいは「いちじるしい」と読む。著すの「あらわす」と混同しやすいので注意。"
+  },
+  {
+    "id": "l3-japanese-08",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「拝む」の読み方はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "おがむ"
+      },
+      {
+        "id": "c2",
+        "text": "はいむ"
+      },
+      {
+        "id": "c3",
+        "text": "たのむ"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "拝は手を合わせる意味で「おがむ」と読む。拝見の「はい」と音読みしやすい。"
+  },
+  {
+    "id": "l3-japanese-09",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「二人の性格はたいしょう的だ」の「たいしょう」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "対象"
+      },
+      {
+        "id": "c2",
+        "text": "対照"
+      },
+      {
+        "id": "c3",
+        "text": "大正"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "ちがいがはっきりしているのは対照。対象は目当てとするものという意味。"
+  },
+  {
+    "id": "l3-japanese-10",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「会の代表をつとめる」の「つとめる」を漢字で書くとどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "努める"
+      },
+      {
+        "id": "c2",
+        "text": "勤める"
+      },
+      {
+        "id": "c3",
+        "text": "務める"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "役目をはたすのは務める。努めるは力をつくす、勤めるは会社などで働くこと。"
+  },
+  {
+    "id": "l3-japanese-11",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「春はあけぼの」で始まる作品はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "枕草子"
+      },
+      {
+        "id": "c2",
+        "text": "竹取物語"
+      },
+      {
+        "id": "c3",
+        "text": "平家物語"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "清少納言が四季のよさなどを書いた作品。平家物語は武士の争いをえがいた物語。"
+  },
+  {
+    "id": "l3-japanese-12",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「わたしは、母が作ったケーキを食べた。」で、「作った」の主語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "わたしは"
+      },
+      {
+        "id": "c2",
+        "text": "ケーキを"
+      },
+      {
+        "id": "c3",
+        "text": "母が"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "作ったのは母なので主語は「母が」。文全体の主語「わたしは」とまちがえやすい。"
+  },
+  {
+    "id": "l3-japanese-13",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「□肉□食」の□に入る漢字の組み合わせはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "強・弱"
+      },
+      {
+        "id": "c2",
+        "text": "弱・強"
+      },
+      {
+        "id": "c3",
+        "text": "大・小"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "弱い者が強い者に食べられる「弱肉強食」。強と弱の順番を逆にしやすい。"
+  },
+  {
+    "id": "l3-japanese-14",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「かたを持つ」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "重い物を運ぶ"
+      },
+      {
+        "id": "c2",
+        "text": "味方をする"
+      },
+      {
+        "id": "c3",
+        "text": "責任を負う"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "争っている一方の味方をすること。重い物を運ぶという意味ではないので注意。"
+  },
+  {
+    "id": "l3-japanese-15",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "「ルール」と同じ意味の漢語はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "決まり"
+      },
+      {
+        "id": "c2",
+        "text": "規則"
+      },
+      {
+        "id": "c3",
+        "text": "マナー"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "規則は漢字を音で読む漢語。決まりは和語、マナーは外来語で意味も少しちがう。"
+  },
+  {
+    "id": "l3-japanese-16",
+    "genre": "japanese",
+    "grade": 6,
+    "level": 3,
+    "question": "古文に出てくる「をかし」の意味はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "おかしくて笑える"
+      },
+      {
+        "id": "c2",
+        "text": "変な形をしている"
+      },
+      {
+        "id": "c3",
+        "text": "おもむきがある"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "古文の「をかし」はおもむきがあるという意味。今の「おかしい」とはちがう。"
+  },
+  {
+    "id": "l3-social-01",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "国会・内閣・裁判所が国の力を分け合うしくみを何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "国民主権"
+      },
+      {
+        "id": "c2",
+        "text": "三権分立"
+      },
+      {
+        "id": "c3",
+        "text": "基本的人権"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "力が1つに集中しないよう3つに分けるのが三権分立。国民主権とは別の考え。"
+  },
+  {
+    "id": "l3-social-02",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "日本国憲法が公布された11月3日は、今は何の祝日？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "憲法記念日"
+      },
+      {
+        "id": "c2",
+        "text": "建国記念の日"
+      },
+      {
+        "id": "c3",
+        "text": "文化の日"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "公布された11月3日は文化の日。5月3日の憲法記念日は憲法が使われ始めた日。"
+  },
+  {
+    "id": "l3-social-03",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "国の法律をつくるのはどこ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "国会"
+      },
+      {
+        "id": "c2",
+        "text": "内閣"
+      },
+      {
+        "id": "c3",
+        "text": "裁判所"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "法律をつくるのは国会。内閣は法律にもとづいて実際の政治を行う所。"
+  },
+  {
+    "id": "l3-social-04",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "衆議院議員の選挙で投票できるのは何才以上？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "20才以上"
+      },
+      {
+        "id": "c2",
+        "text": "18才以上"
+      },
+      {
+        "id": "c3",
+        "text": "25才以上"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "2016年から18才以上が投票できる。25才以上は衆議院議員に立候補できる年齢。"
+  },
+  {
+    "id": "l3-social-05",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "縄文時代の人々のくらしとして正しいのはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "米づくりが広まる"
+      },
+      {
+        "id": "c2",
+        "text": "かりや漁でくらす"
+      },
+      {
+        "id": "c3",
+        "text": "大きな古墳を作る"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "縄文時代はかりや漁、木の実集めでくらした。米づくりが広まったのは弥生時代。"
+  },
+  {
+    "id": "l3-social-06",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "邪馬台国をおさめた女王はだれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "推古天皇"
+      },
+      {
+        "id": "c2",
+        "text": "持統天皇"
+      },
+      {
+        "id": "c3",
+        "text": "卑弥呼"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "卑弥呼は中国の古い記録に出てくる女王。推古天皇は聖徳太子と同じ時代の天皇。"
+  },
+  {
+    "id": "l3-social-07",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "聖徳太子が定めた、役人の心がまえを示したきまりはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "十七条の憲法"
+      },
+      {
+        "id": "c2",
+        "text": "大宝律令"
+      },
+      {
+        "id": "c3",
+        "text": "武家諸法度"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "十七条の憲法は役人の心がまえを示した。今の日本国憲法とはちがうので注意。"
+  },
+  {
+    "id": "l3-social-08",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "奈良の大仏をつくることを命じた天皇はだれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "推古天皇"
+      },
+      {
+        "id": "c2",
+        "text": "聖武天皇"
+      },
+      {
+        "id": "c3",
+        "text": "天武天皇"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "聖武天皇は仏教の力で国を守ろうと大仏をつくらせた。推古天皇は飛鳥時代。"
+  },
+  {
+    "id": "l3-social-09",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "鎌倉幕府を開いたのはだれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "足利義満"
+      },
+      {
+        "id": "c2",
+        "text": "徳川家康"
+      },
+      {
+        "id": "c3",
+        "text": "源頼朝"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "源頼朝が鎌倉幕府を開いた。足利義満は室町、徳川家康は江戸幕府。"
+  },
+  {
+    "id": "l3-social-10",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "京都に銀閣を建てた室町幕府の将軍はだれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "足利義政"
+      },
+      {
+        "id": "c2",
+        "text": "足利義満"
+      },
+      {
+        "id": "c3",
+        "text": "徳川家光"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "銀閣を建てたのは足利義政。金閣を建てた足利義満とまちがえやすいので注意。"
+  },
+  {
+    "id": "l3-social-11",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "豊臣秀吉が全国の田畑の広さや土地のよしあしを調べたことを何という？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "刀狩"
+      },
+      {
+        "id": "c2",
+        "text": "検地"
+      },
+      {
+        "id": "c3",
+        "text": "楽市・楽座"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "検地で田畑の広さやとれ高を調べた。刀狩は農民から武器を取り上げたこと。"
+  },
+  {
+    "id": "l3-social-12",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "江戸幕府が、大名に1年おきに江戸と領地を行き来させた制度は？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "参勤交代"
+      },
+      {
+        "id": "c2",
+        "text": "武家諸法度"
+      },
+      {
+        "id": "c3",
+        "text": "鎖国"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "参勤交代で大名は1年ごとに江戸と領地を行き来し、多くのお金を使った。"
+  },
+  {
+    "id": "l3-social-13",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "明治時代に、20才になった男子に軍隊に入る義務を定めたきまりはどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "学制"
+      },
+      {
+        "id": "c2",
+        "text": "徴兵令"
+      },
+      {
+        "id": "c3",
+        "text": "地租改正"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "徴兵令で男子に兵役が義務づけられた。学制は学校の制度を定めたもの。"
+  },
+  {
+    "id": "l3-social-14",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "1964年に東京で開かれた大きな国際的行事はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "大阪の万国博覧会"
+      },
+      {
+        "id": "c2",
+        "text": "冬季オリンピック"
+      },
+      {
+        "id": "c3",
+        "text": "東京オリンピック"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1964年に東京オリンピックが開かれた。大阪の万国博覧会は1970年。"
+  },
+  {
+    "id": "l3-social-15",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "世界の平和を守るため、1945年につくられた国際組織はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "国際連盟"
+      },
+      {
+        "id": "c2",
+        "text": "国際連合"
+      },
+      {
+        "id": "c3",
+        "text": "ユネスコ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "1945年にできたのは国際連合。国際連盟は第一次世界大戦のあとにできた。"
+  },
+  {
+    "id": "l3-social-16",
+    "genre": "social",
+    "grade": 6,
+    "level": 3,
+    "question": "市の予算を話し合って決めるところはどこ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "市議会"
+      },
+      {
+        "id": "c2",
+        "text": "市役所"
+      },
+      {
+        "id": "c3",
+        "text": "裁判所"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "予算を決めるのは市議会。市役所は決まった予算を使って仕事を行う所。"
+  },
+  {
+    "id": "l3-logic-01",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "時計が6時30分のとき、長いはりと短いはりがつくる小さいほうの角は何度？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "0°"
+      },
+      {
+        "id": "c2",
+        "text": "30°"
+      },
+      {
+        "id": "c3",
+        "text": "15°"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "30分の間に短いはりは6と7のまん中まで進む。30°の半分の15°ずれている。"
+  },
+  {
+    "id": "l3-logic-02",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "2、3、5、8、12、□ と数がならんでいる。□に入る数はどれ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "17"
+      },
+      {
+        "id": "c2",
+        "text": "16"
+      },
+      {
+        "id": "c3",
+        "text": "20"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "ふえ方が1、2、3、4と1ずつ大きくなる。次は5ふえて12+5=17。"
+  },
+  {
+    "id": "l3-logic-03",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "3人のうち1人がまどをわった。A「Bだ」B「ぼくじゃない」C「ぼくじゃない」。本当は1人だけ。わったのは？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A"
+      },
+      {
+        "id": "c2",
+        "text": "B"
+      },
+      {
+        "id": "c3",
+        "text": "C"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "Cがわったとすると、本当なのはBの言葉だけになる。1人ずつためして考える。"
+  },
+  {
+    "id": "l3-logic-04",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "1本80円のえん筆と1本120円のペンを合わせて10本買うと1000円。ペンは何本？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4本"
+      },
+      {
+        "id": "c2",
+        "text": "5本"
+      },
+      {
+        "id": "c3",
+        "text": "6本"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "全部えん筆なら800円。1本ペンにかえると40円ふえるので200÷40=5本。"
+  },
+  {
+    "id": "l3-logic-05",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "姉は分速80m、妹は分速60mで、家から同時に同じ方向へ歩く。10分後に何mはなれる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1400m"
+      },
+      {
+        "id": "c2",
+        "text": "140m"
+      },
+      {
+        "id": "c3",
+        "text": "200m"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1分で80−60=20mずつはなれる。速さをたすのは反対向きに進むとき。"
+  },
+  {
+    "id": "l3-logic-06",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "長さ100mの電車が秒速20mで長さ300mの鉄橋をわたる。わたり始めてから終わるまで何秒？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "15秒"
+      },
+      {
+        "id": "c2",
+        "text": "20秒"
+      },
+      {
+        "id": "c3",
+        "text": "5秒"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "電車の長さの分も進むので300+100=400m。400÷20=20秒かかる。"
+  },
+  {
+    "id": "l3-logic-07",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "2月が28日までの年、2月1日が日曜日なら、3月1日は何曜日？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "日曜日"
+      },
+      {
+        "id": "c2",
+        "text": "月曜日"
+      },
+      {
+        "id": "c3",
+        "text": "土曜日"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "2月が28日なら3月1日はちょうど4週間後。曜日は同じ日曜日になる。"
+  },
+  {
+    "id": "l3-logic-08",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "ある仕事を、Aは1人で6日、Bは1人で3日で終える。2人いっしょにすると何日で終わる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4.5日"
+      },
+      {
+        "id": "c2",
+        "text": "9日"
+      },
+      {
+        "id": "c3",
+        "text": "2日"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "1日にAは全体の6分の1、Bは3分の1をする。合わせて2分の1なので2日。"
+  },
+  {
+    "id": "l3-logic-09",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "4回のテストの平均が75点。5回目で何点とれば、5回の平均が80点になる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "85点"
+      },
+      {
+        "id": "c2",
+        "text": "100点"
+      },
+      {
+        "id": "c3",
+        "text": "80点"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "5回の合計は80×5=400点。4回で300点なので5回目は100点が必要。"
+  },
+  {
+    "id": "l3-logic-10",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "0、1、2、3の4まいのカードから3まいをならべて、3けたの整数は何通りできる？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "18通り"
+      },
+      {
+        "id": "c2",
+        "text": "24通り"
+      },
+      {
+        "id": "c3",
+        "text": "12通り"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "百の位に0は使えないので3通り。3×3×2=18通り。0を入れると24になる。"
+  },
+  {
+    "id": "l3-logic-11",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "5時から6時の間で、長いはりと短いはりがちょうど重なるのは何分ごろ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "5時25分ごろ"
+      },
+      {
+        "id": "c2",
+        "text": "5時27分ごろ"
+      },
+      {
+        "id": "c3",
+        "text": "5時30分ごろ"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "5時25分には短いはりも5より先へ進んでいる。少しあとの27分ごろに重なる。"
+  },
+  {
+    "id": "l3-logic-12",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "A〜Dの4人が円いテーブルに等しい間かくですわる。AとBは向かい合い、CはAの右どなり。Dの向かいは？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "A"
+      },
+      {
+        "id": "c2",
+        "text": "B"
+      },
+      {
+        "id": "c3",
+        "text": "C"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "AとBが向かい合うので、残りのCとDも向かい合う。Cの位置は関係ない。"
+  },
+  {
+    "id": "l3-logic-13",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "1から100までの整数を全部書くとき、数字の「1」は何回書く？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "20回"
+      },
+      {
+        "id": "c2",
+        "text": "11回"
+      },
+      {
+        "id": "c3",
+        "text": "21回"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "一の位で10回、十の位で10回、100で1回。11は「1」を2回書くので注意。"
+  },
+  {
+    "id": "l3-logic-14",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "今、母は36才、子は8才。母の年齢が子の3倍になるのは何年後？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "4年後"
+      },
+      {
+        "id": "c2",
+        "text": "6年後"
+      },
+      {
+        "id": "c3",
+        "text": "12年後"
+      }
+    ],
+    "answer": "c2",
+    "explanation": "6年後は母42才、子14才で3倍になる。2人の年の差28才はずっと変わらない。"
+  },
+  {
+    "id": "l3-logic-15",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "1辺1cmの立方体27こで大きな立方体を作り、外側を全部ぬった。どの面もぬられていない立方体は何こ？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "1こ"
+      },
+      {
+        "id": "c2",
+        "text": "0こ"
+      },
+      {
+        "id": "c3",
+        "text": "9こ"
+      }
+    ],
+    "answer": "c1",
+    "explanation": "3×3×3のまん中にある1こだけが外に出ていない。外から見えないのでぬられない。"
+  },
+  {
+    "id": "l3-logic-16",
+    "genre": "logic",
+    "grade": 6,
+    "level": 3,
+    "question": "兄と弟の持っているお金の比は3:2。兄が弟に200円わたすと同じ金額になる。兄は最初いくら？",
+    "choices": [
+      {
+        "id": "c1",
+        "text": "600円"
+      },
+      {
+        "id": "c2",
+        "text": "1000円"
+      },
+      {
+        "id": "c3",
+        "text": "1200円"
+      }
+    ],
+    "answer": "c3",
+    "explanation": "差1の半分の0.5をわたせば同じになる。0.5が200円で1が400円、兄は1200円。"
+  }
+]

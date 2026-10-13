@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+pnpm-lock.yaml
+*.md
+**/.claude/
+docs/specs/mock/
+.next/
+next-env.d.ts
