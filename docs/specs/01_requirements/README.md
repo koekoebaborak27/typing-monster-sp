@@ -17,9 +17,7 @@
 | ディレクトリ | 内容 |
 | --- | --- |
 | [`common/`](common/01_概要と対象範囲.md) | 全体（目的・対象範囲・技術と運用・非機能要件・PWA） |
-| [`battle/`](battle/01_バトルのルール.md) | バトル（ルール・結果の評価・難易度と出題・ボス・画面イメージ） |
-| [`question-data/`](question-data/01_問題データ.md) | 問題データ（`questions.json`） |
-| [`question-api/`](question-api/01_出題API.md) | 出題API（Route Handlers） |
+| [`battle/`](battle/01_バトルのルール.md) | バトル（ルール・結果の評価・お題の出し方・ボス） |
+| [`question-data/`](question-data/01_言葉のデータ.md) | 言葉のデータ（お題にする、ひらがなの言葉） |
 | [`local-storage/`](local-storage/01_端末内の保存.md) | 端末内の保存 |
 | [`boss-zukan/`](boss-zukan/01_ボス図鑑.md) | ボス図鑑 |
-| [`revenge/`](revenge/01_リベンジモード.md) | リベンジモード（復習モード） |

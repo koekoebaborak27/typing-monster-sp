@@ -24,7 +24,7 @@
 | ------------------- | ----- |
 | 1. 土台の準備            | 5 / 5 |
 | 2. 入力の試作と実機確認       | 6 / 6 |
-| 3. 要件・基本設計の書き直しとボス名 | 0 / 4 |
+| 3. 要件・基本設計の書き直しとボス名 | 1 / 4 |
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 0 / 3 |
 | 6. バトルの進行           | 0 / 3 |
@@ -36,13 +36,13 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 3-1（要件定義の書き直し）。画面の姿は [`screens.html`](../specs/mock/screens.html) と [`DESIGN.md`](../../DESIGN.md) で確定している（オーナー確認済み）。まず索引と、決めた仕様を読む。
+次の作業は 3-2（基本設計・詳細設計の書き直し）。要件定義（[`01_requirements/`](../specs/01_requirements/README.md)）は書き直し済みで、仕様の正本はそちらに移った。まず索引を読み、どのファイルを直す・消すかを決める。
 
 ```powershell
-rg -n "^#{1,3} " docs/specs/01_requirements/README.md
+rg -n "^#{1,3} " docs/specs/02_basic-design/README.md docs/specs/03_detail-design/README.md
 ```
 
-これまでに決めた仕様（入力の方法・ミスの数え方・削る機能など）は [履歴](history/2026-10.md#2026-10-13-タイピングゲームへの作り替えの方針決め) にある。3 で設計書へ書き写すまでは、ここが正本。
+要件定義でまだ決めていない点（ミスの数え方の細部・言葉を選ぶ基準・オフラインのときの扱いなど）は [履歴](history/2026-10.md#2026-10-13-要件定義の書き直し) にある。
 
 ## 残っているタスク
 
@@ -62,7 +62,7 @@ rg -n "^#{1,3} " docs/specs/01_requirements/README.md
   - [x] 2-5. 本番の URL を実機で開いて確かめる（2026-10-13。オーナーが実施。Android とパソコン。iPhone は未確認）→ [履歴](history/2026-10.md#2026-10-13-実機確認の結果と入力の方法の確定)
   - [x] 2-6. 結果を受けて、入力の方法を確定する（2026-10-13。標準のキーボードで 1 文字ごとに判定。間違えた文字は打った人が消す）→ [履歴](history/2026-10.md#2026-10-13-実機確認の結果と入力の方法の確定)
 - [ ] **3. 要件・基本設計の書き直しとボス名**
-  - [ ] 3-1. [`01_requirements/`](../specs/01_requirements/README.md) を書き直す（`battle/`・`question-data/`・`local-storage/`・`common/`）。`question-api/`・`revenge/` は消す
+  - [x] 3-1. [`01_requirements/`](../specs/01_requirements/README.md) を書き直す（2026-10-13。`question-api/`・`revenge/`・`草案.md` は消した）→ [履歴](history/2026-10.md#2026-10-13-要件定義の書き直し)
   - [ ] 3-2. [`02_basic-design/`](../specs/02_basic-design/README.md)・[`03_detail-design/`](../specs/03_detail-design/README.md) を書き直す（状態遷移・結果画面・ホーム画面・保存データの形・モジュール構成）。`question-api/` は消す
   - [ ] 3-3. ボス 20 体の名前の案を出し、オーナーの確認を取って、設計書と `src/modules/boss/data/bosses.ts` に反映する
   - [ ] 3-4. [`本システムの概要.md`](../development/本システムの概要.md) の扱いを決め、リポジトリ全体の `.md` のリンク切れを確認する
@@ -102,7 +102,7 @@ rg -n "^#{1,3} " docs/specs/01_requirements/README.md
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
-| 設計書・画面イメージ | `screens.html` と `DESIGN.md` はタイピングの内容（オーナー確認済み）。`docs/specs/` の設計書はクイズモンスターの内容のまま |
+| 設計書・画面イメージ | `screens.html` と `DESIGN.md` はタイピングの内容（オーナー確認済み）。`docs/specs/01_requirements/` もタイピングの内容。`02_basic-design/`・`03_detail-design/` はクイズモンスターの内容のまま |
 | GitHub・Vercel | 作成済み。本番は `https://typing-monster-sp.vercel.app`（`main` への push で自動デプロイ） |
 
 ## 完了済みの作業
