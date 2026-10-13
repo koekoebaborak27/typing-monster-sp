@@ -1,7 +1,6 @@
 import type { Boss } from "@/modules/boss";
 import type { Word } from "@/modules/word";
-// HPの計算はクイズのときと変わらないので、今の scoring.ts を使う。scoring.ts を作り直したら（TODO の 6-3）読み込み先を合わせる。
-import { BOSS_MAX_HP, hpAfterFinishFirstHit, hpAfterNormalHit } from "../scoring";
+import { BOSS_MAX_HP, hpAfterFinishFirstHit, hpAfterNormalHit } from "./scoring";
 import { judgeInput } from "./judge";
 import type { BattleAction, BattleEffect, BattleState } from "./types";
 
