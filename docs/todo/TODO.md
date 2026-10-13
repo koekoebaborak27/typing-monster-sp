@@ -22,7 +22,7 @@
 
 | 区分 | 進捗 |
 | --- | --- |
-| 1. 土台の準備 | 0 / 5 |
+| 1. 土台の準備 | 4 / 5 |
 | 2. 入力の試作と実機確認 | 0 / 6 |
 | 3. 要件・基本設計の書き直しとボス名 | 0 / 4 |
 | 4. 画面イメージの作り直し | 0 / 3 |
@@ -36,13 +36,12 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-最初の作業は 1-1（フォルダ名の変更）。エージェントのセッションを閉じてから、オーナーが次を実行する（開いたままだとフォルダが使用中で変えられない）。
+次の作業は 2-1（入力の試作ページ `/trial`）。1-4（アイコン）は、絵を誰が用意するかをオーナーに確認してから進める（待つ間も 2-1 は進められる）。
 
 ```powershell
-Rename-Item C:\work\code\kojin_learn\smartphone-typing typing-monster-sp
+pnpm install
+pnpm dev
 ```
-
-そのあと `C:\work\code\kojin_learn\typing-monster-sp` で新しいセッションを開き、1-2 から進める。
 
 これまでに決めた仕様（入力の方法・ミスの数え方・削る機能など）は [履歴](history/2026-10.md#2026-10-13-タイピングゲームへの作り替えの方針決め) にある。3 で設計書へ書き写すまでは、ここが正本。
 
@@ -51,11 +50,11 @@ Rename-Item C:\work\code\kojin_learn\smartphone-typing typing-monster-sp
 上から順に進める。**2 の実機確認の結果によっては、入力の方法を変えることになり、3 以降の内容が変わる。**
 
 - [ ] **1. 土台の準備**
-  - [ ] 1-1. フォルダ名を `typing-monster-sp` に変える（オーナーが実施。上の「次にやること」）
-  - [ ] 1-2. `git init` して、コピーしてきた状態を最初のコミットにする
-  - [ ] 1-3. 名前を変える: `package.json` の `name`（`typing-monster-sp`）、`src/app/manifest.ts` のアプリ名、localStorage の保存名（`src/modules/progress/storage.ts` とそのテスト）、`README.md`・`AGENTS.md` の冒頭の説明
+  - [x] 1-1. フォルダ名を `typing-monster-sp` に変える（2026-10-13。オーナーが実施）
+  - [x] 1-2. `git init` して、コピーしてきた状態を最初のコミットにする（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-土台の準備)
+  - [x] 1-3. 名前を変える（`package.json`・アプリ名・localStorage の保存名・`README.md`・`AGENTS.md` の冒頭）（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-土台の準備)
   - [ ] 1-4. `public/icons/` のアイコンを差し替える（絵を誰が用意するかをオーナーに確認する）
-  - [ ] 1-5. クイズモンスターのときの記録を消す（[`history/2026-10.md`](history/2026-10.md) の 2026-10-09 までの節と、[`notes/`](notes/README.md) の中身。`99_infra/` の URL・リポジトリ名は 2-4 のあとで直す）
+  - [x] 1-5. クイズモンスターのときの記録を消す（2026-10-13。`99_infra/` の URL・リポジトリ名は 2-4 のあとで直す）→ [履歴](history/2026-10.md#2026-10-13-土台の準備)
 - [ ] **2. 入力の試作と実機確認**（スマホ標準のキーボードで、1 文字ごとの判定が成り立つかを先に確かめる）
   - [ ] 2-1. 試作ページ（`/trial`）を作る。確かめるのは「1 文字ごとの判定」「途中の形（か→が）をミスにしない」「間違えた文字の取り消し」「予測変換の抑え方」と、キーボードが出た状態でボスとお題が上半分に収まるか。ほかの画面はクイズのまま残す
   - [ ] 2-2. GitHub にリポジトリを作る（オーナーが実施。手順はエージェントが案内する）
@@ -100,10 +99,10 @@ Rename-Item C:\work\code\kojin_learn\smartphone-typing typing-monster-sp
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | クイズモンスターをコピーしたままの状態（中身は 3 択クイズ） |
-| フォルダ | `C:\work\code\kojin_learn\smartphone-typing`（名前は未変更） |
-| git 管理 | 無し（`git status` がエラーになる） |
-| 名前 | `package.json`・manifest・localStorage の保存名とも `quiz-monster` のまま |
+| ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み |
+| フォルダ | `C:workdekojin_learn	yping-monster-sp` |
+| フォルダ | `C:workdekojin_learn	yping-monster-sp` |
+| 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
 | 設計書・画面イメージ | クイズモンスターの内容のまま |
 | GitHub・Vercel | 新しいプロジェクト用のものは未作成 |
 
