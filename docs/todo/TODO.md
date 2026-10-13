@@ -26,7 +26,7 @@
 | 2. 入力の試作と実機確認       | 6 / 6 |
 | 3. 要件・基本設計の書き直しとボス名 | 4 / 4 |
 | 4. 画面イメージの作り直し      | 3 / 3 |
-| 5. 言葉の機能            | 0 / 3 |
+| 5. 言葉の機能            | 1 / 3 |
 | 6. バトルの進行           | 0 / 3 |
 | 7. 画面               | 0 / 4 |
 | 8. 保存データ            | 0 / 2 |
@@ -36,13 +36,11 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 5-1（言葉のデータを約 100 語作る）。言葉を選ぶ基準・言葉の ID の付け方・データを置くファイルの名前と形がまだ決まっていないので、設計書の該当する所を読んで案を出し、オーナーの確認を取ってから作る。作った言葉の中身もオーナーが確かめる。
+次の作業は 5-2（最近出た言葉を避けて 5 語を選ぶ処理と、その単体テスト）。先に、言葉のデータの PR（ブランチ `feature/word-data`）がマージ済みかを確かめる。手順は [お題の選び方](../specs/02_basic-design/battle/05_お題の選び方.md#選ぶ手順) のとおりで、`src/modules/word/pick-words.ts` に作り、`index.ts` から `pickWords` を出す。
 
 ```powershell
-git switch main; git pull; rg -l "言葉のデータ" docs/specs
+git switch main; git pull; gh pr list --state all --head feature/word-data
 ```
-
-設計書でまだ決めていない点は [履歴](history/2026-10.md#2026-10-13-基本設計と詳細設計の書き直し) にある。
 
 ## 残っているタスク
 
@@ -71,7 +69,7 @@ git switch main; git pull; rg -l "言葉のデータ" docs/specs
   - [x] 4-2. ホーム画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
   - [x] 4-3. 結果画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
 - [ ] **5. 言葉の機能**（`src/modules/quiz/` を `src/modules/word/` に置き換える）
-  - [ ] 5-1. 言葉のデータを約 100 語作り、オーナーが中身を確かめる
+  - [x] 5-1. 言葉のデータを約 100 語作り、オーナーが中身を確かめる（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-言葉のデータを-100-語作成)
   - [ ] 5-2. 最近出た言葉を避けて 5 語を選ぶ処理と、その単体テストを作る
   - [ ] 5-3. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`）。使う所が無くなる `shared/errors/`・`shared/observability/` を消すかも決める
 - [ ] **6. バトルの進行**（`src/modules/battle/`）
@@ -98,7 +96,7 @@ git switch main; git pull; rg -l "言葉のデータ" docs/specs
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み。入力の試作ページ（`/trial`）がある |
+| ソース | 中身はクイズモンスターのまま（3 択クイズ）。名前だけ変更済み。入力の試作ページ（`/trial`）がある。言葉のデータ（`src/modules/word/`、100 語）があるが、まだどこからも使っていない |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
