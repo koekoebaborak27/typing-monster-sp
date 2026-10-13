@@ -25,7 +25,7 @@
 | 1. 土台の準備            | 5 / 5 |
 | 2. 入力の試作と実機確認       | 6 / 6 |
 | 3. 要件・基本設計の書き直しとボス名 | 0 / 4 |
-| 4. 画面イメージの作り直し      | 0 / 3 |
+| 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 0 / 3 |
 | 6. バトルの進行           | 0 / 3 |
 | 7. 画面               | 0 / 4 |
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-[`screens.html`](../specs/mock/screens.html) はオーナーの確認が済んだ（4 を 3 より先に進めている）。**次は [`DESIGN.md`](../../DESIGN.md) を `screens.html` に合わせて 4 を完了にし、続けて 3-1（要件定義の書き直し）へ進む。**
+次の作業は 3-1（要件定義の書き直し）。画面の姿は [`screens.html`](../specs/mock/screens.html) と [`DESIGN.md`](../../DESIGN.md) で確定している（オーナー確認済み）。まず索引と、決めた仕様を読む。
 
 ```powershell
-rg -n "^#{1,3} " DESIGN.md docs/specs/01_requirements/README.md
+rg -n "^#{1,3} " docs/specs/01_requirements/README.md
 ```
 
 これまでに決めた仕様（入力の方法・ミスの数え方・削る機能など）は [履歴](history/2026-10.md#2026-10-13-タイピングゲームへの作り替えの方針決め) にある。3 で設計書へ書き写すまでは、ここが正本。
@@ -66,10 +66,10 @@ rg -n "^#{1,3} " DESIGN.md docs/specs/01_requirements/README.md
   - [ ] 3-2. [`02_basic-design/`](../specs/02_basic-design/README.md)・[`03_detail-design/`](../specs/03_detail-design/README.md) を書き直す（状態遷移・結果画面・ホーム画面・保存データの形・モジュール構成）。`question-api/` は消す
   - [ ] 3-3. ボス 20 体の名前の案を出し、オーナーの確認を取って、設計書と `src/modules/boss/data/bosses.ts` に反映する
   - [ ] 3-4. [`本システムの概要.md`](../development/本システムの概要.md) の扱いを決め、リポジトリ全体の `.md` のリンク切れを確認する
-- [ ] **4. 画面イメージの作り直し**（[`screens.html`](../specs/mock/screens.html)・[`DESIGN.md`](../../DESIGN.md)。`screens.html` は作成・オーナー確認済み（2026-10-13）。`DESIGN.md` はまだ）
-  - [ ] 4-1. バトル画面（ライフを消し、お題と入力する場所を作る。キーボードを出すと高さがギリギリなので、お題のまわりに説明文を置かない）
-  - [ ] 4-2. ホーム画面（難易度の選択とリベンジモードの入口を消す）
-  - [ ] 4-3. 結果画面（ふりかえりを消し、ミスの回数を出す）
+- [x] **4. 画面イメージの作り直し**（[`screens.html`](../specs/mock/screens.html)・[`DESIGN.md`](../../DESIGN.md)。オーナーの指示で 3 より先に実施）
+  - [x] 4-1. バトル画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
+  - [x] 4-2. ホーム画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
+  - [x] 4-3. 結果画面（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-画面イメージの案の作り直し)
 - [ ] **5. 言葉の機能**（`src/modules/quiz/` を置き換える）
   - [ ] 5-1. 言葉のデータを約 100 語作り、オーナーが中身を確かめる
   - [ ] 5-2. 最近出た言葉を避けて 5 語を選ぶ処理と、その単体テストを作る
@@ -102,7 +102,7 @@ rg -n "^#{1,3} " DESIGN.md docs/specs/01_requirements/README.md
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
-| 設計書・画面イメージ | 設計書と `DESIGN.md` はクイズモンスターの内容のまま。`screens.html` はタイピングの内容に作り直し、オーナーの確認済み |
+| 設計書・画面イメージ | `screens.html` と `DESIGN.md` はタイピングの内容（オーナー確認済み）。`docs/specs/` の設計書はクイズモンスターの内容のまま |
 | GitHub・Vercel | 作成済み。本番は `https://typing-monster-sp.vercel.app`（`main` への push で自動デプロイ） |
 
 ## 完了済みの作業
@@ -113,3 +113,4 @@ rg -n "^#{1,3} " DESIGN.md docs/specs/01_requirements/README.md
 | --- | --- | --- |
 | 1. 土台の準備 | 5 | [土台の準備](history/2026-10.md#2026-10-13-土台の準備)・[アイコンの差し替え](history/2026-10.md#2026-10-13-アイコンの差し替え) |
 | 2. 入力の試作と実機確認 | 6 | [入力の試作ページ](history/2026-10.md#2026-10-13-入力の試作ページ)・[実機確認の結果と入力の方法の確定](history/2026-10.md#2026-10-13-実機確認の結果と入力の方法の確定) |
+| 4. 画面イメージの作り直し | 3 | [画面イメージの案の作り直し](history/2026-10.md#2026-10-13-画面イメージの案の作り直し) |
