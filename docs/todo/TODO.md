@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-オーナーの指示で、要件定義（3）より先に画面イメージ（4）を作っている。[`screens.html`](../specs/mock/screens.html) の案を作り直したので、**次はオーナーに見てもらい、直しを反映する**。決まったら [`DESIGN.md`](../../DESIGN.md) を合わせて 4 を完了にし、3-1 へ進む。
+[`screens.html`](../specs/mock/screens.html) はオーナーの確認が済んだ（4 を 3 より先に進めている）。**次は [`DESIGN.md`](../../DESIGN.md) を `screens.html` に合わせて 4 を完了にし、続けて 3-1（要件定義の書き直し）へ進む。**
 
 ```powershell
-start docsspecsmockscreens.html
+rg -n "^#{1,3} " DESIGN.md docs/specs/01_requirements/README.md
 ```
 
 これまでに決めた仕様（入力の方法・ミスの数え方・削る機能など）は [履歴](history/2026-10.md#2026-10-13-タイピングゲームへの作り替えの方針決め) にある。3 で設計書へ書き写すまでは、ここが正本。
@@ -66,7 +66,7 @@ start docsspecsmockscreens.html
   - [ ] 3-2. [`02_basic-design/`](../specs/02_basic-design/README.md)・[`03_detail-design/`](../specs/03_detail-design/README.md) を書き直す（状態遷移・結果画面・ホーム画面・保存データの形・モジュール構成）。`question-api/` は消す
   - [ ] 3-3. ボス 20 体の名前の案を出し、オーナーの確認を取って、設計書と `src/modules/boss/data/bosses.ts` に反映する
   - [ ] 3-4. [`本システムの概要.md`](../development/本システムの概要.md) の扱いを決め、リポジトリ全体の `.md` のリンク切れを確認する
-- [ ] **4. 画面イメージの作り直し**（[`screens.html`](../specs/mock/screens.html)・[`DESIGN.md`](../../DESIGN.md)。`screens.html` は全画面の案を作成済みで、オーナーの確認待ち。`DESIGN.md` はまだ）
+- [ ] **4. 画面イメージの作り直し**（[`screens.html`](../specs/mock/screens.html)・[`DESIGN.md`](../../DESIGN.md)。`screens.html` は作成・オーナー確認済み（2026-10-13）。`DESIGN.md` はまだ）
   - [ ] 4-1. バトル画面（ライフを消し、お題と入力する場所を作る。キーボードを出すと高さがギリギリなので、お題のまわりに説明文を置かない）
   - [ ] 4-2. ホーム画面（難易度の選択とリベンジモードの入口を消す）
   - [ ] 4-3. 結果画面（ふりかえりを消し、ミスの回数を出す）
@@ -102,7 +102,7 @@ start docsspecsmockscreens.html
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
-| 設計書・画面イメージ | 設計書と `DESIGN.md` はクイズモンスターの内容のまま。`screens.html` はタイピングの案に作り直した（オーナーの確認はまだ） |
+| 設計書・画面イメージ | 設計書と `DESIGN.md` はクイズモンスターの内容のまま。`screens.html` はタイピングの内容に作り直し、オーナーの確認済み |
 | GitHub・Vercel | 作成済み。本番は `https://typing-monster-sp.vercel.app`（`main` への push で自動デプロイ） |
 
 ## 完了済みの作業
