@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: "portrait",
     background_color: "#1b1b1b",
     theme_color: "#1b1b1b",
-    // 512 は端末が丸や角丸に切り抜くので、絵柄は中央の約8割に収めてある。
+    // 端末が丸や角丸に切り抜くので、モンスターと題字は中央の約8割に収まる絵にしてある（まわりのひらがなは切れてもよい飾り）。
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "maskable" },
