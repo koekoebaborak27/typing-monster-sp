@@ -8,7 +8,7 @@ import { describe, it, expect } from "vitest";
 import type { Progress } from "@/modules/progress";
 import { buildBattleResult } from "./battle-result";
 
-const boss = { id: "b1", emoji: "👹", name: "ヒッカケオニ" };
+const boss = { id: "b1", emoji: "👹", name: "ミスタッチオニ" };
 
 /** テスト用の保存データを作る。 */
 function progress(overrides: Partial<Progress> = {}): Progress {

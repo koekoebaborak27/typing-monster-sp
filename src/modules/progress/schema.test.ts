@@ -38,7 +38,7 @@ describe("progress/schema parseProgress", () => {
           wrongIds: ["q1", 4, "q1", ""],
           recentIds: { "1": ["q2", null], "2": "壊れた値", "3": ["q3"] },
           lastBossId: 123,
-          bossKills: { "ukkari-tako": 2, "hikkake-oni": -1, "awate-zame": 1.5 },
+          bossKills: { "renda-dako": 2, "misstouch-oni": -1, "hayauchi-zame": 1.5 },
           perfectCount: "2",
           soundOn: false,
         }),
@@ -47,7 +47,7 @@ describe("progress/schema parseProgress", () => {
         wrongIds: ["q1", ""],
         recentIds: { 1: ["q2"], 2: [], 3: ["q3"] },
         lastBossId: null,
-        bossKills: { "ukkari-tako": 2 },
+        bossKills: { "renda-dako": 2 },
         perfectCount: 0,
         soundOn: false,
       });
@@ -78,8 +78,8 @@ describe("progress/schema parseProgress", () => {
         version: 1,
         wrongIds: ["q1"],
         recentIds: { "1": ["q2"], "2": [], "3": [] },
-        lastBossId: "ukkari-tako",
-        bossKills: { "ukkari-tako": 1 },
+        lastBossId: "renda-dako",
+        bossKills: { "renda-dako": 1 },
         perfectCount: 3,
         soundOn: true,
       };

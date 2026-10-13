@@ -125,17 +125,17 @@ describe("progress/service の各記録更新", () => {
       service.recordFirstAnswer("q1", false);
       service.recordFirstAnswer("q2", false);
       service.removeWrongIds(["q1"]);
-      service.recordLastBoss("ukkari-tako");
-      service.recordBattleWin("ukkari-tako", true);
-      service.recordBattleWin("hikkake-oni", false);
+      service.recordLastBoss("renda-dako");
+      service.recordBattleWin("renda-dako", true);
+      service.recordBattleWin("misstouch-oni", false);
       service.setSoundOn(false);
 
       expect(service.loadProgress()).toEqual({
         version: 1,
         wrongIds: ["q2"],
         recentIds: { 1: [], 2: [], 3: [] },
-        lastBossId: "ukkari-tako",
-        bossKills: { "ukkari-tako": 1, "hikkake-oni": 1 },
+        lastBossId: "renda-dako",
+        bossKills: { "renda-dako": 1, "misstouch-oni": 1 },
         perfectCount: 1,
         soundOn: false,
       });
@@ -150,7 +150,7 @@ describe("progress/service resetZukan", () => {
       const service = await loadService();
       service.recordFirstAnswer("q1", false);
       service.setSoundOn(false);
-      service.recordBattleWin("ukkari-tako", true);
+      service.recordBattleWin("renda-dako", true);
 
       service.resetZukan();
 
@@ -173,12 +173,12 @@ describe("progress/service 保存に失敗したとき", () => {
         throw new Error("読み取り不可");
       });
 
-      service.recordBattleWin("ukkari-tako", false);
+      service.recordBattleWin("renda-dako", false);
 
       expect(service.isStorageAvailable()).toBe(false);
       expect(service.loadProgress()).toMatchObject({
         wrongIds: ["q1"],
-        bossKills: { "ukkari-tako": 1 },
+        bossKills: { "renda-dako": 1 },
       });
       expect(storage.localStorage.setItem).toHaveBeenCalledTimes(1);
     });
