@@ -124,10 +124,12 @@ function DamageDisplay({ state }: { state: BattleState }) {
   if (state.phase === "finishing") {
     return (
       <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center">
-        <span className="text-xs text-combo">とどめの一撃！</span>
-        <span className="text-3xl leading-tight font-medium whitespace-nowrap text-finish">
+        <span className="text-3xl font-bold text-combo [text-shadow:0_0_8px_#000,0_2px_0_#000]">
+          とどめの一撃！
+        </span>
+        <span className="text-6xl leading-tight font-bold whitespace-nowrap text-finish [text-shadow:0_0_12px_var(--color-hp),0_3px_0_var(--color-hp),0_0_2px_#000]">
           {state.lastDamage}
-          <span className="text-lg">ダメージ！</span>
+          <span className="text-3xl">ダメージ！</span>
         </span>
       </div>
     );
@@ -141,9 +143,10 @@ function DamageDisplay({ state }: { state: BattleState }) {
     >
       <span
         aria-hidden="true"
-        className="animate-damage-pop text-3xl leading-none font-bold whitespace-nowrap text-finish [text-shadow:0_0_12px_var(--color-hp),0_3px_0_var(--color-hp),0_0_2px_#000]"
+        className="animate-damage-pop text-6xl leading-none font-bold whitespace-nowrap text-finish [text-shadow:0_0_12px_var(--color-hp),0_3px_0_var(--color-hp),0_0_2px_#000]"
       >
-        {state.lastDamage}ダメージ！
+        {state.lastDamage}
+        <span className="text-3xl">ダメージ！</span>
       </span>
     </div>
   );
