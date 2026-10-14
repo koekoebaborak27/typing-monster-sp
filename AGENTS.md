@@ -1,7 +1,7 @@
 # タイピングモンスター — エージェント向け方針（正本）
 
 小学校高学年向けの、ひらがなの言葉をスマホのキーボードで打ってボスモンスターを倒すタイピングゲーム。スマホで遊ぶ Web アプリ（PWA）で、1バトルは 5 問。
-**クイズモンスター（3択クイズ）のソースを土台に作り替えている途中**で、プログラムと設計書の多くはまだクイズのまま。どこまで進んだかは `docs/todo/TODO.md` を見る。
+クイズモンスター（3択クイズ）のソースを土台に作り替えた。画面・設計書とも作り替えは済み、残りは本番での確認など。残タスクは `docs/todo/TODO.md` を見る。
 記録は端末の localStorage にだけ保存し、DB・ログイン・有料 API は使わない。
 
 本ファイルは Claude Code / Codex / GitHub Copilot すべてが読む**正本**。詳細は各サブディレクトリの AGENTS.md・`DESIGN.md`・`REVIEW.md` に委譲し、ここは薄く保つ。
@@ -42,7 +42,7 @@
 
 > ここは**プロジェクトごとに書き換える節**。決まっていないうちは「未定」と書いておき、決まった時点で 1 行足す。
 
-- **技術スタック**: 言語 = TypeScript / Node.js（`.nvmrc` のバージョン）、パッケージマネージャ = pnpm、テスト = Vitest（単体）+ Playwright（画面）。フロントエンド = Next.js（App Router）+ React、バックエンド = Next.js の Route Handlers（出題 API のみ）、DB = 使わない（端末の localStorage のみ）。
+- **技術スタック**: 言語 = TypeScript / Node.js（`.nvmrc` のバージョン）、パッケージマネージャ = pnpm、テスト = Vitest（単体）+ Playwright（画面）。フロントエンド = Next.js（App Router）+ React、バックエンド = 無し（言葉の選択も含め、すべてブラウザの中で動く）、DB = 使わない（端末の localStorage のみ）。
 - **アーキテクチャ**: 依存方向は `app → modules → shared` の一方向のみ。詳細 → `@src/AGENTS.md`
 - **CI は GitHub Actions**（lint / format / typecheck / test / build）。デプロイ先は Vercel（Hobby プラン）。
 - **ローカル開発の起動方法**: `pnpm install` の後に `pnpm dev`。ブラウザで http://localhost:3000 を開く。

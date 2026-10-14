@@ -30,16 +30,16 @@
 | 6. バトルの進行           | 3 / 3 |
 | 7. 画面               | 5 / 5 |
 | 8. 保存データ            | 2 / 2 |
-| 9. テストと仕上げ          | 2 / 4 |
+| 9. テストと仕上げ          | 3 / 4 |
 
 ## 次にやること
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 9-3（`README.md`・`AGENTS.md`・`99_infra/` を最終の内容に合わせる）。先に、古いクイズ時代の記述が残っていないかを探す。
+次の作業は 9-4（本番へ出し、実機で通しで遊んで確かめる。オーナーが実施）。コードに残る古い記述として、`src/app/layout.tsx` の説明文「3択クイズに答えて…」と、`src/modules/battle/ui/home-screen.tsx` の `mb-10text-center`（スペース抜け）を直すかを決める。
 
 ```powershell
-git switch main; git pull; gh pr list; rg -n "クイズ|3択|trial|wrongIds" README.md README_SIMPLE.md AGENTS.md docs/specs/99_infra
+git switch main; git pull; gh pr list
 ```
 
 ## 残っているタスク
@@ -87,7 +87,7 @@ git switch main; git pull; gh pr list; rg -n "クイズ|3択|trial|wrongIds" REA
 - [ ] **9. テストと仕上げ**
   - [x] 9-1. 試作ページ（`/trial`）を消した。`src/app/trial/` と `src/modules/trial/` を削除し、`README.md` の画面一覧から外した（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-試作ページを消した)
   - [x] 9-2. lint・format:check・typecheck・test・build を通した。`main` の最新（9-1 のマージ後）で全部通り、直す点は無かった（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-最終の検証を通した)
-  - [ ] 9-3. `README.md`・`AGENTS.md`・[`99_infra/`](../specs/99_infra/README.md) を最終の内容に合わせる
+  - [x] 9-3. `README.md`・`README_SIMPLE.md`・`AGENTS.md`・`src/AGENTS.md`・`DESIGN.md`・[`99_infra/`](../specs/99_infra/README.md) のクイズ時代の記述を直した（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-文書を最終の内容に合わせた)
   - [ ] 9-4. 本番へ出し、実機で通しで遊んで確かめる（オーナーが実施）
 
 ## 現在の状態

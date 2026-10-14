@@ -32,19 +32,16 @@
 
 ```bash
 B=https://typing-monster-sp.vercel.app
-for p in / /trial /battle /result /zukan /manifest.webmanifest /sw.js /offline.html; do
+for p in / /battle /result /zukan /manifest.webmanifest /sw.js /offline.html; do
   printf "%s " $p; curl -s -o /dev/null -w "%{http_code} %{content_type}\n" $B$p
 done
-curl -s -o /dev/null -w "API %{http_code}\n" -X POST $B/api/questions \
-  -H 'content-type: application/json' -d '{"mode":"normal","level":1}'
 ```
 
-見方：すべて `200`。`/sw.js` は `application/javascript`、`/manifest.webmanifest` は `application/manifest+json`、API は `200`。API の本文は `mode`（`normal` / `revenge`）と `level`（1〜3）が必要で、足りないと `400`。
+見方：すべて `200`。`/sw.js` は `application/javascript`、`/manifest.webmanifest` は `application/manifest+json`。API は無いので確かめない。
 
 | 確認項目 | 結果 |
 | --- | --- |
-| `/`・`/trial`・`/battle`・`/result`・`/zukan` | 200 |
-| `POST /api/questions` | 今回は確かめていない（7-5 で消した） |
+| `/`・`/battle`・`/result`・`/zukan` | 200 |
 | `/manifest.webmanifest`・`/sw.js`・`/offline.html`・`/icons/*.png` | 200。`sw.js` は JavaScript で配信 |
 
 ## 5. スマホ実機の確認（オーナーが実施）
