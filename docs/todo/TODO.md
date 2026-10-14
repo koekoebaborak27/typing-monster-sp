@@ -30,16 +30,16 @@
 | 6. バトルの進行           | 3 / 3 |
 | 7. 画面               | 5 / 5 |
 | 8. 保存データ            | 2 / 2 |
-| 9. テストと仕上げ          | 1 / 4 |
+| 9. テストと仕上げ          | 2 / 4 |
 
 ## 次にやること
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 9-2（lint・format:check・typecheck・test・build を通す）。9-1 の変更で通っているので、`main` の最新で確かめ直して、足りない点があれば直す。
+次の作業は 9-3（`README.md`・`AGENTS.md`・`99_infra/` を最終の内容に合わせる）。先に、古いクイズ時代の記述が残っていないかを探す。
 
 ```powershell
-git switch main; git pull; gh pr list; pnpm lint; pnpm format:check; pnpm typecheck; pnpm test; pnpm build
+git switch main; git pull; gh pr list; rg -n "クイズ|3択|trial|wrongIds" README.md README_SIMPLE.md AGENTS.md docs/specs/99_infra
 ```
 
 ## 残っているタスク
@@ -86,7 +86,7 @@ git switch main; git pull; gh pr list; pnpm lint; pnpm format:check; pnpm typech
   - [x] 8-2. 読み書きと単体テストを合わせた（8-1 と同じ変更で直した）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-保存データを作り替えた)
 - [ ] **9. テストと仕上げ**
   - [x] 9-1. 試作ページ（`/trial`）を消した。`src/app/trial/` と `src/modules/trial/` を削除し、`README.md` の画面一覧から外した（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-試作ページを消した)
-  - [ ] 9-2. lint・format:check・typecheck・test・build を通す
+  - [x] 9-2. lint・format:check・typecheck・test・build を通した。`main` の最新（9-1 のマージ後）で全部通り、直す点は無かった（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-最終の検証を通した)
   - [ ] 9-3. `README.md`・`AGENTS.md`・[`99_infra/`](../specs/99_infra/README.md) を最終の内容に合わせる
   - [ ] 9-4. 本番へ出し、実機で通しで遊んで確かめる（オーナーが実施）
 
