@@ -30,16 +30,16 @@
 | 6. バトルの進行           | 3 / 3 |
 | 7. 画面               | 5 / 5 |
 | 8. 保存データ            | 2 / 2 |
-| 9. テストと仕上げ          | 0 / 4 |
+| 9. テストと仕上げ          | 1 / 4 |
 
 ## 次にやること
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 9-1（試作ページ `/trial` を消す）。先に参照元を洗い出す。
+次の作業は 9-2（lint・format:check・typecheck・test・build を通す）。9-1 の変更で通っているので、`main` の最新で確かめ直して、足りない点があれば直す。
 
 ```powershell
-git switch main; git pull; gh pr list; rg -n "trial" src docs --glob "!docs/todo/history/**"
+git switch main; git pull; gh pr list; pnpm lint; pnpm format:check; pnpm typecheck; pnpm test; pnpm build
 ```
 
 ## 残っているタスク
@@ -85,7 +85,7 @@ git switch main; git pull; gh pr list; rg -n "trial" src docs --glob "!docs/todo
   - [x] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にした。開始時の保存は `recordBattleStart` の 1 つにまとめ、バトル開始時に最近出た言葉を避けるようにした（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-保存データを作り替えた)
   - [x] 8-2. 読み書きと単体テストを合わせた（8-1 と同じ変更で直した）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-保存データを作り替えた)
 - [ ] **9. テストと仕上げ**
-  - [ ] 9-1. 試作ページ（`/trial`）を消す
+  - [x] 9-1. 試作ページ（`/trial`）を消した。`src/app/trial/` と `src/modules/trial/` を削除し、`README.md` の画面一覧から外した（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-試作ページを消した)
   - [ ] 9-2. lint・format:check・typecheck・test・build を通す
   - [ ] 9-3. `README.md`・`AGENTS.md`・[`99_infra/`](../specs/99_infra/README.md) を最終の内容に合わせる
   - [ ] 9-4. 本番へ出し、実機で通しで遊んで確かめる（オーナーが実施）
@@ -96,7 +96,7 @@ git switch main; git pull; gh pr list; rg -n "trial" src docs --glob "!docs/todo
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | バトル画面（`/battle`）・ホーム・結果はタイピング用に作り替え済み（設計書・モックと突き合わせ済み）。クイズ用のコードと出題 API は消した。保存データ（`progress`）も設計書どおりに作り替え済み（`recentIds` は 1 本、`wrongIds` は無い）。バトル開始時に最近出た言葉を避けている。入力の試作ページ（`/trial`）が残っている |
+| ソース | バトル画面（`/battle`）・ホーム・結果はタイピング用に作り替え済み（設計書・モックと突き合わせ済み）。クイズ用のコードと出題 API は消した。保存データ（`progress`）も設計書どおりに作り替え済み（`recentIds` は 1 本、`wrongIds` は無い）。バトル開始時に最近出た言葉を避けている。入力の試作ページ（`/trial`）は消した（アクセスすると 404） |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
