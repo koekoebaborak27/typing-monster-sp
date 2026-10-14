@@ -79,7 +79,7 @@ export function HomeScreen() {
         <BossCircle boss={HOME_BOSS} size="lg" />
       </div>
       <h1 className="text-center text-2xl font-medium">タイピングモンスター</h1>
-      <p className="mb-10text-center text-fg-muted">ひらがなを うって ボスをたおせ！</p>
+      <p className="mb-10 text-center text-fg-muted">ひらがなを うって ボスをたおせ！</p>
 
       <button
         type="button"

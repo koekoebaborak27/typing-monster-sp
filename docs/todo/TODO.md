@@ -36,7 +36,7 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 9-4（本番へ出し、実機で通しで遊んで確かめる。オーナーが実施）。コードに残る古い記述として、`src/app/layout.tsx` の説明文「3択クイズに答えて…」と、`src/modules/battle/ui/home-screen.tsx` の `mb-10text-center`（スペース抜け）を直すかを決める。
+次の作業は 9-4（本番へ出し、実機で通しで遊んで確かめる。オーナーが実施）。コードに残っていた古い記述（`layout.tsx` の説明文・`home-screen.tsx` のスペース抜け）は直した。
 
 ```powershell
 git switch main; git pull; gh pr list
