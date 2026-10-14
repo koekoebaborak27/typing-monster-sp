@@ -1,7 +1,7 @@
 "use client";
 
 import type { RefObject } from "react";
-import { BossCircle } from "@/modules/boss";
+import { BossStage } from "@/modules/boss";
 import { cn } from "@/shared/ui/utils";
 import { currentWord } from "../battle-reducer";
 import { BOSS_MAX_HP } from "../scoring";
@@ -33,29 +33,47 @@ export function BattleScreen() {
   return (
     <main className={cn("min-h-dvh", angry ? "bg-angry-bg" : "bg-bg")}>
       <div className="mx-auto flex max-w-md flex-col p-4">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-fg-muted">{state.slot + 1} / 5問</span>
-          <span className={state.missCount >= 1 ? "text-life" : "text-fg-muted"}>
+        {/* ボスを大きく見せるため、光の背景を横いっぱいに広げ、問題数・ミスの回数はその上の隅に重ねる（専用の行は取らない）。 */}
+        <div className="relative -mx-4 -mt-4 px-4 pt-4">
+          <span className="absolute top-4 left-4 z-10 text-sm text-fg-muted">
+            {state.slot + 1} / 5問
+          </span>
+          <span
+            className={cn(
+              "absolute top-4 right-4 z-10 text-sm",
+              state.missCount >= 1 ? "text-life" : "text-fg-muted",
+            )}
+          >
             ミス {state.missCount}回
           </span>
-        </div>
-
-        <div className="relative mt-2">
           {angry && (
-            <p className="absolute top-0 left-0 z-10 rounded-xl bg-white px-3 py-1 text-xs font-medium text-boss-angry">
+            <p className="absolute top-10 left-4 z-10 rounded-xl bg-white px-3 py-1 text-xs font-medium text-boss-angry">
               もうゆるさないぞ！
             </p>
           )}
-          <BossCircle boss={boss} size="sm" angry={angry} dimmed={isFinishing} />
+          <BossStage boss={boss} angry={angry} dimmed={isFinishing} />
+          {/* 「とどめ問題」の札は、HP の行を増やさないようボスの右下に置く。 */}
+          {finishLabel && (
+            <span className="absolute right-4 bottom-2 z-10 rounded-md bg-combo px-2 py-0.5 text-xs text-bg">
+              {finishLabel}
+            </span>
+          )}
           <DamageDisplay state={state} />
         </div>
 
-        <p className={cn("mt-2 mb-2 text-center text-base font-medium", angry && "text-wrong")}>
+        {/* 光の背景（位置を指定した要素）が文字より前に描かれて隠してしまうので、名前と進行バーにも relative を付けて前に出す。 */}
+        <p
+          className={cn(
+            "relative mt-1 mb-1 text-center text-base font-medium",
+            angry && "text-wrong",
+          )}
+        >
           {angry ? `いかりの${boss.name}` : boss.name}
         </p>
 
+        {/* HP の数字は棒の中に入れて、1 行ぶん高さを減らす。 */}
         <div
-          className="h-3 overflow-hidden rounded-full bg-track"
+          className="relative h-4 overflow-hidden rounded-full bg-track"
           role="progressbar"
           aria-label="ボスのHP"
           aria-valuemin={0}
@@ -66,17 +84,12 @@ export function BattleScreen() {
             className="h-full bg-hp transition-[width] duration-500"
             style={{ width: `${hpPercent(state.hp)}%` }}
           />
-        </div>
-        <div className="mt-1 flex items-center justify-between text-sm">
-          <span className="text-fg-muted">
+          <span className="absolute inset-0 text-center text-xs leading-4 font-bold">
             HP {state.hp} / {BOSS_MAX_HP}
           </span>
-          {finishLabel && (
-            <span className="rounded-md bg-combo px-2 py-0.5 text-xs text-bg">{finishLabel}</span>
-          )}
         </div>
 
-        <div className="mt-2 mb-3 h-1 overflow-hidden rounded-full bg-track">
+        <div className="relative mt-1.5 mb-2 h-1 overflow-hidden rounded-full bg-track">
           <div
             className="h-full bg-primary"
             style={{ width: `${progressPercent(phase, state.slot)}%` }}
