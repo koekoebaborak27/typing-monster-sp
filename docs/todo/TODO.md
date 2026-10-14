@@ -28,7 +28,7 @@
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 2 / 2 |
 | 6. バトルの進行           | 3 / 3 |
-| 7. 画面               | 3 / 5 |
+| 7. 画面               | 4 / 5 |
 | 8. 保存データ            | 0 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
 
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 7-4（ボス図鑑。文言の見直しだけ）。`docs/specs/mock/screens.html` の図鑑・設計書の図鑑の節と、いまの `src/app/zukan/` と `src/modules/boss/ui/` を突き合わせる。
+次の作業は 7-5（出題 API まわりを消す）。先に参照している箇所を洗い出す。
 
 ```powershell
-git switch main; git pull; gh pr list; ls src/modules/boss/ui
+git switch main; git pull; gh pr list; rg -l "modules/quiz|api/questions|api-client|prefetch" src
 ```
 
 ## 残っているタスク
@@ -79,7 +79,7 @@ git switch main; git pull; gh pr list; ls src/modules/boss/ui
   - [x] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）。クイズ用の古いファイルを消して `battle/next/` の中身を 1 つ上へ移した（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-バトル画面を作り替え)
   - [x] 7-2. ホーム画面（余白をモックに合わせ、音のボタンの `aria-pressed` を外した。ほかは合っていた）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-ホーム画面を設計書とモックに合わせる)
   - [x] 7-3. 結果画面（「ミスの回数」の欄を足した。ほかは合っていた）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-結果画面にミスの回数の欄を足す)
-  - [ ] 7-4. ボス図鑑（文言の見直しだけ）
+  - [x] 7-4. ボス図鑑（突き合わせたが直す点は無かった。コードは変えていない）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-ボス図鑑を確かめた)
   - [ ] 7-5. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`・`shared/errors/`・`shared/observability/`）。`src/AGENTS.md` と `REVIEW.md` の対応する行も直す → [後ろへ回した理由](history/2026-10.md#2026-10-13-出題-api-まわりを消す作業を後ろへ移動)
 - [ ] **8. 保存データ**（`src/modules/progress/`）
   - [ ] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にする（開始時の保存は `recordBattleStart` の 1 つにまとめる）
