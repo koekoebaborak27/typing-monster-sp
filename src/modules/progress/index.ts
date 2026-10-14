@@ -1,12 +1,9 @@
 export {
   loadProgress,
-  recordFirstAnswer,
-  recordRecentIds,
-  recordLastBoss,
+  recordBattleStart,
   recordBattleWin,
-  removeWrongIds,
   resetZukan,
   setSoundOn,
   isStorageAvailable,
 } from "./service";
-export type { Level, Progress } from "./types";
+export type { Progress } from "./types";

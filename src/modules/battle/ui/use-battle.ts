@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { pickBoss } from "@/modules/boss";
-import { loadProgress, recordBattleWin, recordLastBoss } from "@/modules/progress";
+import { loadProgress, recordBattleStart, recordBattleWin } from "@/modules/progress";
 import { pickWords } from "@/modules/word";
 import { battleReducer, createInitialState, listEffects } from "../battle-reducer";
 import { buildBattleResult } from "../battle-result";
@@ -96,11 +96,16 @@ export function useBattle() {
 
     // 前のバトルの結果を残さない。
     setResult(null);
-    // 直前と同じボスが続かないよう、保存データの直前のボスを避けて選び、すぐ保存する。
-    const boss = pickBoss(loadProgress().lastBossId, Math.random);
-    recordLastBoss(boss.id);
-    // 最近出た言葉を避ける仕組みは保存データの作り替え（8）で入れる。いまは避けずに選ぶ。
-    const initial = createInitialState(boss, pickWords([], Math.random));
+    // 直前と同じボスが続かないよう直前のボスを避けて選び、最近出た言葉を避けて5語を選ぶ。
+    const progress = loadProgress();
+    const boss = pickBoss(progress.lastBossId, Math.random);
+    const words = pickWords(progress.recentIds, Math.random);
+    // 選んだボスと言葉を、1回でまとめて保存する。
+    recordBattleStart(
+      boss.id,
+      words.map((word) => word.id),
+    );
+    const initial = createInitialState(boss, words);
     stateRef.current = initial;
     setState(initial);
   }, [canStart, router, setResult]);
