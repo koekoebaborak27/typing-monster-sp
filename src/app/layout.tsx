@@ -17,7 +17,7 @@ const notoSansJp = Noto_Sans_JP({
 // ブラウザのタブに出すタイトルと、検索結果などに出す説明文。
 export const metadata: Metadata = {
   title: "タイピングモンスター",
-  description: "3択クイズに答えてモンスターをたおそう",
+  description: "ひらがなをうってモンスターをたおそう",
 };
 
 // すべての画面に共通する外枠。BattleSession（画面間で受け渡すメモリ）もここで持つ。
