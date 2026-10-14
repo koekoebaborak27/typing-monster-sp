@@ -28,7 +28,7 @@
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 2 / 2 |
 | 6. バトルの進行           | 3 / 3 |
-| 7. 画面               | 2 / 5 |
+| 7. 画面               | 3 / 5 |
 | 8. 保存データ            | 0 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
 
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 7-3（結果画面）。7-1 のとき、通すための最小限の形で作り替えてある。7-3 で足すのは「ミスの回数」の欄（大きな数字と一言。`view.ts` の `getMissNote` は用意済み）。`docs/specs/mock/screens.html` の結果と突き合わせる。
+次の作業は 7-4（ボス図鑑。文言の見直しだけ）。`docs/specs/mock/screens.html` の図鑑・設計書の図鑑の節と、いまの `src/app/zukan/` と `src/modules/boss/ui/` を突き合わせる。
 
 ```powershell
-git switch main; git pull; gh pr list; ls src/modules/battle/ui
+git switch main; git pull; gh pr list; ls src/modules/boss/ui
 ```
 
 ## 残っているタスク
@@ -78,7 +78,7 @@ git switch main; git pull; gh pr list; ls src/modules/battle/ui
 - [ ] **7. 画面**
   - [x] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）。クイズ用の古いファイルを消して `battle/next/` の中身を 1 つ上へ移した（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-バトル画面を作り替え)
   - [x] 7-2. ホーム画面（余白をモックに合わせ、音のボタンの `aria-pressed` を外した。ほかは合っていた）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-ホーム画面を設計書とモックに合わせる)
-  - [ ] 7-3. 結果画面（7-1 で最小限は作り替え済み。「ミスの回数」の欄が残り）
+  - [x] 7-3. 結果画面（「ミスの回数」の欄を足した。ほかは合っていた）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-結果画面にミスの回数の欄を足す)
   - [ ] 7-4. ボス図鑑（文言の見直しだけ）
   - [ ] 7-5. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`・`shared/errors/`・`shared/observability/`）。`src/AGENTS.md` と `REVIEW.md` の対応する行も直す → [後ろへ回した理由](history/2026-10.md#2026-10-13-出題-api-まわりを消す作業を後ろへ移動)
 - [ ] **8. 保存データ**（`src/modules/progress/`）
@@ -96,7 +96,7 @@ git switch main; git pull; gh pr list; ls src/modules/battle/ui
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | バトル画面（`/battle`）・ホームはタイピング用に作り替え済み（設計書・モックと突き合わせ済み）、結果は最小限に作り替え済み。`src/modules/battle/` のクイズ用ファイルは `api-client.ts`・`prefetch.ts`（と、そこだけが使う型）を除いて消した。出題 API まわり（`src/app/api/questions/`・`src/modules/quiz/`・`shared/errors/`・`shared/observability/`）と、保存データ（`progress`）は、まだクイズのまま。入力の試作ページ（`/trial`）がある。最近出た言葉を避ける処理はまだ使っていない（8 で入れる） |
+| ソース | バトル画面（`/battle`）・ホーム・結果はタイピング用に作り替え済み（設計書・モックと突き合わせ済み）。`src/modules/battle/` のクイズ用ファイルは `api-client.ts`・`prefetch.ts`（と、そこだけが使う型）を除いて消した。出題 API まわり（`src/app/api/questions/`・`src/modules/quiz/`・`shared/errors/`・`shared/observability/`）と、保存データ（`progress`）は、まだクイズのまま。入力の試作ページ（`/trial`）がある。最近出た言葉を避ける処理はまだ使っていない（8 で入れる） |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |
