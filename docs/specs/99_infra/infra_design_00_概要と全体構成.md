@@ -11,7 +11,7 @@
 | 連携元 | GitHub `koekoebaborak27/typing-monster-sp`（公開）の `main` ブランチ |
 | 自動デプロイ | Vercel の GitHub 連携による。`main` への push で本番、それ以外のブランチ・PR でプレビュー URL が作られる。GitHub Actions（CI）とは別に動き、CI の成否は待たない |
 | 環境変数 | 無し |
-| 出題 API | Next.js の Route Handlers（`POST /api/questions`。Vercel のサーバーレス関数として動く） |
+| 出題 API | 無し（7-5 で消した。言葉はブラウザの中で選ぶ） |
 | PWA | `/manifest.webmanifest`・`/sw.js`・`/offline.html`。Service Worker は本番ビルドのときだけ登録される |
 
 ## プロジェクトの設定値

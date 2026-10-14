@@ -44,7 +44,7 @@ curl -s -o /dev/null -w "API %{http_code}\n" -X POST $B/api/questions \
 | 確認項目 | 結果 |
 | --- | --- |
 | `/`・`/trial`・`/battle`・`/result`・`/zukan` | 200 |
-| `POST /api/questions` | 今回は確かめていない（7-5 で消す予定のため） |
+| `POST /api/questions` | 今回は確かめていない（7-5 で消した） |
 | `/manifest.webmanifest`・`/sw.js`・`/offline.html`・`/icons/*.png` | 200。`sw.js` は JavaScript で配信 |
 
 ## 5. スマホ実機の確認（オーナーが実施）
