@@ -61,8 +61,8 @@ export function HomeScreen() {
         <button
           type="button"
           onClick={toggleSound}
+          // 文言が「音 ON」「音 OFF」で状態を表すので、押された状態の印（aria-pressed）は付けない。
           disabled={!progress}
-          aria-pressed={progress?.soundOn ?? false}
           className="flex min-h-11 items-center gap-1 rounded-full border border-border px-4 text-sm text-fg-muted focus-visible:ring-2 focus-visible:ring-label focus-visible:outline-none"
         >
           {progress?.soundOn === false ? (
@@ -74,11 +74,12 @@ export function HomeScreen() {
         </button>
       </div>
 
-      <div className="mt-4">
+      {/* モックどおり、音のボタンとボスの丸の間・一言とボタンの間を広めに空ける。 */}
+      <div className="mt-10">
         <BossCircle boss={HOME_BOSS} size="lg" />
       </div>
       <h1 className="text-center text-2xl font-medium">タイピングモンスター</h1>
-      <p className="mb-6 text-center text-fg-muted">ひらがなを うって ボスをたおせ！</p>
+      <p className="mb-10text-center text-fg-muted">ひらがなを うって ボスをたおせ！</p>
 
       <button
         type="button"
