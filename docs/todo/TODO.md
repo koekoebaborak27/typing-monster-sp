@@ -29,17 +29,17 @@
 | 5. 言葉の機能            | 2 / 2 |
 | 6. バトルの進行           | 3 / 3 |
 | 7. 画面               | 5 / 5 |
-| 8. 保存データ            | 0 / 2 |
+| 8. 保存データ            | 2 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
 
 ## 次にやること
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 8-1（保存データの `wrongIds` を消し、`recentIds` を 1 本にする）。先に `progress` の参照元を洗い出す。
+次の作業は 9-1（試作ページ `/trial` を消す）。先に参照元を洗い出す。
 
 ```powershell
-git switch main; git pull; gh pr list; rg -l "wrongIds|recentIds" src
+git switch main; git pull; gh pr list; rg -n "trial" src docs --glob "!docs/todo/history/**"
 ```
 
 ## 残っているタスク
@@ -81,9 +81,9 @@ git switch main; git pull; gh pr list; rg -l "wrongIds|recentIds" src
   - [x] 7-3. 結果画面（「ミスの回数」の欄を足した。ほかは合っていた）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-結果画面にミスの回数の欄を足す)
   - [x] 7-4. ボス図鑑（突き合わせたが直す点は無かった。コードは変えていない）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-ボス図鑑を確かめた)
   - [x] 7-5. 出題 API まわり（`src/app/api/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`・`shared/errors/`・`shared/observability/`）と、それだけが使っていた `server-only` を消した。`src/AGENTS.md`・`REVIEW.md`・`TESTING.md` の対応する行も直した（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-出題-api-まわりを消した)
-- [ ] **8. 保存データ**（`src/modules/progress/`）
-  - [ ] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にする（開始時の保存は `recordBattleStart` の 1 つにまとめる）
-  - [ ] 8-2. 読み書きと単体テストを合わせる
+- [x] **8. 保存データ**（`src/modules/progress/`）
+  - [x] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にした。開始時の保存は `recordBattleStart` の 1 つにまとめ、バトル開始時に最近出た言葉を避けるようにした（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-保存データを作り替えた)
+  - [x] 8-2. 読み書きと単体テストを合わせた（8-1 と同じ変更で直した）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-保存データを作り替えた)
 - [ ] **9. テストと仕上げ**
   - [ ] 9-1. 試作ページ（`/trial`）を消す
   - [ ] 9-2. lint・format:check・typecheck・test・build を通す
@@ -96,7 +96,7 @@ git switch main; git pull; gh pr list; rg -l "wrongIds|recentIds" src
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | バトル画面（`/battle`）・ホーム・結果はタイピング用に作り替え済み（設計書・モックと突き合わせ済み）。クイズ用のコードと出題 API は消した。保存データ（`progress`）は、まだクイズのまま（`wrongIds` がある）。入力の試作ページ（`/trial`）がある。最近出た言葉を避ける処理はまだ使っていない（8 で入れる） |
+| ソース | バトル画面（`/battle`）・ホーム・結果はタイピング用に作り替え済み（設計書・モックと突き合わせ済み）。クイズ用のコードと出題 API は消した。保存データ（`progress`）も設計書どおりに作り替え済み（`recentIds` は 1 本、`wrongIds` は無い）。バトル開始時に最近出た言葉を避けている。入力の試作ページ（`/trial`）が残っている |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |

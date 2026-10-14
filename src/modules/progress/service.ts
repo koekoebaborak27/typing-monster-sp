@@ -1,6 +1,6 @@
-import { createInitialProgress } from "./schema";
+import { RECENT_LIMIT, createInitialProgress } from "./schema";
 import { ProgressStorageError, readProgress, writeProgress } from "./storage";
-import type { Level, Progress } from "./types";
+import type { Progress } from "./types";
 
 let memoryProgress = createInitialProgress();
 let storageAvailable: boolean | null = null;
@@ -10,12 +10,7 @@ let writesAllowed = true;
 function copyProgress(progress: Progress): Progress {
   return {
     ...progress,
-    wrongIds: [...progress.wrongIds],
-    recentIds: {
-      1: [...progress.recentIds[1]],
-      2: [...progress.recentIds[2]],
-      3: [...progress.recentIds[3]],
-    },
+    recentIds: [...progress.recentIds],
     bossKills: { ...progress.bossKills },
   };
 }
@@ -67,36 +62,15 @@ export function loadProgress(): Progress {
 }
 
 /**
- * 各問題への最初の解答を「まちがえた問題」に反映する。
- * 正解ならその問題を外し、不正解なら末尾へ加える（すでにあれば何もしない）。
+ * バトルの開始を記録する。選んだボスのIDと、選んだ言葉のIDを1回で保存する。
+ * 言葉のIDは「最近出た言葉」の末尾へ加え、古いものから捨てて新しい分だけ残す。
  */
-export function recordFirstAnswer(questionId: string, isCorrect: boolean): void {
+export function recordBattleStart(bossId: string, wordIds: string[]): void {
   updateProgress((progress) => {
-    // 正解した問題は覚えられたとみなし、リベンジの対象から外す。
-    if (isCorrect) {
-      return { ...progress, wrongIds: progress.wrongIds.filter((id) => id !== questionId) };
-    }
-    return progress.wrongIds.includes(questionId)
-      ? progress
-      : { ...progress, wrongIds: [...progress.wrongIds, questionId] };
+    // 今回の言葉がすでに入っていたら一度外し、新しい側（末尾）へ入れ直す。
+    const next = [...progress.recentIds.filter((id) => !wordIds.includes(id)), ...wordIds];
+    return { ...progress, lastBossId: bossId, recentIds: [...new Set(next)].slice(-RECENT_LIMIT) };
   });
-}
-
-/** 難易度ごとの最近出た問題を古い順に保ち、直近20件だけ残す。 */
-export function recordRecentIds(level: Level, ids: string[]): void {
-  updateProgress((progress) => {
-    const recent = progress.recentIds[level];
-    const next = [...recent.filter((id) => !ids.includes(id)), ...ids];
-    return {
-      ...progress,
-      recentIds: { ...progress.recentIds, [level]: [...new Set(next)].slice(-20) },
-    };
-  });
-}
-
-/** 次のバトルで避けるボスIDを記録する。 */
-export function recordLastBoss(bossId: string): void {
-  updateProgress((progress) => ({ ...progress, lastBossId: bossId }));
 }
 
 /** 勝利数を増やし、パーフェクト勝利ならその回数も増やす。 */
@@ -110,19 +84,10 @@ export function recordBattleWin(bossId: string, isPerfect: boolean): void {
 
 /**
  * ボス図鑑の記録（ボスごとの撃破回数とパーフェクト勝利の回数）を空にする。
- * まちがえた問題やサウンド設定など、図鑑に関係しない記録はそのまま残す。
+ * 直前のボスや最近出た言葉、サウンド設定など、図鑑に関係しない記録はそのまま残す。
  */
 export function resetZukan(): void {
   updateProgress((progress) => ({ ...progress, bossKills: {}, perfectCount: 0 }));
-}
-
-/** 出題元に存在しなかった問題IDを、間違いの記録から取り除く。 */
-export function removeWrongIds(ids: string[]): void {
-  const removed = new Set(ids);
-  updateProgress((progress) => ({
-    ...progress,
-    wrongIds: progress.wrongIds.filter((id) => !removed.has(id)),
-  }));
 }
 
 /** サウンド設定を記録する。 */

@@ -29,14 +29,14 @@ describe("progress/storage readProgress", () => {
       useStorage();
       expect(readProgress()).toMatchObject({
         version: 1,
-        wrongIds: [],
+        recentIds: [],
         soundOn: true,
       });
     });
 
     it("壊れた JSON なら初期値を返す", () => {
       useStorage("{");
-      expect(readProgress()).toMatchObject({ wrongIds: [], soundOn: true });
+      expect(readProgress()).toMatchObject({ recentIds: [], soundOn: true });
     });
   });
 
@@ -68,8 +68,7 @@ describe("progress/storage writeProgress", () => {
       const storage = useStorage();
       const progress: Progress = {
         version: 1,
-        wrongIds: ["q1"],
-        recentIds: { 1: [], 2: [], 3: [] },
+        recentIds: ["w-001"],
         lastBossId: null,
         bossKills: {},
         perfectCount: 0,
@@ -94,8 +93,7 @@ describe("progress/storage writeProgress", () => {
       expect(() =>
         writeProgress({
           version: 1,
-          wrongIds: [],
-          recentIds: { 1: [], 2: [], 3: [] },
+          recentIds: [],
           lastBossId: null,
           bossKills: {},
           perfectCount: 0,

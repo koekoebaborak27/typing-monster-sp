@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Level, Progress } from "./types";
+import type { Progress } from "./types";
 
 /** localStorage に保存するデータの現在の版。 */
 export const CURRENT_VERSION = 1;
@@ -8,12 +8,14 @@ const objectSchema = z.record(z.string(), z.unknown());
 const nonNegativeIntegerSchema = z.number().int().nonnegative();
 const positiveIntegerSchema = z.number().int().positive();
 
+/** 「最近出た言葉」として覚えておく最大件数。 */
+export const RECENT_LIMIT = 20;
+
 /** 初期状態を新しいオブジェクトとして返す。 */
 export function createInitialProgress(): Progress {
   return {
     version: CURRENT_VERSION,
-    wrongIds: [],
-    recentIds: { 1: [], 2: [], 3: [] },
+    recentIds: [],
     lastBossId: null,
     bossKills: {},
     perfectCount: 0,
@@ -35,15 +37,6 @@ function readIds(value: unknown, limit?: number): string[] {
 /** 壊れた項目だけ初期値へ戻し、有効な保存データを組み立てる。 */
 function readCurrentProgress(data: Record<string, unknown>): Progress {
   const initial = createInitialProgress();
-  const recent = objectSchema.safeParse(data.recentIds);
-  const recentIds: Record<Level, string[]> = { 1: [], 2: [], 3: [] };
-
-  if (recent.success) {
-    recentIds[1] = readIds(recent.data["1"], 20);
-    recentIds[2] = readIds(recent.data["2"], 20);
-    recentIds[3] = readIds(recent.data["3"], 20);
-  }
-
   const rawKills = objectSchema.safeParse(data.bossKills);
   const bossKills: Progress["bossKills"] = {};
   if (rawKills.success) {
@@ -62,8 +55,8 @@ function readCurrentProgress(data: Record<string, unknown>): Progress {
 
   return {
     ...initial,
-    wrongIds: readIds(data.wrongIds),
-    recentIds,
+    // 前の形（難易度別のオブジェクト）で保存されていた場合は配列ではないので、空に戻る。
+    recentIds: readIds(data.recentIds, RECENT_LIMIT),
     lastBossId: lastBossId.success ? lastBossId.data : null,
     bossKills,
     perfectCount: perfectCount.success ? perfectCount.data : initial.perfectCount,
