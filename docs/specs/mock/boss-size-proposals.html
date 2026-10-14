@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>バトル画面 ボス拡大 案</title>
+<!-- バトル画面のボスを大きくする案。現行（64px）と 3 案を並べる。キーボードの高さは screens.html と同じ 250px。 -->
+<style>
+body{margin:0;padding:20px;background:#f2f2f2;font-family:sans-serif;width:1500px}
+.wrap{display:flex;gap:20px}
+.cap{font-size:14px;color:#333;margin:0 0 6px;font-weight:bold}
+.sub{font-size:12px;color:#555;margin:6px 0 0;line-height:1.5;width:340px}
+.ph{width:340px;height:640px;box-sizing:border-box;background:#1b1b1b;border:1px solid #3a3a3a;border-radius:20px;padding:16px 16px 266px;color:#ececec;font-size:13px;position:relative;overflow:hidden}
+.row{display:flex;justify-content:space-between;align-items:center}
+.mut{color:#b9b9b9}
+.hp{height:12px;background:#0f0f0f;border-radius:6px;overflow:hidden}.hp>i{display:block;height:100%;background:#d13b3b}
+.pg{height:5px;background:#0f0f0f;border-radius:3px;overflow:hidden;margin:6px 0 8px}.pg>i{display:block;height:100%;background:#2f7fd8}
+.boss{border-radius:50%;background:#251f55;margin:0 auto;display:flex;align-items:center;justify-content:center}
+.odai{text-align:center;font-size:30px;font-weight:500;letter-spacing:6px;margin:2px 0 8px}
+.odai .ok{color:#3fbf7f}.odai .nx{text-decoration:underline;text-decoration-color:#6aa7f0;text-underline-offset:8px}
+.inp{border:2px solid #6aa7f0;border-radius:10px;background:#0f0f0f;padding:9px 12px;font-size:18px;min-height:24px;display:flex;align-items:center}
+.inp .cur{display:inline-block;width:2px;height:20px;background:#ececec;margin-left:2px}
+.kbd{position:absolute;left:0;right:0;bottom:0;height:250px;background:#2e3033;border-top:1px solid #444;display:flex;flex-direction:column}
+.kbd .sg{height:38px;display:flex;align-items:center;gap:18px;padding:0 14px;color:#b9b9b9;font-size:14px;border-bottom:1px solid #3a3a3a}
+.kbd .ks{flex:1;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(4,1fr);gap:5px;padding:6px}
+.kbd .ks i{background:#4a4d52;border-radius:6px;font-style:normal;display:flex;align-items:center;justify-content:center;font-size:16px;color:#ececec}
+.kbd .ks i.f{background:#3a3c40;font-size:12px;color:#b9b9b9}
+.name{text-align:center;font-size:15px;font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- 現行 -->
+<div><p class="cap">現行（丸 64px）</p><div class="ph">
+<div class="row"><span class="mut">2 / 5問</span><span class="mut">ミス 0回</span></div>
+<div class="boss" style="width:64px;height:64px;font-size:32px;margin-top:2px;margin-bottom:4px">👹</div>
+<div class="name" style="margin-bottom:6px">ミスタッチオニ</div>
+<div class="hp"><i style="width:80%"></i></div>
+<div class="mut" style="margin-top:4px">HP 400 / 500</div>
+<div class="pg"><i style="width:20%"></i></div>
+<div class="odai"><span class="ok">が</span><span class="ok">っ</span><span class="nx">こ</span>う</div>
+<div class="inp">がっ<span class="cur"></span></div>
+<div class="kbd"><div class="sg"><span>学校</span><span>がっ</span><span>ガッ</span></div><div class="ks">
+<i class="f">→</i><i>あ</i><i>か</i><i>さ</i><i class="f">⌫</i><i class="f">←</i><i>た</i><i>な</i><i>は</i><i class="f">空白</i><i class="f">☺</i><i>ま</i><i>や</i><i>ら</i><i class="f">確定</i><i class="f">あA1</i><i>゛゜小</i><i>わ</i><i>、。?!</i><i class="f">↵</i>
+</div></div></div>
+<p class="sub">ボスがかなり小さい。ホーム画面（96px）より小さく、絵の迫力が出ない。</p></div>
+
+<!-- 案A：丸を 120px に。HP の文字を棒の中に入れて 1 行減らす -->
+<div><p class="cap">案A：丸 120px（棒の中に HP を入れて 1 行節約）</p><div class="ph">
+<div class="row"><span class="mut">2 / 5問</span><span class="mut">ミス 0回</span></div>
+<div class="boss" style="width:120px;height:120px;font-size:64px;margin-top:2px;margin-bottom:4px">👹</div>
+<div class="name" style="margin-bottom:6px">ミスタッチオニ</div>
+<div style="position:relative"><div class="hp" style="height:16px"><i style="width:80%"></i></div><span style="position:absolute;left:0;right:0;top:0;text-align:center;font-size:11px;line-height:16px;font-weight:bold">HP 400 / 500</span></div>
+<div class="pg"><i style="width:20%"></i></div>
+<div class="odai"><span class="ok">が</span><span class="ok">っ</span><span class="nx">こ</span>う</div>
+<div class="inp">がっ<span class="cur"></span></div>
+<div class="kbd"><div class="sg"><span>学校</span><span>がっ</span><span>ガッ</span></div><div class="ks">
+<i class="f">→</i><i>あ</i><i>か</i><i>さ</i><i class="f">⌫</i><i class="f">←</i><i>た</i><i>な</i><i>は</i><i class="f">空白</i><i class="f">☺</i><i>ま</i><i>や</i><i>ら</i><i class="f">確定</i><i class="f">あA1</i><i>゛゜小</i><i>わ</i><i>、。?!</i><i class="f">↵</i>
+</div></div></div>
+<p class="sub">いちばん変更が小さい。今の並び順のまま、ボスが約 2 倍に。</p></div>
+
+<!-- 案B：丸を 156px に。問題数・ミスは左右の隅に重ね、名前と HP はボスの下に重ねる -->
+<div><p class="cap">案B：丸 156px（問題数・ミスをボスの両脇に重ねる）</p><div class="ph">
+<div style="position:relative;height:156px">
+<span class="mut" style="position:absolute;left:0;top:0">2 / 5問</span><span class="mut" style="position:absolute;right:0;top:0">ミス 0回</span>
+<div class="boss" style="width:156px;height:156px;font-size:84px">👹</div></div>
+<div class="name" style="margin:4px 0 5px">ミスタッチオニ</div>
+<div style="position:relative"><div class="hp" style="height:16px"><i style="width:80%"></i></div><span style="position:absolute;left:0;right:0;top:0;text-align:center;font-size:11px;line-height:16px;font-weight:bold">HP 400 / 500</span></div>
+<div class="pg"><i style="width:20%"></i></div>
+<div class="odai"><span class="ok">が</span><span class="ok">っ</span><span class="nx">こ</span>う</div>
+<div class="inp">がっ<span class="cur"></span></div>
+<div class="kbd"><div class="sg"><span>学校</span><span>がっ</span><span>ガッ</span></div><div class="ks">
+<i class="f">→</i><i>あ</i><i>か</i><i>さ</i><i class="f">⌫</i><i class="f">←</i><i>た</i><i>な</i><i>は</i><i class="f">空白</i><i class="f">☺</i><i>ま</i><i>や</i><i>ら</i><i class="f">確定</i><i class="f">あA1</i><i>゛゜小</i><i>わ</i><i>、。?!</i><i class="f">↵</i>
+</div></div></div>
+<p class="sub">ボスが主役になる。上の行を無くす分、お題まわりは今と同じ高さに収まる。</p></div>
+
+<!-- 案C：丸をやめ、ボスを画面上部いっぱいの背景のように大きく置く -->
+<div><p class="cap">案C：丸なしで 200px（ボスを背景のように大きく）</p><div class="ph">
+<div style="position:absolute;left:0;right:0;top:0;height:250px;background:radial-gradient(circle at 50% 45%,#3a2f85 0,#251f55 45%,#1b1b1b 78%)"></div>
+<div style="position:absolute;left:0;right:0;top:14px;text-align:center;font-size:150px;line-height:1">👹</div>
+<div class="row" style="position:relative"><span class="mut">2 / 5問</span><span class="mut">ミス 0回</span></div>
+<div style="position:relative;margin-top:184px">
+<div class="name" style="margin-bottom:5px">ミスタッチオニ</div>
+<div style="position:relative"><div class="hp" style="height:16px"><i style="width:80%"></i></div><span style="position:absolute;left:0;right:0;top:0;text-align:center;font-size:11px;line-height:16px;font-weight:bold">HP 400 / 500</span></div>
+<div class="pg"><i style="width:20%"></i></div>
+<div class="odai"><span class="ok">が</span><span class="ok">っ</span><span class="nx">こ</span>う</div>
+<div class="inp">がっ<span class="cur"></span></div></div>
+<div class="kbd"><div class="sg"><span>学校</span><span>がっ</span><span>ガッ</span></div><div class="ks">
+<i class="f">→</i><i>あ</i><i>か</i><i>さ</i><i class="f">⌫</i><i class="f">←</i><i>た</i><i>な</i><i>は</i><i class="f">空白</i><i class="f">☺</i><i>ま</i><i>や</i><i>ら</i><i class="f">確定</i><i class="f">あA1</i><i>゛゜小</i><i>わ</i><i>、。?!</i><i class="f">↵</i>
+</div></div></div>
+<p class="sub">迫力は最大。ただし、お題の上下がぎりぎりで、小さい端末ではあふれる恐れがある。</p></div>
+
+</div>
+</body>
+</html>

@@ -24,6 +24,10 @@ body{margin:0;padding:16px;background:#f2f2f2;font-family:sans-serif}
 .pg{height:5px;background:#0f0f0f;border-radius:3px;overflow:hidden;margin:8px 0 10px}.pg>i{display:block;height:100%;background:#2f7fd8}
 .boss{width:96px;height:96px;border-radius:50%;background:#251f55;margin:6px auto 8px;display:flex;align-items:center;justify-content:center;font-size:48px}
 .boss.s{width:64px;height:64px;font-size:32px;margin:2px auto 4px}
+.stage{position:absolute;left:0;right:0;top:0;height:250px;background:radial-gradient(circle at 50% 45%,#3a2f85 0,#251f55 45%,#1b1b1b 78%)}
+.angry .stage{background:radial-gradient(circle at 50% 45%,#c04545 0,#b02a2a 45%,#3a1414 78%)}
+.bem{position:relative;text-align:center;font-size:150px;line-height:1;height:184px;padding-top:12px;box-sizing:border-box}
+.hpb{position:relative;height:16px;background:#0f0f0f;border-radius:8px;overflow:hidden}.hpb>i{display:block;height:100%;background:#d13b3b}.hpb>b{position:absolute;inset:0;text-align:center;font-size:11px;line-height:16px}
 .miss{color:#f07c7c}
 /* お題。打てた文字は緑、次に打つ文字には下線を付ける。 */
 .odai{text-align:center;font-size:30px;font-weight:500;letter-spacing:6px;margin:2px 0 8px}
@@ -44,23 +48,20 @@ body{margin:0;padding:16px;background:#f2f2f2;font-family:sans-serif}
 <body>
 <div class="wrap">
 
-<div><p class="cap">1. ホーム</p><div class="ph">
+<div><p class="cap">1. ホーム</p><!-- 背景画像にロゴ・ボス・一言が入っている。画像は public/images のもの。 -->
+<div class="ph" style="background:#0f0f0f url('../../../public/images/home-bg-mobile.webp') center top/cover no-repeat">
 <div class="row"><span></span><span class="mut" style="font-size:12px;border:1px solid #444;border-radius:20px;padding:4px 10px">🔊 音 ON</span></div>
-<div class="boss" style="margin-top:40px">👾</div>
-<div style="text-align:center;font-size:24px;font-weight:500">タイピングモンスター</div>
-<div class="mut" style="text-align:center;margin:4px 0 40px">ひらがなを うって ボスをたおせ！</div>
-<div class="btn pri" style="padding:16px;font-size:17px">バトル スタート</div>
+<div class="btn pri" style="padding:16px;font-size:17px;margin-top:290px">バトル スタート</div>
 <div class="btn" style="color:#e8a020;border-color:#5a4520;margin-top:14px">📖 ボス図鑑　7 / 20</div>
 </div>
-<ul class="note"><li>難易度の選択とリベンジモードの入口は無い</li></ul></div>
+<ul class="note"><li>難易度の選択とリベンジモードの入口は無い</li><li>ロゴ・ボス・一言は背景画像の中（PC は横長の別画像）</li></ul></div>
 
 <div><p class="cap">2. バトル（打っている途中）</p><div class="ph kb">
-<div class="row"><span class="mut">2 / 5問</span><span class="mut">ミス 0回</span></div>
-<div class="boss s">👹</div>
-<div style="text-align:center;font-size:15px;font-weight:500;margin-bottom:6px">ミスタッチオニ</div>
-<div class="hp"><i style="width:80%"></i></div>
-<div class="mut" style="margin-top:4px">HP 400 / 500</div>
-<div class="pg"><i style="width:20%"></i></div>
+<div class="stage"></div><div class="row" style="position:relative;z-index:1"><span class="mut">2 / 5問</span><span class="mut">ミス 0回</span></div>
+<div class="bem">👹</div>
+<div style="position:relative;text-align:center;font-size:15px;font-weight:500;margin:4px 0">ミスタッチオニ</div>
+<div class="hpb"><i style="width:80%"></i><b>HP 400 / 500</b></div>
+<div class="pg" style="position:relative"><i style="width:20%"></i></div>
 <div class="odai"><span class="ok">が</span><span class="ok">っ</span><span class="nx">こ</span>う</div>
 <div class="inp">がっ<span class="cur"></span></div>
 <div class="msg mut"></div>
@@ -71,15 +72,14 @@ body{margin:0;padding:16px;background:#f2f2f2;font-family:sans-serif}
 <i class="f">あA1</i><i>゛゜小</i><i>わ</i><i>、。?!</i><i class="f">↵</i>
 </div></div>
 </div>
-<ul class="note"><li>画面を開いたらすぐ打てるように、入力欄を選んだ状態にする（キーボードは出たまま）</li><li>お題のまわりに説明文は置かない。キーボードの上に全部が収まること</li><li>「が」を打つ途中の「か」などは、ミスにせず入力欄にそのまま出す</li><li>言葉を打ち終えたら、「100ダメージ！」と出して入力欄を空にし、次のお題へ進む</li></ul></div>
+<ul class="note"><li>画面を開いたらすぐ打てるように、入力欄を選んだ状態にする（キーボードは出たまま）</li><li>ボスは丸を使わず 150px の絵文字を、光の背景の上に大きく置く。問題数・ミスは背景の上の隅に重ね、HP の数字は棒の中に入れる</li><li>お題のまわりに説明文は置かない。キーボードの上に全部が収まること</li><li>「が」を打つ途中の「か」などは、ミスにせず入力欄にそのまま出す</li><li>言葉を打ち終えたら、「100ダメージ！」と出して入力欄を空にし、次のお題へ進む</li></ul></div>
 
 <div><p class="cap">3. バトル（ミス）</p><div class="ph kb">
-<div class="row"><span class="mut">2 / 5問</span><span class="miss">ミス 1回</span></div>
-<div class="boss s">👹</div>
-<div style="text-align:center;font-size:15px;font-weight:500;margin-bottom:6px">ミスタッチオニ</div>
-<div class="hp"><i style="width:80%"></i></div>
-<div class="mut" style="margin-top:4px">HP 400 / 500</div>
-<div class="pg"><i style="width:20%"></i></div>
+<div class="stage"></div><div class="row" style="position:relative;z-index:1"><span class="mut">2 / 5問</span><span class="miss">ミス 1回</span></div>
+<div class="bem">👹</div>
+<div style="position:relative;text-align:center;font-size:15px;font-weight:500;margin:4px 0">ミスタッチオニ</div>
+<div class="hpb"><i style="width:80%"></i><b>HP 400 / 500</b></div>
+<div class="pg" style="position:relative"><i style="width:20%"></i></div>
 <div class="odai"><span class="ok">が</span><span class="ok">っ</span><span class="nx">こ</span>う</div>
 <div class="inp ng">がっ<span class="w">け</span><span class="cur"></span></div>
 <div class="msg" style="color:#ee8888">「け」は ちがうよ。⌫ で けしてね</div>
@@ -93,13 +93,12 @@ body{margin:0;padding:16px;background:#f2f2f2;font-family:sans-serif}
 <ul class="note"><li>違う文字は取り消さずに、赤い字で入力欄に残す。打った人が消してから打ち直す</li><li>ミスの回数は 1 回だけ増える（消している間は増えない）</li><li>色だけに頼らず、文でも知らせる</li></ul></div>
 
 <div><p class="cap">4. バトル（いかり ＋ とどめ問題）</p><div class="ph kb angry">
-<div class="row"><span class="mut">4 / 5問</span><span class="miss">ミス 5回</span></div>
+<div class="stage"></div><div class="row" style="position:relative;z-index:1"><span class="mut">4 / 5問</span><span class="miss">ミス 5回</span></div>
 <div style="position:absolute;left:6px;top:50px;background:#fff;color:#7a1f1f;border-radius:12px;padding:5px 8px;font-size:11px;font-weight:500">もうゆるさないぞ！</div>
-<div style="position:relative;width:64px;margin:2px auto 4px"><div class="boss s" style="background:#b02a2a;margin:0">👹</div><span style="position:absolute;right:-10px;top:-6px;font-size:20px">💢</span></div>
-<div style="text-align:center;font-size:15px;font-weight:500;color:#ff9a9a;margin-bottom:6px">いかりのミスタッチオニ</div>
-<div class="hp"><i style="width:40%"></i></div>
-<div class="row" style="margin-top:4px"><span class="mut">HP 200 / 500</span><span style="background:#e8a020;color:#3a2400;border-radius:6px;padding:1px 8px;font-size:12px">とどめ問題 1/2</span></div>
-<div class="pg"><i style="width:60%"></i></div>
+<div class="bem"><span style="display:inline-block;position:relative">👹<span style="position:absolute;right:-16px;top:8px;font-size:36px">💢</span></span><span style="position:absolute;right:16px;bottom:8px;background:#e8a020;color:#3a2400;border-radius:6px;padding:1px 8px;font-size:12px;line-height:1.5">とどめ問題 1/2</span></div>
+<div style="position:relative;text-align:center;font-size:15px;font-weight:500;color:#ff9a9a;margin:4px 0">いかりのミスタッチオニ</div>
+<div class="hpb"><i style="width:40%"></i><b>HP 200 / 500</b></div>
+<div class="pg" style="position:relative"><i style="width:60%"></i></div>
 <div class="odai"><span class="nx">き</span>ょうりゅう</div>
 <div class="inp"><span class="ph0">ここに うってね</span></div>
 <div class="msg mut"></div>
@@ -113,13 +112,12 @@ body{margin:0;padding:16px;background:#f2f2f2;font-family:sans-serif}
 <ul class="note"><li>ミスが 5 回に達したら、そのバトルの最後まで「いかり」（背景が赤・ボスが小刻みにふるえる・名前が「いかりの◯◯」）</li><li>HP は元に戻さない（見た目だけが変わる）</li><li>4・5 問目は「とどめ問題」の札を出す</li></ul></div>
 
 <div><p class="cap">5. バトル（とどめの一撃）</p><div class="ph kb">
-<div class="row"><span class="mut">5 / 5問</span><span class="miss">ミス 2回</span></div>
-<div style="position:relative"><div class="boss s" style="opacity:.5">👹</div>
+<div class="stage"></div><div class="row" style="position:relative;z-index:1"><span class="mut">5 / 5問</span><span class="miss">ミス 2回</span></div>
+<div style="position:relative"><div class="bem" style="opacity:.5">👹</div>
 <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:12px;color:#e8a020">とどめの一撃！</span><span style="font-size:30px;font-weight:500;color:#ffd24a;line-height:1.1;white-space:nowrap">100<span style="font-size:18px">ダメージ！</span></span></div></div>
-<div style="text-align:center;font-size:15px;font-weight:500;margin-bottom:6px">ミスタッチオニ</div>
-<div class="hp"><i style="width:0"></i></div>
-<div class="mut" style="margin-top:4px">HP 0 / 500</div>
-<div class="pg"><i style="width:100%"></i></div>
+<div style="position:relative;text-align:center;font-size:15px;font-weight:500;margin:4px 0">ミスタッチオニ</div>
+<div class="hpb"><i style="width:0%"></i><b>HP 0 / 500</b></div>
+<div class="pg" style="position:relative"><i style="width:100%"></i></div>
 <div class="odai"><span class="ok">えんぴつ</span></div>
 <div class="inp" style="border-color:#3fbf7f">えんぴつ</div>
 <div class="msg mut">（数秒後に結果画面へ）</div>
