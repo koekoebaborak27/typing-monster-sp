@@ -28,7 +28,7 @@
 | 4. 画面イメージの作り直し      | 3 / 3 |
 | 5. 言葉の機能            | 2 / 2 |
 | 6. バトルの進行           | 3 / 3 |
-| 7. 画面               | 4 / 5 |
+| 7. 画面               | 5 / 5 |
 | 8. 保存データ            | 0 / 2 |
 | 9. テストと仕上げ          | 0 / 4 |
 
@@ -36,10 +36,10 @@
 
 **次のセッションが最初に打つコマンドまで具体的に書く。**
 
-次の作業は 7-5（出題 API まわりを消す）。先に参照している箇所を洗い出す。
+次の作業は 8-1（保存データの `wrongIds` を消し、`recentIds` を 1 本にする）。先に `progress` の参照元を洗い出す。
 
 ```powershell
-git switch main; git pull; gh pr list; rg -l "modules/quiz|api/questions|api-client|prefetch" src
+git switch main; git pull; gh pr list; rg -l "wrongIds|recentIds" src
 ```
 
 ## 残っているタスク
@@ -75,12 +75,12 @@ git switch main; git pull; gh pr list; rg -l "modules/quiz|api/questions|api-cli
   - [x] 6-1. `battle-reducer.ts` から失敗・取得中・取得失敗・ライフを消し、「何文字目まで打ったか」「ミスの回数」を足す（2026-10-13。`battle/next/` に作った）→ [履歴](history/2026-10.md#2026-10-13-バトルの状態の変え方と判定を作成)
   - [x] 6-2. 1 文字ごとの判定（途中の形の扱いを含む）を、画面に依存しない関数として作る（`trial/judge.ts` を `battle/next/judge.ts` へ移した）（2026-10-13。`battle/next/` に作った）→ [履歴](history/2026-10.md#2026-10-13-バトルの状態の変え方と判定を作成)
   - [x] 6-3. `scoring.ts` の評価をミスの回数で決める形に変え、`battle-result.ts`・`view.ts` を合わせる（2026-10-13。`battle/next/` に作った。PR #6）→ [履歴](history/2026-10.md#2026-10-13-評価と結果と表示の出し分けを作成)
-- [ ] **7. 画面**
+- [x] **7. 画面**
   - [x] 7-1. バトル画面（お題の表示と入力欄。ミスが 5 回に達したら「いかり」にする）。クイズ用の古いファイルを消して `battle/next/` の中身を 1 つ上へ移した（2026-10-13）→ [履歴](history/2026-10.md#2026-10-13-バトル画面を作り替え)
   - [x] 7-2. ホーム画面（余白をモックに合わせ、音のボタンの `aria-pressed` を外した。ほかは合っていた）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-ホーム画面を設計書とモックに合わせる)
   - [x] 7-3. 結果画面（「ミスの回数」の欄を足した。ほかは合っていた）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-結果画面にミスの回数の欄を足す)
   - [x] 7-4. ボス図鑑（突き合わせたが直す点は無かった。コードは変えていない）（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-ボス図鑑を確かめた)
-  - [ ] 7-5. 出題 API まわりを消す（`src/app/api/questions/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`・`shared/errors/`・`shared/observability/`）。`src/AGENTS.md` と `REVIEW.md` の対応する行も直す → [後ろへ回した理由](history/2026-10.md#2026-10-13-出題-api-まわりを消す作業を後ろへ移動)
+  - [x] 7-5. 出題 API まわり（`src/app/api/`・`src/modules/quiz/`・`battle/api-client.ts`・`battle/prefetch.ts`・`shared/errors/`・`shared/observability/`）と、それだけが使っていた `server-only` を消した。`src/AGENTS.md`・`REVIEW.md`・`TESTING.md` の対応する行も直した（2026-10-14）→ [履歴](history/2026-10.md#2026-10-14-出題-api-まわりを消した)
 - [ ] **8. 保存データ**（`src/modules/progress/`）
   - [ ] 8-1. `wrongIds` を消し、`recentIds` を難易度別から 1 本にする（開始時の保存は `recordBattleStart` の 1 つにまとめる）
   - [ ] 8-2. 読み書きと単体テストを合わせる
@@ -96,7 +96,7 @@ git switch main; git pull; gh pr list; rg -l "modules/quiz|api/questions|api-cli
 
 | 項目 | 状態 |
 | --- | --- |
-| ソース | バトル画面（`/battle`）・ホーム・結果はタイピング用に作り替え済み（設計書・モックと突き合わせ済み）。`src/modules/battle/` のクイズ用ファイルは `api-client.ts`・`prefetch.ts`（と、そこだけが使う型）を除いて消した。出題 API まわり（`src/app/api/questions/`・`src/modules/quiz/`・`shared/errors/`・`shared/observability/`）と、保存データ（`progress`）は、まだクイズのまま。入力の試作ページ（`/trial`）がある。最近出た言葉を避ける処理はまだ使っていない（8 で入れる） |
+| ソース | バトル画面（`/battle`）・ホーム・結果はタイピング用に作り替え済み（設計書・モックと突き合わせ済み）。クイズ用のコードと出題 API は消した。保存データ（`progress`）は、まだクイズのまま（`wrongIds` がある）。入力の試作ページ（`/trial`）がある。最近出た言葉を避ける処理はまだ使っていない（8 で入れる） |
 | フォルダ | `C:\work\code\kojin_learn\typing-monster-sp` |
 | git 管理 | `main` を GitHub（`origin`）へ push 済み。`git log --oneline -5` で確認できる |
 | 名前 | `package.json`・localStorage の保存名は `typing-monster-sp`、アプリ名は「タイピングモンスター」 |

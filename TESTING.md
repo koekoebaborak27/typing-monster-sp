@@ -25,14 +25,10 @@ lite-DDD はレイヤーで責務が違う。テストの優先度も変える�
 | `repository.ts`（DB アクセス） | △原則書かない | 複雑なクエリ・トランザクション境界のみ。単純 CRUD は書かない（ORM を信用） | DB 統合（後述） |
 | `ui/` | ✕当面スキップ | E2E に委譲。単体では原則書かない | — |
 
-**観測性との整合**: 業務コードは `try/catch`・ログを書かず `throw new AppError(...)` のみ（`src/AGENTS.md`）。したがって —
-- `service` のテストは「条件 → 正常戻り値 or AppError スロー」だけ見ればよい（副作用がなく書きやすい）。
-- ログ／エラー整形は入口ラッパー（`shared/observability`）のテストで**一度だけ**担保し、各 action で再テストしない。
-
 **service 向け観点チェックリスト**:
 - 正常系: 代表ケース1本
 - 業務分岐: if/ロジックの各分岐
-- 異常系: どの条件で**どの `AppError`**（code/メッセージまで）が飛ぶか（標準 code は `shared/errors/app-error.ts` の `Errors` ファクトリ＝`NOT_FOUND` / `UNAUTHORIZED` / `FORBIDDEN` / `VALIDATION_ERROR` / `CONFLICT`、それ以外は grep 可能な独自キー）
+- 異常系: どの条件でどんな結果（エラー・空の戻り値など）になるか
 - 境界値: ロック判定の閾値、ページング境界 等
 
 ## 3. ファイル分割 — 「1対象 = 1テストファイル」

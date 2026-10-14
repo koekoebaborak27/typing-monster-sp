@@ -32,5 +32,4 @@
 
 - [ ] **依存方向**: `app → modules → shared` の一方向を守れているか（→ `src/AGENTS.md`）
 - [ ] **server-only**: サーバ専用コードにマーカーが付き、クライアントへ混入していないか（→ `src/AGENTS.md`）
-- [ ] **ログ境界**: 業務コードに `try/catch`・ログがなく、入口ラッパー経由で `throw new AppError(...)` のみか（→ `src/AGENTS.md`）
 - [ ] **UI / 一覧**: `DESIGN.md` に従っているか（一覧/テーブル規約を含む → `DESIGN.md`。画面を持つプロジェクトのみ）
