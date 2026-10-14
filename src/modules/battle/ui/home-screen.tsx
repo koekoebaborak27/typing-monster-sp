@@ -3,15 +3,12 @@
 import { BookOpen, Volume2, VolumeX } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BOSSES, BossCircle, countDefeatedBosses } from "@/modules/boss";
+import { BOSSES, countDefeatedBosses } from "@/modules/boss";
 import { isStorageAvailable, loadProgress, setSoundOn } from "@/modules/progress";
 import type { Progress } from "@/modules/progress";
 import { cn } from "@/shared/ui/utils";
 import { useBattleSession } from "../session";
 import { enableSound } from "../sound";
-
-/** ホームのタイトル横に出すボス。決まった1体を出す。 */
-const HOME_BOSS = BOSSES.find((boss) => boss.id === "keyin-invader") ?? BOSSES[0];
 
 /** 補助ボタン（枠だけのボタン）の共通のクラス。縦横44px以上を保つ。 */
 const BUTTON_CLASS =
@@ -50,64 +47,64 @@ export function HomeScreen() {
   }
 
   return (
-    <main className="mx-auto flex min-h-dvh max-w-md flex-col gap-2 p-4">
-      {!storageOk && (
-        <p role="status" className="rounded-xl bg-surface px-4 py-3 text-sm text-combo">
-          きろくをほぞんできないよ。あそぶことはできるよ。
-        </p>
-      )}
+    // 背景画像にロゴ・ボス・一言が入っているので、画面にはボタンだけを重ねる。画像はスマホ用と PC 用を幅で切り替える（使う方だけ読み込まれる）。
+    <main className="flex min-h-dvh flex-col bg-track bg-[url('/images/home-bg-mobile.webp')] bg-cover bg-top bg-no-repeat md:bg-[url('/images/home-bg-pc.webp')] md:bg-center">
+      <div className="mx-auto flex w-full max-w-md flex-1 flex-col gap-2 p-4">
+        {!storageOk && (
+          <p role="status" className="rounded-xl bg-surface px-4 py-3 text-sm text-combo">
+            きろくをほぞんできないよ。あそぶことはできるよ。
+          </p>
+        )}
 
-      <div className="flex justify-end">
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={toggleSound}
+            // 文言が「音 ON」「音 OFF」で状態を表すので、押された状態の印（aria-pressed）は付けない。
+            disabled={!progress}
+            className="flex min-h-11 items-center gap-1 rounded-full border border-border px-4 text-sm text-fg-muted focus-visible:ring-2 focus-visible:ring-label focus-visible:outline-none"
+          >
+            {progress?.soundOn === false ? (
+              <VolumeX aria-hidden="true" className="size-4" />
+            ) : (
+              <Volume2 aria-hidden="true" className="size-4" />
+            )}
+            {progress?.soundOn === false ? "音 OFF" : "音 ON"}
+          </button>
+        </div>
+
+        {/* 画像の中のロゴと一言（画面の上から約6割）より下にボタンを置く。見出しは読み上げ用に隠して残す。 */}
+        <h1 className="sr-only">タイピングモンスター</h1>
+        <div className="mt-[50dvh] md:mt-[55dvh]" />
+
         <button
           type="button"
-          onClick={toggleSound}
-          // 文言が「音 ON」「音 OFF」で状態を表すので、押された状態の印（aria-pressed）は付けない。
-          disabled={!progress}
-          className="flex min-h-11 items-center gap-1 rounded-full border border-border px-4 text-sm text-fg-muted focus-visible:ring-2 focus-visible:ring-label focus-visible:outline-none"
+          onClick={start}
+          className={cn(BUTTON_CLASS, "border-primary bg-primary py-4 text-lg text-white")}
         >
-          {progress?.soundOn === false ? (
-            <VolumeX aria-hidden="true" className="size-4" />
-          ) : (
-            <Volume2 aria-hidden="true" className="size-4" />
-          )}
-          {progress?.soundOn === false ? "音 OFF" : "音 ON"}
+          バトル スタート
+        </button>
+
+        <button
+          type="button"
+          onClick={() => router.push("/zukan")}
+          className={cn(BUTTON_CLASS, "mt-4 border-combo text-combo")}
+        >
+          <span className="flex items-center gap-1">
+            <BookOpen aria-hidden="true" className="size-4" />
+            ボス図鑑
+            {progress && (
+              <span className="ml-2">
+                {countDefeatedBosses(
+                  progress.bossKills,
+                  BOSSES.map((boss) => boss.id),
+                )}{" "}
+                / {BOSSES.length}
+              </span>
+            )}
+          </span>
         </button>
       </div>
-
-      {/* モックどおり、音のボタンとボスの丸の間・一言とボタンの間を広めに空ける。 */}
-      <div className="mt-10">
-        <BossCircle boss={HOME_BOSS} size="lg" />
-      </div>
-      <h1 className="text-center text-2xl font-medium">タイピングモンスター</h1>
-      <p className="mb-10 text-center text-fg-muted">ひらがなを うって ボスをたおせ！</p>
-
-      <button
-        type="button"
-        onClick={start}
-        className={cn(BUTTON_CLASS, "border-primary bg-primary py-4 text-lg text-white")}
-      >
-        バトル スタート
-      </button>
-
-      <button
-        type="button"
-        onClick={() => router.push("/zukan")}
-        className={cn(BUTTON_CLASS, "mt-4 border-combo text-combo")}
-      >
-        <span className="flex items-center gap-1">
-          <BookOpen aria-hidden="true" className="size-4" />
-          ボス図鑑
-          {progress && (
-            <span className="ml-2">
-              {countDefeatedBosses(
-                progress.bossKills,
-                BOSSES.map((boss) => boss.id),
-              )}{" "}
-              / {BOSSES.length}
-            </span>
-          )}
-        </span>
-      </button>
     </main>
   );
 }
