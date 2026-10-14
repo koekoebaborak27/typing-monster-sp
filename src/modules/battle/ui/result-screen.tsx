@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { BossCircle } from "@/modules/boss";
 import { cn } from "@/shared/ui/utils";
 import { useBattleSession } from "../session";
-import { getEvaluationView, getNoticeTexts } from "../view";
+import { getEvaluationView, getMissNote, getNoticeTexts } from "../view";
 
 /** ボタンの共通のクラス。縦横44px以上を保つ。 */
 const BUTTON_CLASS =
@@ -61,7 +61,19 @@ export function ResultScreen() {
         </p>
       ))}
 
-      <div className="mt-4 flex flex-col gap-2">
+      {/* ミスの回数の欄。数字を大きく出し、一言で★3の条件（ミス0回ならパーフェクト）を伝える。 */}
+      <section
+        aria-label="ミスの回数"
+        className="mt-4 rounded-xl bg-surface px-3 py-3.5 text-center"
+      >
+        <p className="text-sm text-fg-muted">ミスの回数</p>
+        <p>
+          <span className="text-3xl font-medium">{result.missCount}</span> 回
+        </p>
+        <p className="text-sm text-fg-muted">{getMissNote(result.missCount)}</p>
+      </section>
+
+      <div className="mt-5 flex flex-col gap-2">
         <button
           type="button"
           onClick={() => {
